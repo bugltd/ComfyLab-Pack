@@ -2,7 +2,7 @@ from ..collection.register_nodes import register_node
 from ..shared.utils import AnyReturnTypes
 
 
-@register_node('Output Config: Load (local)', 'config')
+@register_node('Output Config: Load', 'config')
 class OutputConfigLocal:
     def __init__(self):
         pass
