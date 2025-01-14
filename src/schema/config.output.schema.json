@@ -1,0 +1,26 @@
+{
+	"$schema": "http://json-schema.org/draft-04/schema#",
+	"type": "object",
+	"additionalProperties": {
+		"oneOf": [
+			{ "not": { "type": "object" } },
+			{
+				"type": "object",
+				"properties": {
+					"value": {},
+					"type": {
+						"type": ["string", "array"],
+						"items": { "type": "string" }
+					},
+					"label": { "type": "string" },
+					"tooltip": { "type": "string" },
+					"color_off": { "type": "string" },
+					"color_on": { "type": "string" },
+					"shape": { "enum": ["box", "circle", "arrow", "grid"] }
+				},
+				"required": ["value"],
+				"additionalProperties": true
+			}
+		]
+	}
+}

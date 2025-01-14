@@ -1,0 +1,22 @@
+{
+  "singleQuote": true,
+  "trailingComma": "all",
+  "semi": false,
+  "useTabs": true,
+  "tabWidth": 2,
+  "overrides": [
+    {
+      "files": ["*.json", "*.jsonc"],
+      "options": {
+        "useTabs": false,
+        "trailingComma": "none"
+      }
+    },
+    {
+      "files": ["*.json5"],
+      "options": {
+        "useTabs": false
+      }
+    }
+  ]
+}
