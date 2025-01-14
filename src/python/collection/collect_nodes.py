@@ -1,6 +1,6 @@
 import importlib
 import os
-from dotenv import load_dotenv
+from dotenv import load_dotenv  # type: ignore
 import json
 
 from .register_nodes import ALL_NODES

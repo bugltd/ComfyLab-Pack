@@ -1,5 +1,5 @@
-from comfy_execution.graph import ExecutionBlocker
-import torch
+from comfy_execution.graph import ExecutionBlocker  # type: ignore
+import torch  # type: ignore
 from math import ceil
 
 from ..collection.register_nodes import register_node

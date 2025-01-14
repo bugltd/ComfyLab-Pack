@@ -3,9 +3,9 @@ import time
 import os
 from PIL import Image
 import numpy as np
-import torch
+import torch  # type: ignore
 
-import folder_paths
+import folder_paths  # type: ignore
 
 from ..collection.register_nodes import register_node
 from ..shared.utils import ANY_TYPE, pillow_to_tensor

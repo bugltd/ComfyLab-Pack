@@ -1,11 +1,11 @@
 import json
-import json5
+import json5  # type: ignore
 import yaml
-import pyaml
+import pyaml  # type: ignore
 import mimetypes
 from pathlib import Path
-from aiohttp.web import Request, json_response
-from server import PromptServer
+from aiohttp.web import Request, json_response  # type: ignore
+from server import PromptServer  # type: ignore
 
 from ..shared.json_validation import validate, SchemaError, InvalidStructureError
 

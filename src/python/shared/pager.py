@@ -1,5 +1,5 @@
 from types import SimpleNamespace
-import torch
+import torch  # type: ignore
 from .utils import tensor_to_pillow, pillow_to_tensor
 from .plot_data import (
     XYPlotQueueData,

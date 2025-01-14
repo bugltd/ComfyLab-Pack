@@ -1,6 +1,6 @@
 from pathlib import Path
 import json
-from jsonschema import Draft202012Validator
+from jsonschema import Draft202012Validator  # type: ignore
 
 SCHEMA_DIR = Path(__file__).parent.parent.parent / 'schema'
 

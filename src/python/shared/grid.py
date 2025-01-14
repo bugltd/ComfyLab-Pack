@@ -1,5 +1,3 @@
-import torch
-import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 from pathlib import Path
 import textwrap

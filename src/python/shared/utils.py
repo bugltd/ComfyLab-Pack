@@ -1,4 +1,4 @@
-import torch
+import torch  # type: ignore
 from PIL import Image
 import numpy as np
 
