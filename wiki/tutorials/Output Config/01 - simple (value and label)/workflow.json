@@ -1,5 +1,5 @@
 {
-  "last_node_id": 10,
+  "last_node_id": 11,
   "last_link_id": 10,
   "nodes": [
     {
@@ -14,7 +14,7 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 3,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -52,7 +52,7 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 2,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -124,7 +124,7 @@
         262
       ],
       "flags": {},
-      "order": 4,
+      "order": 5,
       "mode": 0,
       "inputs": [
         {
@@ -232,7 +232,7 @@
         46
       ],
       "flags": {},
-      "order": 5,
+      "order": 6,
       "mode": 0,
       "inputs": [
         {
@@ -273,7 +273,7 @@
         26
       ],
       "flags": {},
-      "order": 6,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -285,7 +285,54 @@
       "outputs": [],
       "properties": {
         "Node name for S&R": "PreviewImage"
-      }
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 11,
+      "type": "OutputConfigLocal",
+      "pos": [
+        -80,
+        -30
+      ],
+      "size": [
+        430,
+        420
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "OutputConfigLocal"
+      },
+      "widgets_values": [
+        null,
+        0,
+        "in a popup",
+        true,
+        "",
+        "",
+        0,
+        {
+          "current": true,
+          "states": {
+            "true": {
+              "size": [
+                430,
+                420
+              ],
+              "members": {
+                "config": "customtext"
+              }
+            },
+            "false": {
+              "members": {}
+            }
+          }
+        }
+      ]
     }
   ],
   "links": [
@@ -366,14 +413,15 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 0.8264462809917354,
       "offset": [
-        -305,
-        127
+        233.8873162735555,
+        186.57777046155832
       ]
     },
     "node_versions": {
-      "comfy-core": "0.3.10"
+      "comfy-core": "0.3.10",
+      "ComfyLab-Pack": "f4fb0806b873b9b25ecd9ae1b5dde2fefcdbd00f"
     }
   },
   "version": 0.4
