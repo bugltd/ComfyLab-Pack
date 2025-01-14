@@ -1,0 +1,27 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "watch",
+			"group": {
+				"kind": "build",
+				"isDefault": true
+			},
+			"problemMatcher": [],
+			"label": "npm: watch",
+			"detail": "tsc-watch -p tsconfig.json --onSuccess 'tsc-alias -p tsconfig.json -r build/replacers.js/mock.js'",
+			"runOptions": {
+				"runOn": "folderOpen"
+			}
+		},
+		{
+			"type": "npm",
+			"script": "build",
+			"group": "build",
+			"problemMatcher": [],
+			"label": "npm: build",
+			"detail": "rimraf ./dist/js && tsc -p tsconfig.prod.json && tsc-alias -p tsconfig.prod.json -r build/replacers.js/mock.js"
+		}
+	]
+}

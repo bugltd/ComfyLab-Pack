@@ -1,0 +1,5 @@
+jsonschema
+json5
+python-dotenv
+pyyaml
+pyaml
