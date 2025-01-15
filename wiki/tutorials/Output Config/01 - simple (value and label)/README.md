@@ -2,7 +2,7 @@
 
 In this first tutorial, we cover the core principles of `Output Config: Load` with the good old KSampler workflow, and some basic output configuration.
 
-IF you have no time yet to follow it, you can jump to [the conclusion](#tldr--conclusion).
+If you have no time yet to follow it, you can jump to [the conclusion](#tldr--conclusion).
 
 ## Part 1 - Let's play
 
@@ -14,9 +14,9 @@ IF you have no time yet to follow it, you can jump to [the conclusion](#tldr--co
 ### Create the outputs from config
 
 - download any of the `config 01 - *` config files in your favorite format: `json`, `json5`, or `yaml`
-  - `json5` and `yaml` allow comments, standard json doesn't
+  - `json5` and `yaml` allow comments, standard `json` doesn't
     - I recommend `json5` or `yaml` for this reason, especially if you intend to share your configs with others
-    - and you will find some detailed explanations in the example files provided here
+    - you will find some detailed explanations in the json5 / yaml example files provided here
 - in `Output Config: Load`, click on `Load output config`, and select the config file
 
 At this point, you should see something like this (example with the `.yaml` config file):
@@ -48,7 +48,7 @@ Modify the config files, change the prompt, or any value as you wish. Enjoy, the
 
 ### Preserving connections (and your expectations)
 
-Now, load any of the `bad config 01 - *` file.
+Now, load any of the `bad config 01 - *` files.
 
 ![node detail](./details/result%2002.jpg)
 
@@ -81,7 +81,7 @@ It was a bit long, but we have covered most of the core principles of the `Outpu
 
 - config files can be either in `JSON`, `JSON5` or `YAML` format
   - `JSON5` and `YAML` are probably better if you intend to share your configs with others
-    - it will allow you to document your config, among other things
+    - it will allow you to document your config, link to your Civitai account, ...
 - you can set virtually any number of outputs, you decide how to structure your use case, and how to connect your outputs to other nodes
 - values can be expressed in 2 ways:
   - by a simple `<output> = <value>` entry
@@ -89,7 +89,9 @@ It was a bit long, but we have covered most of the core principles of the `Outpu
 - labels can be customized, by adding the `label` key
 - existing connections are dropped if any of the following is changed: name, type or label
 - adjust the output type to the type expected by the destination input
+  - by default, the output type is deducted for the value: it can be a string, a number (integer and/or float), a boolean, an array (list)... or anything else, you choose
+    - types can be enforced though, we will cover that in the next tutorial
 
-The next tutorial will be shorter: we will see other configuration options (to make your node look like a Christmas tree if you wish), and how validation errors are handled.
+The next tutorial will be shorter: we will see other configuration options (to make your node look like a christmas garland if you wish), and how validation errors are handled.
 
 To jump to it: **[follow the link](<../02%20-%20making%20your%20life%20(and%20outputs)%20more%20colorful/>)**
