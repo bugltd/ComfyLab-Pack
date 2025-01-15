@@ -10,7 +10,6 @@ Have a good read!
 
 ---
 
-\
 **[Node reference](./node%20reference/README.md)**:
 
 - [Output Config (Load / Retrieve)](./node%20reference/output%20config.md)
@@ -18,7 +17,6 @@ Have a good read!
 
 ---
 
-\
 **[Tutorials](./tutorials/)**:
 
 - [OutputConfig](./tutorials/Output%20Config/)
