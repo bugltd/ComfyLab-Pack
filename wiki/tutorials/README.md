@@ -1,3 +1,3 @@
-# Examples
+# Tutorials
 
-[Output Config](./Output%20Config/README.md)
+**[Output Config](./Output%20Config/)**
