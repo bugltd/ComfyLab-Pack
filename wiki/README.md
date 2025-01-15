@@ -13,7 +13,8 @@ Have a good read!
 \
 **[Node reference](./node%20reference/README.md)**:
 
-- [Output Config](./node%20reference/output%20config.md)
+- [Output Config (Load / Retrieve)](./node%20reference/output%20config.md)
+- [Format (String / Multiline)](./node%20reference/format.md)
 
 ---
 
