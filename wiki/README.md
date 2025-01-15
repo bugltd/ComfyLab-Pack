@@ -1,3 +1,25 @@
 # ComfyLab-Pack wiki
 
-[Examples](./examples/README.md)
+Welcome to the wiki of the ComfyLab-Pack!
+
+Here you will find plenty of information / tricks to help you discover the nodes, and use them efficiently.
+
+Please take the time to read the pages if you face difficulties, and before [creating an issue](https://github.com/bugltd/ComfyLab-Pack/issues).
+
+Have a good read!
+
+---
+
+\
+**[Node reference](./node%20reference/README.md)**:
+
+- [Output Config](./node%20reference/output%20config.md)
+
+---
+
+\
+**[Tutorials](./tutorials/)**:
+
+- [OutputConfig](./tutorials/Output%20Config/)
+  - [01 - simple (value & label)](<./tutorials/Output%20Config/01%20-%20simple%20(value%20and%20label)/>)
+  - [02 - more options](./tutorials/Output%20Config/02%20-%20more%20options/)
