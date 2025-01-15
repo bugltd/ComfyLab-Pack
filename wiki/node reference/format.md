@@ -4,7 +4,7 @@
 
 ## Overview
 
-The `Format` node are very simple yet powerful nodes, that are based on the **standard Python string `format()` method**.\
+The `Format` nodes are very simple yet powerful nodes, that are based on the **standard Python string `format()` method**.\
 They exist in 2 flavors: `String` or `Multiline`.
 
 They are useful to create a string from a template, and **any number of inputs**.\
