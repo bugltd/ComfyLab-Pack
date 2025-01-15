@@ -5,6 +5,8 @@ In [the first tutorial](<../01%20-%20simple%20(value%20and%20label)/>), we have 
 In this second tutorial, we are going to see more configuration options, and also how validation errors are handled. \
 While I don't recommend to customize the color or shape too much, to preserve the standard look of ComfyUI, these options exist in the standard code so they are available for you to play with in your configs. Once again, your config, your choice!
 
+If you have no time yet to follow it, you can jump to [the conclusion](#tldr--conclusion).
+
 ## Part 1 - Make it shine
 
 ### Init the workflow
