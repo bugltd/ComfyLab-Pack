@@ -13,13 +13,13 @@ A config file is a simple text file in one of the following formats: **JSON, JSO
 
 A config can be very simple:
 
-```json
+```jsonc
 {
 	"seed": 618896223111156, // value can be set directly
 	"cfg": {
-		"value": 7.5 // or inside a dictionary, with the 'value' key
+		"value": 7.5, // or inside a dictionary, with the 'value' key
 	},
-	"steps": 40
+	"steps": 40,
 	// add all the outputs you need, name them as you wish
 }
 ```
