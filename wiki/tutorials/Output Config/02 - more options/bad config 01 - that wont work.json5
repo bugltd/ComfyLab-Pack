@@ -1,0 +1,21 @@
+/* 
+  bad config 01 - that won't work:
+    Here we add the checkpoint and sampler, in a traditional way (as strings)
+*/
+{
+  seed: 618896223111156,
+  cfg: {
+    value: 7.5,
+  },
+  steps: 40,
+  prompt: {
+    value: 'illuminated pirate ship sailing on a sea with a galaxy in the sky',
+    label: 'a basic prompt but a custom label',
+  },
+  checkpoint: {
+    value: 'sd_xl_base_1.0.safetensors', // full filename, adjust to your env
+  },
+  sampler: {
+    value: 'dpmpp_2m_sde', // one of the available values in 'sampler_name'
+  },
+}
