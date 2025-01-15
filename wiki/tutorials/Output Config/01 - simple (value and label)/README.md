@@ -77,7 +77,7 @@ By putting our value in quotes, we made it a string, which is not accepted by KS
 ## TL;DR / Conclusion
 
 That's it for this first part!\
-It was a bit long, but we have covered most of the core principles of the `Output Config: Load` node:
+We have covered most of the core principles of the `Output Config: Load` node:
 
 - config files can be either in `JSON`, `JSON5` or `YAML` format
   - `JSON5` and `YAML` are probably better if you intend to share your configs with others
@@ -89,9 +89,9 @@ It was a bit long, but we have covered most of the core principles of the `Outpu
 - labels can be customized, by adding the `label` key
 - existing connections are dropped if any of the following is changed: name, type or label
 - adjust the output type to the type expected by the destination input
-  - by default, the output type is deducted for the value: it can be a string, a number (integer and/or float), a boolean, an array (list)... or anything else, you choose
+  - by default, the output type is deducted from the value: it can be a string, a number (integer and/or float), a boolean, an array (list)... or anything else, you choose
     - types can be enforced though, we will cover that in the next tutorial
 
-The next tutorial will be shorter: we will see other configuration options (to make your node look like a christmas garland if you wish), and how validation errors are handled.
+In the next tutorial, we will see other configuration options (to make your node look like a christmas garland if you wish), and how validation errors are handled.
 
-To jump to it: **[follow the link](<../02%20-%20making%20your%20life%20(and%20outputs)%20more%20colorful/>)**
+To jump to it: **[follow the link](../02%20-%20more%20options/)**
