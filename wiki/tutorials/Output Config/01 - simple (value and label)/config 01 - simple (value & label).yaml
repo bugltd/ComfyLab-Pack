@@ -1,14 +1,14 @@
-# config 01 - basic:
+# config 01 - simple:
 #   Here we just set the values. Please note:
 #     - we can use comments (thanks to YAML)
 #     - values can be set in 2 different ways
 #     - we can also customize labels
 
-seed: 156680208700286 # we can specify the value directly
+seed: 618896223111156 # we can specify the value directly
 # or we can add more details
 cfg:
   value: 7.5 # 'value' is mandatory
 steps: 40
 prompt:
-  value: 'beautiful scenery nature glass bottle landscape, purple galaxy bottle,'
+  value: 'illuminated pirate ship sailing on a sea with a galaxy in the sky'
   label: a basic prompt but a custom label # we can customize the label
