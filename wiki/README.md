@@ -6,7 +6,10 @@ Here you will find plenty of information / tricks to help you discover the nodes
 
 Please take the time to read the pages if you face difficulties, and before [creating an issue](https://github.com/bugltd/ComfyLab-Pack/issues).
 
-Have a good read!
+Finally, kindly pardon my French: English is not my native language (and I don't know how to write simple sentences, even in French...), but I hope these pages will be understandable enough for you to enjoy.\
+If you can / wish, do not hesitate to propose a Pull Request to improve them and benefit to the community, I will be really grateful.
+
+That being said, have a good read dear friends!
 
 ---
 
