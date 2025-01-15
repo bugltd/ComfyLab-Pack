@@ -15,7 +15,7 @@ We will start with the same workflow as in [the first tutorial](<../01%20-%20sim
 
 ### Let's make our eyes bleed (a little)
 
-Download any of the `config 01 - *` files, and load it into `Output Config: Load`.
+Load any of the `config 01 - *` files into `Output Config: Load`.
 
 ![node detail](./details/result%2001.jpg)
 
@@ -37,7 +37,7 @@ However, we are going to make use of it, in a kind of 'hacky' way, just below.
 
 ### That won't work...
 
-Download any of the `bad config 01 - *` files, and load it into `Output Config: Load`.
+Load any of the `bad config 01 - *` files into `Output Config: Load`.
 
 We have added the `checkpoint` and `sampler` outputs. Please adjust the value for `checkpoint` to your env, if SDXL is not available in your ComfyUI instance.
 
@@ -50,7 +50,7 @@ Let's see how we can remediate this.
 
 ### ... unless we play a bit
 
-This time, download any of the `config 02 - *` files, and load it into `Output Config: Load`. Once again, adjust `checkpoint` to a model that exists in your ComfyUI instance.
+This time, load any of the `config 02 - *` files into `Output Config: Load`. Once again, adjust `checkpoint` to a model that exists in your ComfyUI instance.
 
 Try to connect the `checkpoint` and `sampler` outputs, to `Load Checkpoint` / ckpt_name and `KSampler` / sampler_name.
 This time it works, and we can run the workflow. Why?

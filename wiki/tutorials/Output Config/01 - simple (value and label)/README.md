@@ -8,12 +8,12 @@ If you have no time yet to follow it, you can jump to [the conclusion](#tldr--co
 
 ### Init the workflow
 
-- download [wortkflow.json](./wortkflow.json) or [workflow.png](./workflow.png), and open it in ComfyUI
+- open [wortkflow.json](./wortkflow.json) or [workflow.png](./workflow.png) of current folder, in ComfyUI
 - or start with the default KSampler workflow, and just add node `Output Config: Load`
 
 ### Create the outputs from config
 
-- download any of the `config 01 - *` config files in your favorite format: `json`, `json5`, or `yaml`
+- choose any of the `config 01 - *` config files in your favorite format: `json`, `json5`, or `yaml`
   - `json5` and `yaml` allow comments, standard `json` doesn't
     - I recommend `json5` or `yaml` for this reason, especially if you intend to share your configs with others
     - you will find some detailed explanations in the json5 / yaml example files provided here
