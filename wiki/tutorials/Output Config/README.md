@@ -1,8 +1,8 @@
 # Tutorials / Output Config
 
-The `Output Config` nodes allow you to create and load custom config files, to **dynamically create any number of custom outputs**, that you can later connect to other nodes before executing the workflow.
+The `Output Config` nodes allow you to load custom config files, to **dynamically create any number of custom outputs**, that you can later connect to other nodes before executing the workflow.
 
-The following tutorials cover all you need to know, from a simple config to a nore custom one.\
+The following tutorials cover all you need to know, from a simple config to a more custom one.\
 They will also help you understand how you can solve some issues (checkpoints combo, ...), and use the integrated validation check report.
 
 If needed, you can also check the [node reference](../../node%20reference/output%20config.md).
