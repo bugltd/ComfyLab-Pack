@@ -29,14 +29,17 @@ You should get something like this (obviously not exactly the same images):
 
 What do we see?
 
-- the `image` output of the `Render` is rendered at each KSampler processing
+- the `image` output of the `Render` node is updated at each KSampler processing
 - the `grid` output, however, is only rendered when the whole queue has been processed
 
 ### Understanding the config and processing
 
 #### The inputs
 
-The `Queue` node takes lists as inputs. For this we use the nodes `Format: from Multiline` and `Format: from String`, available in the ComfyLab extension. Of course, you can choose nodes from other extensions, as long as they provide lists.
+The `Queue` node takes lists as inputs. For this we use the nodes `Format: from Multiline` and `Format: from String`, available in the ComfyLab extension.\
+Of course, you can choose nodes from other extensions, as long as they provide lists.
+
+> There are other list-related nodes in the ComfyLab collection if you need
 
 Let's focus a bit:
 
@@ -62,7 +65,7 @@ For the test, just set the `convert` widget to `disabled`. You will get an error
 
 #### processing / auto-queuing
 
-The `Queue` and `Render` are connected by the specific `XY plot data` link: that is the way the queue updates the render node with the current processing state.
+The `Queue` and `Render` nodes are connected by the specific `XY plot data` link: that is the way the queue updates the render node with the current processing state.
 
 During processing, the `Queue` node informs you about the current state: `Processing: 2 / 9` for example
 
@@ -113,7 +116,7 @@ What we have changed:
 - the astronaut is back into business (we have removed the `#`, see Part 1)
 - in the `XY Plot: Queue` node, we have set `dim1: max per page` to 2
   - this where we set the pagination (0 to disable it)
-    in the `XT Plot: Render` node, we changed the `direction` to `dim1 as cols`
+- in the `XT Plot: Render` node, the `direction` was changed to `dim1 as cols`
 
 And if you observe the `grid` output of the Render node, we can indeed see that:
 

@@ -5,6 +5,7 @@ The `XY Plot` nodes allow you to create the grids you want, with virtually no li
 - simple to use by default: only 2 nodes
   - optional configuration nodes to customize the grid, or the page header / footer
   - with possible pagination
+- auto-queuing
 - you can virtually make anything vary: CFG, seed, checkpoint / sampler / LoRA / ...
 - not restricted to KSampler: can be adapted to any process generating images
 - many configuration options:
