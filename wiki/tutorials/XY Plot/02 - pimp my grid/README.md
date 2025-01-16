@@ -120,7 +120,7 @@ These tutorials are intended for a large audience and to cover the most standard
 - ...
 
 It would be too long for me to detail those as tutorials, but I will do my best to add some regurlarly, in the [wiki/examples folder](../../../examples/).\
-And I would suggest, if you haven't already, that you spend a bit of time to read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md): it's not too long, but you may learn some important design choices there.
+And I would suggest, if you haven't already, that you spend a bit of time to read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md): it's not too long, and you may learn some important design choices there.
 
 That being said, I hope you have found these tutorials interesting and easy to follow. If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
 
