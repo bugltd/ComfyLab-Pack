@@ -32,4 +32,6 @@ Contents:
 
 Contents:
 
-- WiP
+- customize the grid: background color, font, gap, ...
+- add a page header and/or footer, and configure them separately
+- make the grid RGBA to add a custom background inage
