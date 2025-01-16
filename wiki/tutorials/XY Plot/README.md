@@ -4,15 +4,16 @@ The `XY Plot` nodes allow you to create the grids you want, with virtually no li
 
 - simple to use by default: only 2 nodes
   - optional configuration nodes to customize the grid, or the page header / footer
-  - with possible pagination
+  - with possible pagination, row / column switch
 - auto-queuing
 - you can virtually make anything vary: CFG, seed, checkpoint / sampler / LoRA / ...
 - not restricted to KSampler: can be adapted to any process generating images
 - many configuration options:
-  - font (type / size / color), text with templating
+  - font (type / size / color)
     - in row / column headers, and/or page header / footer
-  - background color, even make your grid transparent (RGBA) if you wish!
-  - ...
+  - background color:
+    - make your grid transparent (RGBA) if you wish
+  - padding, wrap, ...
 - use any image resolution / aspect ratio
 
 If needed, you can also check the [node references](../../node%20reference/xy%20plot/) for the [core concepts](../../node%20reference/xy%20plot/00%20-%20core%20concepts.md) and detailed node information.
