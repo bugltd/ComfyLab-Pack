@@ -114,7 +114,8 @@ These tutorials are intended for a large audience and to cover the most standard
 - vary checkpoints, LoRA (any model in fact), ... virtually anything
   - automatize LoRA testing: different epochs, weight, ...
 - use a totally different process: load images from multiple folders, apply transformations... it's totally flexible
-- use a JSON / JSON5 / YAML config file, to standardize your workflow, and store a collection of test cases
+- display `page X of Y` in the footer
+- use a JSON / JSON5 / YAML config file, to standardize your workflow, and use a collection of test cases
   - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
