@@ -59,11 +59,11 @@ We can see that all connections except `seed` have been dropped. Why? There are 
   - note the quotes: the value is now a string, not a number anymore
 - the label for `prompt` has been changed
 
-> This is intended, to limit issues when opening a new file. **There are 3 reasons for a connection to be dropped:**
+> This is intended, to restrict ambiguity when opening a new file. **There are 3 reasons for a connection to be dropped:**
 >
-> 1. the output name has changed: obvious
-> 2. the value type has changed: if the destination node expects a number, we cannot send a string
-> 3. the label has changed: if your labelled your output a certain way, it's probably for a reason
+> 1. the output name has changed -> drop
+> 2. the value type has changed -> drop: if the destination node expects a number, we cannot send a string
+> 3. the label has changed -> drop: if your labelled your output a certain way, it's probably for a reason
 
 ### Valid config but wrong value type
 
