@@ -21,7 +21,7 @@ And as always, if you do not want to follow all the steps, you can jump directly
 
 **Load either `workflow - part 1.json` or `workflow - part 1.png` into ComfyUI.**\
 **Ensure that the batch size is set to 1 (default)**.\
-Adjust the checkpoint to one available in your ComfyUI instance.
+Adjust the checkpoint to one available in your ComfyUI instance.\
 Execute the workflow.
 
 You should get something like this (obviously not exactly the same images):
@@ -106,7 +106,7 @@ We did a very similar thing, this time in the `XY Plot: Render` node:\
 - we have set the `dim2: header format` string to `CFG: {dim2}`
 - the only difference is the placeholder name, `{dim2}` here
 
-## Part 3 - rows / columns and pagination
+## Part 3 - Rows / columns and pagination
 
 **Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI**.\
 Execute the workflow.
