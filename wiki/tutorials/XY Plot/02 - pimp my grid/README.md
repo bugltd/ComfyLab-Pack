@@ -1,8 +1,8 @@
 # Tutorials / XY Plot: 02 - pimp my grid
 
 In this second tutorial, we are going to discover the true power of ComfyLab's XY Plot: its configurability.\
-First by tweaking the grid itself, then by adding page header and footer.
-And finally, by adding a custom background image.
+First by tweaking the grid itself, then by adding header and footer to the page.\
+And finally, by setting a custom background image.
 
 Tutorial sections:
 
@@ -61,17 +61,19 @@ Some of the configuration options are similar to the `Plot Config: Grid` (font, 
 - `text`: you add text, and position it either at left / center / right
   - of course you can add multiple texts, as we have done in the footer
 - `background color`: you can set a color (as in header), or use the special value `transparent` (as in footer) to keep the grid bg color
-- a note about colors (either font or background, in all the `Plot Config` nodes): as you can see for the footer, you can specifiy them by name (eg `white`), instead of the traditional RGB hex notation
 - `padding`: add vertical space above and below the header / footer text
 
+> a note about colors (either font or background, in all the `Plot Config` nodes):\
+> as you can see in the footer, you can specify them by name (eg `white`), instead of the traditional RGB hex notation
+
 With just these 3 `Plot Config` nodes, we now have access to a bunch of configuration options.\
-But there's maybe something more we can: what about adding a custom background image?
+But there's maybe something more we can do: what about adding a custom background image?
 
 ## Part 3 - Add a background image (RGBA mode)
 
 **Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
 Adjust the checkpoint to one available in your ComfyUI instance.\
-Upload a background image into the `Load Image` node. You can find 2 samples in the `backgrounds` suvfolder, feel free to use your own.\
+Upload a background image into the `Load Image` node. You can find 2 samples in the `backgrounds` subfolder, feel free to use your own.\
 Execute the workflow.
 
 ![result - part 3](./details/result%20-%20part%203.jpg)
@@ -113,7 +115,7 @@ These tutorials are intended for a large audience and to cover the most standard
   - automatize LoRA testing: different epochs, weight, ...
 - use a totally different process: load images from multiple folders, apply transformations... it's totally flexible
 - use a JSON / JSON5 / YAML config file, to standardize your workflow, and store a collection of test cases
-  - thanks to the [ComfyLab `OutConfig` node](../../Output%20Config/)
+  - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
 It would be too long for me to detail those as tutorials, but I will do my best to add some regurlarly, in the [wiki/examples folder](../../../examples/).\
