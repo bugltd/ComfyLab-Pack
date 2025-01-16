@@ -20,6 +20,8 @@ That being said, have a good read, dear friends!
 
 - [Output Config (Load / Retrieve)](./node%20reference/output%20config.md)
 - [Format (String / Multiline)](./node%20reference/format.md)
+- [XY Plot](./node%20reference/xy%20plot/)
+  - [00 - Core concepts](./node%20reference/xy%20plot/00%20-%20core%20concepts.md)
 
 ---
 
@@ -28,3 +30,7 @@ That being said, have a good read, dear friends!
 - [OutputConfig](./tutorials/Output%20Config/)
   - [01 - simple (value & label)](<./tutorials/Output%20Config/01%20-%20simple%20(value%20and%20label)/>)
   - [02 - more options](./tutorials/Output%20Config/02%20-%20more%20options/)
+- [XY Plot](./tutorials/XY%20Plot/)
+  - [01 - the basics](./tutorials/XY%20Plot/01%20-%20the%20basics/)
+  - [02 - pimp my grid](./tutorials/XY%20Plot/02%20-%20pimp%20my%20grid/)
+- [Format](./tutorials/Format/)
