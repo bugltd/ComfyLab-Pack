@@ -130,6 +130,8 @@ And if you observe the `grid` output of the Render node, we can indeed see that:
 
 We have covered many important things in this first tutorial:
 
+- we only need 2 nodes to make grids: `Queue` and `Render`
+  - there are linked with the specific `XY plot data` output / input
 - the `Queue` node takes lists as inputs
   - although you can connect the outputs anywhere, you must ensure the type of the list values corresponds to the one expected by the input you connect it to
     - for example: float for CFG, integer for steps, ...
