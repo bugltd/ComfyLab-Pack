@@ -14,7 +14,7 @@ Tutorial sections:
 - [Part 2 - Various resolutions and aspect ratios](#part-2---various-resolutions-and-aspect-ratios)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
-> As for all nodes in this extension, you can get useful contextual information, by just **putting the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
+> As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
 And as always, if you do not want to follow all the steps, you can jump directly to [the conclusion](#tldr--conclusion).
 

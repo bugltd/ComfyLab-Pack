@@ -12,7 +12,7 @@ Tutorial sections:
 
 To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md).
 
-> As for all nodes in this extension, you can get useful contextual information, by just **putting the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
+> As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
 And as always, if you do not want to follow all the steps, you can jump directly to [the conclusion](#tldr--conclusion).
 
