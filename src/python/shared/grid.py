@@ -44,8 +44,12 @@ class Grid:
 
         for r, row in enumerate(image_matrix):
             for c, image in enumerate(row):
-                x = c * (self.max_cell_size[0] + self.config_grid.gap)
-                y = r * (self.max_cell_size[1] + self.config_grid.gap)
+                x = c * (self.max_cell_size[0] + self.config_grid.gap) + int(
+                    (self.max_cell_size[0] - image.size[0]) / 2
+                )
+                y = r * (self.max_cell_size[1] + self.config_grid.gap) + int(
+                    (self.max_cell_size[1] - image.size[1]) / 2
+                )
                 grid_image.paste(image, (x, y))
 
         # add headers; if header format for dim1/dim2 is empty, they will be silently ignored
