@@ -33,4 +33,5 @@ That being said, have a good read, dear friends!
 - [XY Plot](./tutorials/XY%20Plot/)
   - [01 - the basics](./tutorials/XY%20Plot/01%20-%20the%20basics/)
   - [02 - pimp my grid](./tutorials/XY%20Plot/02%20-%20pimp%20my%20grid/)
+  - [03 - advanced techniques](./tutorials/XY%20Plot/03%20-%20advanced%20techniques/)
 - [Format](./tutorials/Format/)

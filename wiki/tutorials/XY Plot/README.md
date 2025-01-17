@@ -45,4 +45,5 @@ Contents:
 
 Contents:
 
-- WIP
+- various checkpoints (or virtually any model, LoRA, ...)
+- integrate various image resolutions / aspect ratios in the grid

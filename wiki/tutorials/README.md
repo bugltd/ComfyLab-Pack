@@ -9,5 +9,6 @@
 
 - [01 - the basics](./XY%20Plot/01%20-%20the%20basics/)
 - [02 - pimp my grid](./XY%20Plot/02%20-%20pimp%20my%20grid/)
+- [03 - advanced techniques](./XY%20Plot/03%20-%20advanced%20techniques/)
 
 **[Format](./Format/)**
