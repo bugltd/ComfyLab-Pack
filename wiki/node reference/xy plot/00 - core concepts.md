@@ -22,9 +22,9 @@ As you can see, there is no concept of row / column or X / Y here, as in many ot
     - said differently: if you send a list of numbers, you will get number values in output
     - or one could say: sh\*t in, sh\*t out...
 - for the reason above, the `Queue` node cannot determine what it will get in input, so the type of the outputs is set to `"*"` (Any)
-  - this make the `dim1 value` and `dim2 value` outputs very flexible, as you can basically connect them anywhere
+  - this makes the `dim1 value` and `dim2 value` outputs very flexible, as you can basically connect them anywhere
   - but it comes at a price: **you must ensure that the data in input correspond to the expected data in output**
-    - for example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of integers. If you send strings, you will obviously get an error when running the workflow
+    - for example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats. If you send strings, you will obviously get an error when running the workflow
 - one of the main features of the `Queue` node is **auto-queuing**
   - no need to reset a counter, or manually increase the batch size
   - **the `Queue` node will take care of that for you**
@@ -41,16 +41,33 @@ The `Render` node, in its default configuration is easier to understand:
 - it has 2 outputs:
   - `image` is the single image, as received in input
   - `grid` is the generated grid, when it has received enough images
-    - obviously, you can generate multiple grids, but you configure pagination
+    - obviously, you can generate multiple grids, if you configure pagination in the `Queue` node
 
-As per the widgets:
+## dim1 vs dim2, which one should I choose? (or the Performance Question)
 
-- `dim1: header format` and `dim2: header format`
-  - enter here a template string, following the syntax of Python string `format()` method
-  - the `{dim1}` and `{dim2}` placeholders will be replaced by the current dim1 / dim2 value
-  - very handy if you want to prefix the row / column headers, for example:
-    - if you have CFG values in dim1, by default the headers will be `7.5`, `8`, ...
-    - just change the dim1 header format to `CFG: {dim1}` and you will get: `CFG: 7.5`, `CFG: 8`, ...
-  - there are plenty of advanced techniques, but you will probably not use them here
-    - however if you want to learn more, you can check the [`Format` node reference](../format.md)
-- `direction`: whether dim1 values are displayed as rows, or columns
+As seen above, connecting an input list on either `dim1` or `dim2` doesn't determine if data will be displayed as rows or columns: you can simply switch the `direction` in the `Render` node.
+
+So, what does it change?\
+In the most simple cases, for example if you plot `CFG` vs `seed`, it should not have any visible impact.
+
+But now, imagine a more advanced case: I want to plot a given list of 3 seeds vs a list of 3 checkoints with `KSampler`.\
+Let's recall the rule above: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1`**.\
+That means that, if I set the list of seeds in `dim1`, the process will work as follows:
+
+- get seed #1, get checkpoint #1 > <ins>load checkpoint #1</ins> > render image
+- **keep** seed #1, get checkpoint #2 > <ins>load checkpoint #2</ins> > render image
+- **keep** seed #1, get checkpoint #3 > <ins>load checkpoint #3</ins> > render image
+- get seed #2, get checkpoint #1 > <ins>load checkpoint #1</ins> > render image
+- ...
+
+Loading a checkpoint is a costly operation, in terms of performance: we don't want to load a new checkpoint at each and every iteration.\
+So let's switch, connecting the list of checkpoints to `dim1`, and the list of seeds to `dim2`:
+
+- get checkpoint #1, get seed #1 > <ins>load checkpoint #1</ins> > render image
+- **keep** checkpoint #1, get seed #2 > _do not load checkpoint #1_ (it's in memory) > render image
+- **keep** checkpoint #1, get seed #3 > _do not load checkpoint #1_ (it's in memory) > render image
+- ...
+
+By doing so, we optimize the performance as much as possible.\
+So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim 1`**.\
+(And if you vary 2 lists of models, obviously choose the slowest as `dim 1`).
