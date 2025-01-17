@@ -1,0 +1,830 @@
+{
+  "last_node_id": 22,
+  "last_link_id": 31,
+  "nodes": [
+    {
+      "id": 7,
+      "type": "CLIPTextEncode",
+      "pos": [
+        413,
+        389
+      ],
+      "size": [
+        425.27801513671875,
+        180.6060791015625
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 5
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            6
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "text, watermark"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "VAEDecode",
+      "pos": [
+        1209,
+        188
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 7
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 8
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            11
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 11,
+      "type": "PreviewImage",
+      "pos": [
+        1480,
+        420
+      ],
+      "size": [
+        260,
+        246
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 13
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 6,
+      "type": "CLIPTextEncode",
+      "pos": [
+        415,
+        186
+      ],
+      "size": [
+        422.84503173828125,
+        164.31304931640625
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 3
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            4
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        26,
+        474
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            8
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "KSampler",
+      "pos": [
+        863,
+        186
+      ],
+      "size": [
+        315,
+        474
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 4
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 6
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 26
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            7
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        134178653729123,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "ListFromMultiline",
+      "pos": [
+        -410,
+        -110
+      ],
+      "size": [
+        220,
+        210
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            15
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "disabled",
+        "# image dimensions\n1024 x 1024\n896 x 1152\n1216 x 832"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "ListFromMultiline",
+      "pos": [
+        -410,
+        160
+      ],
+      "size": [
+        218.39999389648438,
+        220
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            18
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "disabled",
+        "# rotations\nnone\n90 degrees"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "XYPlotQueue",
+      "pos": [
+        -150,
+        -100
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dim1",
+          "type": "LIST",
+          "link": 15,
+          "shape": 6
+        },
+        {
+          "name": "dim2",
+          "type": "LIST",
+          "link": 18,
+          "shape": 6,
+          "label": "dim2 (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "links": [
+            14
+          ],
+          "slot_index": 0,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "dim1_value",
+          "type": "*",
+          "links": [
+            29
+          ],
+          "slot_index": 1,
+          "label": "dim1 value"
+        },
+        {
+          "name": "dim2_value",
+          "type": "*",
+          "links": [
+            28
+          ],
+          "slot_index": 2,
+          "label": "dim2 value"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotQueue"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0
+      ]
+    },
+    {
+      "id": 22,
+      "type": "ResolutionToDims",
+      "pos": [
+        190,
+        -110
+      ],
+      "size": [
+        252,
+        102
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "resolution",
+          "type": "STRING",
+          "link": 29,
+          "widget": {
+            "name": "resolution"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            30
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            31
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResolutionToDims"
+      },
+      "widgets_values": [
+        "1024x1024",
+        1
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        500,
+        -10
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "link": 30,
+          "widget": {
+            "name": "width"
+          }
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "link": 31,
+          "widget": {
+            "name": "height"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            25
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
+      "id": 21,
+      "type": "LatentRotate",
+      "pos": [
+        860,
+        10
+      ],
+      "size": [
+        210,
+        70
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 25
+        },
+        {
+          "name": "rotation",
+          "type": "COMBO",
+          "link": 28,
+          "widget": {
+            "name": "rotation"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            26
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentRotate"
+      },
+      "widgets_values": [
+        "none"
+      ]
+    },
+    {
+      "id": 10,
+      "type": "PreviewImage",
+      "pos": [
+        1820,
+        180
+      ],
+      "size": [
+        720,
+        640
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 12,
+      "type": "XYPlotRender",
+      "pos": [
+        1450,
+        170
+      ],
+      "size": [
+        315,
+        186
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "link": 14,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 11
+        },
+        {
+          "name": "plot_config_grid",
+          "type": "PLOT_CONFIG_GRID",
+          "link": null,
+          "shape": 7,
+          "label": "config: grid (opt)"
+        },
+        {
+          "name": "plot_config_header",
+          "type": "PLOT_CONFIG_HF",
+          "link": null,
+          "shape": 7,
+          "label": "config: header (opt)"
+        },
+        {
+          "name": "plot_config_footer",
+          "type": "PLOT_CONFIG_HF",
+          "link": null,
+          "shape": 7,
+          "label": "config: footer (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "grid",
+          "type": "IMAGE",
+          "links": [
+            12
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            13
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotRender"
+      },
+      "widgets_values": [
+        "{dim1}",
+        "{dim2}",
+        false
+      ]
+    }
+  ],
+  "links": [
+    [
+      1,
+      4,
+      0,
+      3,
+      0,
+      "MODEL"
+    ],
+    [
+      3,
+      4,
+      1,
+      6,
+      0,
+      "CLIP"
+    ],
+    [
+      4,
+      6,
+      0,
+      3,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      5,
+      4,
+      1,
+      7,
+      0,
+      "CLIP"
+    ],
+    [
+      6,
+      7,
+      0,
+      3,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      7,
+      3,
+      0,
+      8,
+      0,
+      "LATENT"
+    ],
+    [
+      8,
+      4,
+      2,
+      8,
+      1,
+      "VAE"
+    ],
+    [
+      11,
+      8,
+      0,
+      12,
+      1,
+      "IMAGE"
+    ],
+    [
+      12,
+      12,
+      0,
+      10,
+      0,
+      "IMAGE"
+    ],
+    [
+      13,
+      12,
+      1,
+      11,
+      0,
+      "IMAGE"
+    ],
+    [
+      14,
+      13,
+      0,
+      12,
+      0,
+      "XY_PLOT_DATA"
+    ],
+    [
+      15,
+      14,
+      0,
+      13,
+      0,
+      "LIST"
+    ],
+    [
+      18,
+      15,
+      0,
+      13,
+      1,
+      "LIST"
+    ],
+    [
+      25,
+      5,
+      0,
+      21,
+      0,
+      "LATENT"
+    ],
+    [
+      26,
+      21,
+      0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      28,
+      13,
+      2,
+      21,
+      1,
+      "COMBO"
+    ],
+    [
+      29,
+      13,
+      1,
+      22,
+      0,
+      "STRING"
+    ],
+    [
+      30,
+      22,
+      0,
+      5,
+      0,
+      "INT"
+    ],
+    [
+      31,
+      22,
+      1,
+      5,
+      1,
+      "INT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1,
+      "offset": [
+        520.672463652246,
+        237.231567790153
+      ]
+    },
+    "node_versions": {
+      "comfy-core": "0.3.10",
+      "ComfyLab-Pack": "3b61f457a25c43f16f76dfa98fafd4a7bbc56c37"
+    }
+  },
+  "version": 0.4
+}

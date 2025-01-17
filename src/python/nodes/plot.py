@@ -73,12 +73,12 @@ class XYPlotQueue:
         }
 
     FUNCTION = 'run'
-    RETURN_TYPES = (ANY_TYPE, ANY_TYPE, 'XY_PLOT_DATA')
-    RETURN_NAMES = ('dim1_value', 'dim2_value', 'xy_plot_data')
+    RETURN_TYPES = ('XY_PLOT_DATA', ANY_TYPE, ANY_TYPE)
+    RETURN_NAMES = ('xy_plot_data', 'dim1_value', 'dim2_value')
     OUTPUT_TOOLTIPS = (
+        TOOLTIP_XY_PLOT_DATA,
         'dim1 value (not typed)',
         'dim2 value (not typed)',
-        TOOLTIP_XY_PLOT_DATA,
     )
     DESCRIPTION = 'Loop through all values of dim1, optionally combined with dim2 values, and send them to outputs.\nIMPORTANT: for a given dim1 value, all dim2 values are first iterated, before going to the next dim1 value.\nSo it is advised to associate slow operations (e.g. loading checkpoints) to dim1, to ensure better performance.'
 
@@ -169,7 +169,7 @@ class XYPlotQueue:
         )
 
         return {
-            'result': (values[0], values[1], xy_plot_data),
+            'result': (xy_plot_data, values[0], values[1]),
             'ui': {'index': [index], 'total': [total]},
         }
 
@@ -188,15 +188,15 @@ class XYPlotRender:
                 'dim1_header_format': (
                     'STRING',
                     {
-                        'default': 'dim1: {dim1}',
-                        'tooltip': "temoplate text to be displayed as dim1 header.\nthe '{dim1'} placeholder will be replaced by the current value.\nUse '\\n' for multiline text.",
+                        'default': '{dim1}',
+                        'tooltip': "template text to be displayed as dim1 header.\nthe '{dim1'} placeholder will be replaced by the current value.\nUse '\\n' for multiline text.",
                     },
                 ),
                 'dim2_header_format': (
                     'STRING',
                     {
-                        'default': 'dim2: {dim2}',
-                        'tooltip': "temoplate text to be displayed as dim2 header.\nthe '{dim2'} placeholder will be replaced by the current value.\nUse '\\n' for multiline text.",
+                        'default': '{dim2}',
+                        'tooltip': "template text to be displayed as dim2 header.\nthe '{dim2'} placeholder will be replaced by the current value.\nUse '\\n' for multiline text.",
                     },
                 ),
                 'direction': (

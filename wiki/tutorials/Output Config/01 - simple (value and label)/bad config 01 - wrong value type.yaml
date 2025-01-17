@@ -1,0 +1,10 @@
+# bad config 01 - wrong value type:
+#   Here we set number as string
+
+seed: 618896223111156
+cfg2: # output name changed -> connection dropped
+  value: 7.5
+steps: '40' # note the quotes -> value is a string, not a number anymore
+prompt:
+  value: illuminated pirate ship sailing on a sea with a galaxy in the sky
+  label: a new label # label changed -> connection dropped

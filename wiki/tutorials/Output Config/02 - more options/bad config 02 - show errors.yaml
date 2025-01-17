@@ -1,0 +1,20 @@
+# bad config 02 - show errors:
+#   Demonstrate the possible validation errors
+
+seed: 618896223111156
+cfg:
+  not_value: 7.5 # invalid
+  shape: rabbit # invalid
+steps:
+  value: 40
+  color_off: 5 # invalid
+prompt:
+  not_value: illuminated pirate ship sailing on a sea with a galaxy in the sky # invalid
+  label: a basic prompt but a custom label
+checkpoint:
+  value: sd_xl_base_1.0.safetensors
+  type: 98 # invalid
+sampler:
+  value: dpmpp_2m_sde
+  label:
+    - in a list # invalid

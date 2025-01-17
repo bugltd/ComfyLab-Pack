@@ -63,6 +63,7 @@ const customLabels = {
         output: {
             current_page: 'current page',
             total_pages: 'total pages',
+            complete: 'complete?',
         },
     },
     ListFromMultiline: {
@@ -163,6 +164,16 @@ const customLabels = {
             mask_precision: 'mask method',
         },
     },
+    ConvertToAny: {
+        output: {
+            value_any: 'value (Any)',
+        },
+    },
+    ResolutionToDims: {
+        widget: {
+            scale_factor: 'scale factor',
+        },
+    },
 };
 const customLooks = {
     XYPlotQueue: {
@@ -182,6 +193,14 @@ const customLooks = {
         },
     },
     XYPlotRender: {
+        input: {
+            xy_plot_data: {
+                color_off: '#52395B',
+                color_on: '#9521c3',
+            },
+        },
+    },
+    XYPlotDataSplit: {
         input: {
             xy_plot_data: {
                 color_off: '#52395B',

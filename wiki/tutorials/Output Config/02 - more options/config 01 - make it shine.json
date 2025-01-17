@@ -1,0 +1,24 @@
+{
+    "seed": {
+        "value": 618896223111156,
+        "shape": "box",
+        "color_off": "#FF0000",
+        "color_on": "#00FF00"
+    },
+    "cfg": {
+        "value": 7.5,
+        "shape": "circle",
+        "color_off": "blue"
+    },
+    "steps": {
+        "value": 40,
+        "shape": "arrow",
+        "color_off": "#dcb21a"
+    },
+    "prompt": {
+        "value": "illuminated pirate ship sailing on a sea with a galaxy in the sky",
+        "label": "a basic prompt but a custom label",
+        "shape": "grid",
+        "color_off": "#28cfcd"
+    }
+}

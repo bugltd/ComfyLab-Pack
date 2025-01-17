@@ -1,0 +1,28 @@
+/* 
+  config 01 - make it shine:
+    Here we see the different configuration options
+*/
+{
+  seed: {
+    value: 618896223111156,
+    shape: 'box',
+    color_off: '#FF0000', // when not connected
+    color_on: '#00FF00', // when connected
+  },
+  cfg: {
+    value: 7.5,
+    shape: 'circle', // default shape
+    color_off: 'blue', // we can set colors by name
+  },
+  steps: {
+    value: 40,
+    shape: 'arrow',
+    color_off: '#dcb21a',
+  },
+  prompt: {
+    value: 'illuminated pirate ship sailing on a sea with a galaxy in the sky',
+    label: 'a basic prompt but a custom label',
+    shape: 'grid',
+    color_off: '#28cfcd',
+  },
+}
