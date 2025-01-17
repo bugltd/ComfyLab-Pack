@@ -8,6 +8,7 @@ Tutorial sections:
 - [Part 1 - Our first grid (and some useful explanations)](#part-1---our-first-grid-and-some-useful-explanations)
 - [Part 2 - String templating](#part-2---string-templating)
 - [Part 3 - rows / columns and pagination](#part-3---rows--columns-and-pagination)
+- [TL;DR / Conclusion](#tldr--conclusion)
 
 To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md).
 
