@@ -164,6 +164,11 @@ const customLabels = {
             mask_precision: 'mask method',
         },
     },
+    ConvertToAny: {
+        output: {
+            value_any: 'value (Any)',
+        },
+    },
 };
 const customLooks = {
     XYPlotQueue: {

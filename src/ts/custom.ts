@@ -193,6 +193,11 @@ const customLabels = {
 			mask_precision: 'mask method',
 		},
 	},
+	ConvertToAny: {
+		output: {
+			value_any: 'value (Any)',
+		},
+	},
 } as const as Record<string, { [key in Scope]?: Record<string, string> }>
 
 const customLooks = {

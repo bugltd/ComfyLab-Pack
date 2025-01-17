@@ -265,3 +265,32 @@ class Sleep:
     def run(self, input: Any, seconds: float):
         time.sleep(seconds)
         return (input,)
+
+
+@register_node('Convert to Any', 'utils')
+class ConvertToAny:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'value': (
+                    ANY_TYPE,
+                    {
+                        'label': 'input value',
+                        'tooltip': 'input value to convert to type Any',
+                    },
+                )
+            }
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = (ANY_TYPE,)
+    RETURN_NAMES = ('value_any',)
+    OUTPUT_TOOLTIPS = ("input value, converted to type Any ('*')",)
+    DESCRIPTION = "Convert any value to type Any ('*).\nUseful to pipe to a combo widget, for example."
+
+    def run(self, value: Any):
+        return (value,)
