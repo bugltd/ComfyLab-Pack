@@ -12,7 +12,7 @@ What is processed between them (from `dim1 value` / `dim2 value` outputs of `Que
 
 As you can see in the screenshot, there is no concept of row / column or X / Y here, as in many other plot / grid implementations:
 
-- instead, we talk about `dim` and `dim2` (dimensions 1 & 2)
+- instead, we talk about `dim1` and `dim2` (dimensions 1 & 2)
   - this is intended, to improve performance: but we'll talk about that later
   - just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
   - whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (`direction` toggle)
@@ -69,5 +69,5 @@ So let's switch, connecting the list of checkpoints to `dim1`, and the list of s
 - ...
 
 By doing so, we optimize the performance as much as possible.\
-So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim 1`**.\
-(And if you vary 2 lists of models, obviously choose the slowest as `dim 1`).
+So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim1`**.\
+(And if you vary 2 lists of models, obviously choose the slowest as `dim1`).
