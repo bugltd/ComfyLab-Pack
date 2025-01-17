@@ -37,3 +37,12 @@ Contents:
 - customize the grid: background color, font, gap, ...
 - add a page header and/or footer, and configure them separately
 - make the grid RGBA to add a custom background inage
+- display 'page X / Y'
+
+## Tutorial 03 - advanced techniques
+
+**[>> Go to the tutorial](./03%20-%20advanced%20techniques/)**
+
+Contents:
+
+- WIP

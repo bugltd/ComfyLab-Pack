@@ -9,6 +9,9 @@ Tutorial sections:
 - [Part 1 - Customize the grid](#part-1---customize-the-grid)
 - [Part 2 - Add page header / footer](#part-2---add-page-header--footer)
 - [Part 3 - Add a background image (RGBA mode)](#part-3---add-a-background-image-rgba-mode)
+- [Part 4 - Display 'page X / Y`](#part-4---display-page-x--y)
+- [TL;DR / Conclusion](#tldr--conclusion)
+- [Going further (advanced)](#going-further-advanced)
 
 > As for all nodes in this extension, you can get useful contextual information, by just **putting the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
@@ -90,9 +93,26 @@ Finally, we add a `Load Image` node to load the background, and connect it to `s
 
 All that with ComfyLab and a few Comfy Core nodes. That wasn't too difficult, don't you think?
 
+## Part 4 - Display 'page X / Y'
+
+**Load either `workflow - part 4.json` or `workflow - part 4.png` into ComfyUI.**\
+Adjust the checkpoint to one available in your ComfyUI instance.\
+Upload a background image into the `Load Image` node. You can find 2 samples in the `backgrounds` subfolder, feel free to use your own.\
+Execute the workflow.
+
+![result - part 4 page 1](./details/result%20-%20part%204%20-%20page%201.jpg)
+![result - part 4 page 2](./details/result%20-%20part%204%20-%20page%202.jpg)
+
+What did we do?\
+![nodes](./details/detail%20-%20part%204%20-%20nodes.jpg)
+
+We have simply added the `XY Plot: Split Data` node, then used a `Format: String` to build the text from `current page` and `total pages`, then finally pipe the formatted string into `text (right)` of the `Render` node:
+
+> We have used `XY Plot: Split Data` to adjust the display, but of course it can be useful for other purposes, like naming the grid image file when saving it.
+
 ## TL;DR / Conclusion
 
-In just 3 steps and 3 optional configuration nodes, we have totally changed the look of our grid.
+In just 4 steps and 3 optional nodes, we have totally changed the look of our grid.
 
 What we have covered:
 
@@ -105,24 +125,34 @@ What we have covered:
   - set a custom background color, or use the grid one
   - custom font and padding
 - make the grid RGBA, to add a background image thanks to a few standard nodes
+- use `XY Plot: Split Data` to display 'page X / Y' in the footer
 
 With these 2 tutorials, **we have seen how to create grids, and make them unique**.\
-It's now your turn to use your creativity and aesthetic talent (which is surely better than mine), to make them as beautiful as you wish!
+It's now your turn to use your creativity and aesthetic talent (surely better than mine), to make them as beautiful as you wish!
 
-These tutorials are intended for a large audience and to cover the most standard use cases, but please note there are **many advanced techniques you can apply with ComfyLab XY Plot nodes**, for example:
+That being said, I hope you have found these tutorials interesting and easy to follow.\
+If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
+
+Thank you for reading, and enjoy your beautiful grids my friends!
+
+## Going further (advanced)
+
+These 2 tutorials are intended for a large audience, and to cover the most standard use cases.\
+But please note there are **many advanced techniques you can apply with ComfyLab XY Plot nodes**, for example:
 
 - vary checkpoints, LoRA (any model in fact), ... virtually anything
   - automatize LoRA testing: different epochs, weight, ...
 - use a totally different process: load images from multiple folders, apply transformations... it's totally flexible
-- display `page X of Y` in the footer
 - use various image resolutions / aspect ratios
 - use a JSON / JSON5 / YAML config file, to standardize your workflow, and use a collection of test cases
   - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
-It would be too long for me to detail those as tutorials, but I will do my best to add some regurlarly, in the [wiki/examples folder](../../../examples/).\
-And I would suggest, if you haven't already, that you spend a bit of time to read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md): it's not too long, and you may learn some important design choices there.
+If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 03 - advanced techniques**.\
+But before doing that, please note:
 
-That being said, I hope you have found these tutorials interesting and easy to follow. If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
+- it addresses some edge cases that may not be needed for most
+- it is not as detailed as those 2 first tutorials, we'll go faster
+- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
 
-Thank you for reading, and enjoy your beautiful grids my friends!
+Interested? Let's go to the next tutorial: **[03 - advanced techniques](../03%20-%20advanced%20techniques/)**
