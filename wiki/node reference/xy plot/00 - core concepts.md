@@ -4,18 +4,18 @@ As a minimum, to use the `XY Plot`, you need to integrate 2 nodes, `XY Plot: Que
 
 ![standard nodes](./images/nodes.jpg)
 
-They must be connected by the specific `XY plot data` link
+They must be connected by the specific `XY plot data` link : that is the way the queue can inform the render node about the current processing state.
 
-- that is the way the queue can inform the render node about the current processing state
+What is processed between them (from `dim1 value` / `dim2 value` outputs of `Queue` to `image` input in `Render`) is for you to choose: as such, **the ComfyLab's XY Plot approach is totally process-independent**.
 
 ## XY Plot: Queue
 
-As you can see, there is no concept of row / column or X / Y here, as in many other plot / grid implementations:
+As you can see in the screenshot, there is no concept of row / column or X / Y here, as in many other plot / grid implementations:
 
 - instead, we talk about `dim` and `dim2` (dimensions 1 & 2)
   - this is intended, to improve performance: but we'll talk about that later
-  - just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1`**
-  - whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node
+  - just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
+  - whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (`direction` toggle)
 - `dim1` and `dim2` (optional) **take lists as inputs**
   - in ComfyUI, a LIST is a LIST, but we cannot know if it's a list of strings, numbers, images, ...
   - so another important rule: **what you send is what you get**
@@ -50,8 +50,8 @@ As seen above, connecting an input list on either `dim1` or `dim2` doesn't deter
 So, what does it change?\
 In the most simple cases, for example if you plot `CFG` vs `seed`, it should not have any visible impact.
 
-But now, imagine a more advanced case: I want to plot a given list of 3 seeds vs a list of 3 checkoints with `KSampler`.\
-Let's recall the rule above: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1`**.\
+But now, imagine a more advanced case: I want to plot a given list of 3 seeds vs a list of 3 checkoints with the default `KSampler` workflow.\
+Let's recall the rule above: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**.\
 That means that, if I set the list of seeds in `dim1`, the process will work as follows:
 
 - get seed #1, get checkpoint #1 > <ins>load checkpoint #1</ins> > render image
