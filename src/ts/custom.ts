@@ -198,6 +198,11 @@ const customLabels = {
 			value_any: 'value (Any)',
 		},
 	},
+	ResolutionToDims: {
+		widget: {
+			scale_factor: 'scale factor',
+		},
+	},
 } as const as Record<string, { [key in Scope]?: Record<string, string> }>
 
 const customLooks = {

@@ -4,6 +4,7 @@ import os
 from PIL import Image
 import numpy as np
 import torch  # type: ignore
+import re
 
 import folder_paths  # type: ignore
 
@@ -294,3 +295,47 @@ class ConvertToAny:
 
     def run(self, value: Any):
         return (value,)
+
+
+@register_node('Resolution to Dimensions', 'utils')
+class ResolutionToDims:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'resolution': (
+                    'STRING',
+                    {
+                        'default': '1024x1024',
+                        'tooltip': "resolution as string (ex. '1024x1024')",
+                    },
+                ),
+                'scale_factor': (
+                    'FLOAT',
+                    {
+                        'default': 1,
+                        'step': 0.1,
+                        'display': 'float',
+                        'tooltip': 'dimension multiplier',
+                    },
+                ),
+            }
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('INT', 'INT')
+    RETURN_NAMES = ('width', 'height')
+    OUTPUT_TOOLTIPS = ('width', 'height')
+    DESCRIPTION = "Split a resolution (as string, ex. '1024x1024') to dimensions, optionally multiplied by scale factor."
+
+    def run(self, resolution: str, scale_factor: float):
+        m = re.search(r'^\s*(\d+)\s*x\s*(\d+)\s*$', resolution)
+        if not m:
+            raise ValueError('Invalid resolution')
+        return (
+            int(int(m.group(1)) * scale_factor),
+            int(int(m.group(2)) * scale_factor),
+        )

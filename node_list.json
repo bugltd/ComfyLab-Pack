@@ -26,5 +26,6 @@
   "Load Image (RGBA) (lab)": "Load an image as RGBA, with 2 different available methods to generate the mask",
   "Save Text File (lab)": "Save text content to a file",
   "Sleep (lab)": "Delay execution for the given amount of seconds",
-  "Convert to Any (lab)": "Convert any value to type Any ('*)"
+  "Convert to Any (lab)": "Convert any value to type Any ('*)",
+  "Resolution to Dimensions (lab)": "Split a resolution (as string, ex. '1024x1024') to dimensions, optionally multiplied by scale factor"
 }

@@ -169,6 +169,11 @@ const customLabels = {
             value_any: 'value (Any)',
         },
     },
+    ResolutionToDims: {
+        widget: {
+            scale_factor: 'scale factor',
+        },
+    },
 };
 const customLooks = {
     XYPlotQueue: {
