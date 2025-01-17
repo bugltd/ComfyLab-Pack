@@ -63,6 +63,7 @@ const customLabels = {
         output: {
             current_page: 'current page',
             total_pages: 'total pages',
+            complete: 'complete?',
         },
     },
     ListFromMultiline: {
@@ -182,6 +183,14 @@ const customLooks = {
         },
     },
     XYPlotRender: {
+        input: {
+            xy_plot_data: {
+                color_off: '#52395B',
+                color_on: '#9521c3',
+            },
+        },
+    },
+    XYPlotDataSplit: {
         input: {
             xy_plot_data: {
                 color_off: '#52395B',
