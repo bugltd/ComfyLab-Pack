@@ -2,4 +2,4 @@
 
 A collection of carefully crafted nodes, to improve your Comfy UX.
 
-![banner](./.images/banner.jpg)
+![banner](./.images/repo_banner.jpg)
