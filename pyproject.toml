@@ -1,6 +1,6 @@
 [project]
 name = "comfylab-pack"
-description = "A collection of carefully crafted nodes, to improve your Comfy UX."
+description = "A collection of carefully experimented nodes, to improve your Comfy UX."
 version = "0.0.1"
 authors = [{ name = "bugltd" }]
 license = {file = "LICENSE"}
