@@ -1,11 +1,11 @@
 <h1 align="center">
     ComfyLab Pack
-    <br>
-    <sub><span style="color:#787878; font-size: large; font-style: italic">A collection of innovative nodes, carefully experimented in our lab, to improve your Comfy UX.</span></sub>
 </h1>
 
 <p align="center">
     <img src=".images/repo_banner.jpg" width="70%" title="welcome to ComfyLab Pack!">
+    <br/>
+    <span style="color:#787878; font-size: large; font-style: italic">A collection of carefully experimented nodes, to improve your Comfy UX.</span>
 </p>
 
 <h2 align="center"><a href="#️node-overview">Node overview</a> &nbsp; | &nbsp; <a href="#documentation">Documentation</a> | &nbsp; <a href="#installation">Installation</a></h2>
@@ -14,11 +14,7 @@
 
 **The complete list of nodes can be found in the [wiki / node reference](./wiki/node%20reference/)**
 
-<h2>
-    XY Plot
-    <br/>
-    <sub><span style="color:#787878; font-size: medium; font-style: italic; padding-left: 18px">build beautiful and unique grids</span></sub>
-</h2>
+## XY Plot - build beautiful and unique grids
 
 **Auto-queue**, make virtually **anything vary** (checkpoints, LoRAs, ...), **not restricted to KSampler**, pagination, ...\
 **Many configuration options**: page header / footer, custom fonts (even your own), background,...\
@@ -50,11 +46,7 @@
 > More information in the [XY Plot node reference](./wiki/node%20reference/xy%20plot/) and the [dedicated tutorials](./wiki/tutorials/XY%20Plot/), from simple to advanced.\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-<h2>
-    Output Config
-    <br/>
-    <sub><span style="color:#787878; font-size: medium; font-style: italic; padding-left: 18px">dynamic outputs from a config file</span></sub>
-</h2>
+## Output Config - dynamic outputs from a config file
 
 The `Output Config` nodes allow you to load custom config files, to **dynamically create any number of custom outputs**, that you can later connect to other nodes before executing the workflow.\
 Very **useful to standardize your workflows**, and keep a collection of configurations / test cases separately. Or many more, depending on you specific case...
@@ -62,9 +54,9 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 <details>
 <summary><strong>Detailed features</strong> <i>(click to show)</i></summary>
 
-- **any number of outputs**, you decide what you put into it depending on your speific cases.
-- **very simple** config file, by default, only `output: value` is needed.
-- optionally configure the **shape, color, and even the type** of each output.
+- **any number of outputs**, you decide what you need for your speific cases
+- **very simple** config file, by default, only `output: value` is needed
+- optionally configure the **shape, color, and even the type** of each output
 - available in **JSON / JSON5 / YAML** (with comments if you wish)
 - strictly validated with a **JSON Schema**, with **detailed visual report** in case of errors
 </details>
@@ -73,11 +65,7 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 > More information in the [Output Config node reference](./wiki/node%20reference/output%20config.md) and the [dedicated tutorials](./wiki/tutorials/Output%20Config/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-<h2>
-    Format String
-    <br/>
-    <sub><span style="color:#787878; font-size: medium; font-style: italic; padding-left: 18px">as powerful as it is simple</span></sub>
-</h2>
+## Format String - as powerful as it is simple
 
 Take advantage of the powerful **Python string `format()`** method, to build strings using placeholders.\
 Very useful for **replacing, prefixing / appending, padding**, ...\
@@ -88,20 +76,12 @@ Safe to use (no arbitary code execution, ...): a well-proven, standard Python me
 > More information in the [Format String node reference](./wiki/node%20reference/format.md) and the [dedicated tutorials](./wiki/tutorials/Format/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-<h2>
-    Queue
-    <br/>
-    <sub><span style="color:#787878; font-size: medium; font-style: italic; padding-left: 18px">efficoent and simple to use</span></sub>
-</h2>
+## Queue - efficient and simple to use
 
 Exist in 3 flavors: **Generic**, **File**, **Image**.\
 Very simple to use: **auto-queuing** (with error / interruption detection), no counter to reset or batch size to set.
 
-<h2>
-    List utilities
-    <br/>
-    <sub><span style="color:#787878; font-size: medium; font-style: italic; padding-left: 18px">make lists as you want</span></sub>
-</h2>
+## List utilities - make lists as you want
 
 A set of nodes to **create lists** (from string, file, individual elements).\
 **Parse and convert** strings to integers, floats, ...\
