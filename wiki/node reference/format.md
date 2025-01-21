@@ -8,7 +8,7 @@ The `Format` nodes are very simple yet powerful nodes, that are based on the **s
 They exist in 2 flavors: `String` or `Multiline`.
 
 They are useful to create a string from a template, and **any number of inputs**.\
-Inputs can be of the following ConfyUI types: `STRING`, `INT`, `FLOAT`, `BOOLEAN`.
+Inputs can be of the following ComfyUI types: `STRING`, `INT`, `FLOAT`, `BOOLEAN`.
 
 ## How to use
 
@@ -18,7 +18,7 @@ Here we will just cover the most basic usage, but please note that Python string
 
 The node takes any number of inputs, that are automatically incremented: `arg0`, `arg1`, ...
 
-Given the following template: `first arg by name: {arg0}, second by index: {1}`, and 2 input string (`tata` and `toto`), we will get the resulting string: `first arg by name: tata, second by index: toto`.
+Given the following template: `first arg by name: {arg0}, second by index: {1}`, and 2 input strings (`tata` and `toto`), we will get the resulting string: `first arg by name: tata, second by index: toto`.
 
 Here we see that **we can reference the inputs either by their name (`argN`), or by their index (starting at 0)**.\
 Straightforward, isn't it?
