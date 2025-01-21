@@ -63,11 +63,12 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 > More information in the [Output Config node reference](./wiki/node%20reference/output%20config.md) and the [dedicated tutorials](./wiki/tutorials/Output%20Config/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-## Format String - as powerful as it is simple
+## Format String - one node to rule them all
 
 Take advantage of the powerful **Python string `format()`** method, to build strings using placeholders.\
-Very useful for **replacing, prefixing / appending, padding**, ...\
+Very useful for many operations: **replace, concatenate, prefix / append, pad, limit**, ...\
 **Any number of inputs** _(credits to [@melMass](https://github.com/melMass) and his [comfy_mtb](https://github.com/melMass/comfy_mtb) extension for the trick!)_.\
+Compatible with **integers, floats, booleans.**\
 Exist in 2 flavors: **simple string and multiline**.\
 Safe to use (no arbitary code execution, ...): a well-proven, standard Python method.
 
