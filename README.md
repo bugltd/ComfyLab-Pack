@@ -12,7 +12,7 @@
 
 # Node overview
 
-**The complete list of nodes can be found in the [wiki / node reference](./wiki/node%20reference/)**
+**The complete list of nodes can be found in the [wiki / node list](./wiki/node_list.md)**
 
 ## XY Plot - build beautiful and unique grids
 
