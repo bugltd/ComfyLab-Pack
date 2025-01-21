@@ -1,0 +1,21 @@
+[project]
+name = "comfylab-pack"
+description = "A collection of carefully experimented nodes, to improve your Comfy UX."
+version = "0.0.1"
+authors = [{ name = "bugltd" }]
+license = {file = "LICENSE"}
+readme = "README.md"
+dependencies = ["jsonschema", "json5", "python-dotenv", "pyyaml", "pyaml"]
+
+[project.urls]
+Homepage = "https://github.com/bugltd/ComfyLab-Pack"
+Documentation = "https://github.com/bugltd/ComfyLab-Pack/wiki"
+Repository = "https://github.com/bugltd/ComfyLab-Pack"
+Issues = "https://github.com/bugltd/ComfyLab-Pack/issues"
+Changelog = "https://github.com/bugltd/ComfyLab-Pack/blob/main/CHANGELOG.md"
+#  Used by Comfy Registry https://comfyregistry.org
+
+[tool.comfy]
+PublisherId = "bugltd"
+DisplayName = "ComfyLab Pack"
+Icon = "https://avatars.githubusercontent.com/u/194549623?s=400&&v=4"

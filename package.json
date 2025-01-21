@@ -1,29 +1,29 @@
 {
-	"name": "confylab-pack",
-	"private": true,
-	"version": "0.0.0",
-	"type": "module",
-	"scripts": {
-		"watch": "tsc-watch -p tsconfig.json --onSuccess 'tsc-alias -p tsconfig.json -r build/replacers.js/mock.js'",
-		"build": "rimraf ./dist/js && tsc -p tsconfig.prod.json && tsc-alias -p tsconfig.prod.json -r build/replacers.js/mock.js",
-		"build:replacers": "tsc -p build/replacers.js/tsconfig.replacers.json",
-		"lint": "eslint .",
-		"format": "prettier --write ."
-	},
-	"devDependencies": {
-		"@comfyorg/comfyui-frontend-types": "^1.6.8",
-		"@comfyorg/litegraph": "^0.8.50",
-		"@eslint/js": "^9.17.0",
-		"eslint": "^9.17.0",
-		"eslint-config-prettier": "^9.1.0",
-		"eslint-plugin-prettier": "^5.2.1",
-		"globals": "^15.14.0",
-		"prettier": "^3.4.2",
-		"rimraf": "^6.0.1",
-		"tsc-alias": "^1.8.10",
-		"tsc-watch": "6.2.1",
-		"typescript": "^5.7.2",
-		"typescript-eslint": "^8.18.2"
-	},
-	"packageManager": "yarn@4.5.3+sha512.3003a14012e2987072d244c720506549c1aab73ee728208f1b2580a9fd67b92d61ba6b08fe93f6dce68fd771e3af1e59a0afa28dd242dd0940d73b95fedd4e90"
+  "name": "confylab-pack",
+  "private": true,
+  "version": "0.0.1",
+  "type": "module",
+  "scripts": {
+    "watch": "tsc-watch -p tsconfig.json --onSuccess 'tsc-alias -p tsconfig.json -r build/replacers.js/mock.js'",
+    "build": "rimraf ./dist/js && tsc -p tsconfig.prod.json && tsc-alias -p tsconfig.prod.json -r build/replacers.js/mock.js",
+    "build:replacers": "tsc -p build/replacers.js/tsconfig.replacers.json",
+    "lint": "eslint .",
+    "format": "prettier --write ."
+  },
+  "devDependencies": {
+    "@comfyorg/comfyui-frontend-types": "^1.6.8",
+    "@comfyorg/litegraph": "^0.8.50",
+    "@eslint/js": "^9.17.0",
+    "eslint": "^9.17.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.14.0",
+    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
+    "tsc-alias": "^1.8.10",
+    "tsc-watch": "6.2.1",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.2"
+  },
+  "packageManager": "yarn@4.5.3+sha512.3003a14012e2987072d244c720506549c1aab73ee728208f1b2580a9fd67b92d61ba6b08fe93f6dce68fd771e3af1e59a0afa28dd242dd0940d73b95fedd4e90"
 }
