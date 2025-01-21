@@ -40,7 +40,6 @@
 - mix any image resolution / aspect ratio
 - ...
 </details>
-<br/>
 
 > For a quick start, it is advised to read the [core concepts](./wiki/node%20reference/xy%20plot/00%20-%20core%20concepts.md).\
 > More information in the [XY Plot node reference](./wiki/node%20reference/xy%20plot/) and the [dedicated tutorials](./wiki/tutorials/XY%20Plot/), from simple to advanced.\
@@ -60,7 +59,6 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 - available in **JSON / JSON5 / YAML** (with comments if you wish)
 - strictly validated with a **JSON Schema**, with **detailed visual report** in case of errors
 </details>
-<br/>
 
 > More information in the [Output Config node reference](./wiki/node%20reference/output%20config.md) and the [dedicated tutorials](./wiki/tutorials/Output%20Config/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
