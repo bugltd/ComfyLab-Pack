@@ -69,17 +69,9 @@ Just remove the `#` and you will get an astronaut!
 
 <br/>
 
-For the test, just set the `convert` widget to `disabled`.]
+For the test, just set the `convert` widget to `disabled`.\
 You will get an error on execution: CFG expects a float, and we sent strings.\
 ![conversion error](./details/detail%20-%20part%201%20-%20convert%20error.jpg)
-
-For the test, just set the `convert` widget to `disabled`.<br/>
-
-<p>
-You will get an error on execution:<br/>CFG expects a float, and we sent strings.
-<img src="./details/detail%20-%20part%201%20-%20convert%20error.jpg" hspace="20"/>
-</p>
-<br/>
 
 #### processing / auto-queuing
 
@@ -110,7 +102,7 @@ What did we change?
 
 First, we have inserted the [`Format: String` node](../../../node%20reference/format.md), between the dim1 output of the queue, and the CLIP Text Encode node.\
 ![format node](./details/detail%20-%20part%202%20-%20prompt.jpg)\
-It is as simple as it is powerful:
+It is as powerful as it is simple to use:
 
 - it takes advantage of Python string `format()` method, to allow string replacement, and many other things, by using placeholders: here `{arg0}`, as the name of the input
 - this node also takes any number of inputs, even though we have just used one here
