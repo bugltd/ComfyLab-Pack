@@ -10,7 +10,7 @@ Tutorial sections:
 - [Part 3 - rows / columns and pagination](#part-3---rows--columns-and-pagination)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
-To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md).
+To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md).
 
 > As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
@@ -63,7 +63,7 @@ Just remove the `#` and you will get an astronaut!
 - we have set the values in a string, separated by `, `: `5.5, 7, 10.5`
   - the separator is configured accordingly, you can use any character you want: `/`, `|`, `&`, ...
 - and we have configured the conversion: `convert: float`
-  - that is a very important [core concept](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md):
+  - that is a very important [core concept](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md):
     - the `Queue` node cannot determine to which input you will connect the dim values
     - that is why the output type is `*` (Any): you can connect them anywhere, but **you must ensure the type of input values corresponds to where you will use them**
 

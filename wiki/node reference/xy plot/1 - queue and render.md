@@ -1,4 +1,4 @@
-# Node reference / XY Plot: 01 - Queue and Render
+# Node reference / XY Plot: 1 - Queue and Render
 
 **Work in Progress**
 
@@ -18,7 +18,7 @@ Important notes:
 - `dim1` and `dim2` are processed following the rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
 - the node will manage auto-queuing: ensure set **the batch size is set to 1**
 
-For more detailed explanations, please check the [core concepts](./00%20-%20core%20concepts.md).
+For more detailed explanations, please check the [core concepts](./0%20-%20core%20concepts.md).
 
 ### Inputs / Widgets / Outputs
 

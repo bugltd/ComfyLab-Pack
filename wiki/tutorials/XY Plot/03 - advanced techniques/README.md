@@ -6,7 +6,7 @@ Here we are going to see a few advanced techniques you may find useful.\
 Of course, I cannot anticipate all the use cases, but by following this tutorial, I hope you will see the versatility of the ComfyLab XY Plot nodes, and understand how to adapt for your scenario.\
 Here, no frills, we'll go straight to the point, to focus of the functionalities rather than fancy grid customization.
 
-If you haven't yet, I highly recommend you follow (at least read) the first 2 tutorials ([1](../01%20-%20the%20basics/) & [2](../02%20-%20pimp%20my%20grid/)), and read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md).
+If you haven't yet, I highly recommend you follow (at least read) the first 2 tutorials ([1](../01%20-%20the%20basics/) & [2](../02%20-%20pimp%20my%20grid/)), and read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md).
 
 Tutorial sections:
 
@@ -44,7 +44,7 @@ What is to be noticed:
     - the `chkpt_name` widget does not accept any string, but a string that exists in the list
   - so to bypass this limitation we simply convert the text output to Any, thanks to the `Convert to Any` node
     - ![Any output](./details/detail%20-%20part%201%20-%20any.jpg)
-    - you can read more about the Any output in the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md), and the [2nd tutorial of the `Output Config` node](../../Output%20Config/02%20-%20more%20options)
+    - you can read more about the Any output in the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md), and the [2nd tutorial of the `Output Config` node](../../Output%20Config/02%20-%20more%20options)
 - seeds:
   - theoritically, we should have converted the list values to integers, thanks to the `convert` combo widget
     - but it also works (for seeds only AFAIK)

@@ -153,6 +153,6 @@ But before doing that, please note:
 
 - it addresses some edge cases that may not be needed for most
 - it is not as detailed as those 2 first tutorials, we'll go faster
-- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
+- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
 
 Interested? Let's go to the next tutorial: **[03 - advanced techniques](../03%20-%20advanced%20techniques/)**

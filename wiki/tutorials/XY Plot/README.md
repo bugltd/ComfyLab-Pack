@@ -17,7 +17,7 @@ The `XY Plot` nodes allow you to create the grids you want, with virtually no li
   - padding, wrap, ...
 - mix any image resolution / aspect ratio
 
-If needed, you can also check the [node references](../../node%20reference/xy%20plot/) for the [core concepts](../../node%20reference/xy%20plot/00%20-%20core%20concepts.md) and detailed node information.
+If needed, you can also check the [node references](../../node%20reference/xy%20plot/) for the [core concepts](../../node%20reference/xy%20plot/0%20-%20core%20concepts.md) and detailed node information.
 
 ## Tutorial 01 - the basics
 

@@ -1,4 +1,4 @@
-# Node reference / XY Plot: 00 - Core concepts
+# Node reference / XY Plot: 0 - Core concepts
 
 As a minimum, to use the `XY Plot`, you need to integrate 2 nodes, `XY Plot: Queue` and `XY Plot: Render`: the first one will organize the queue, the second one will render the grid(s).
 
