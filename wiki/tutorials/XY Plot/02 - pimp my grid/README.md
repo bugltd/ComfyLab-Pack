@@ -39,7 +39,7 @@ In details:
   - either one of the fonts shipped in the extension: _Roboto-Regular.ttf_ / _Roboto-Bold.ttf_ / _Roboto-Italic.ttf_ / _Roboto-BoldItalic.ttf_,
   - or the full path to a locally-installed TTF font
   - this way you can make your grid really different
-- `padding`: you can adjust the space surrounding the row / col headers
+- `padding`: adjust the space surrounding the row / col headers
 - `wrap`: wrap the row / col headers to a given number of characters, if they are too long
 
 With just this simple optional node, we have already completely changed the look of our grid.\
@@ -61,9 +61,9 @@ This way **you can configure them separately, or just add a footer for example**
 
 Some of the configuration options are similar to the `Plot Config: Grid` (font, ...), and some are new:
 
-- `text`: you add text, and position it either at left / center / right
+- `text`: add some text, either at left / center / right
   - of course you can add multiple texts, as we have done in the footer
-- `background color`: you can set a color (as in header), or use the special value `transparent` (as in footer) to keep the grid bg color
+- `background color`: set a color (as in header), or use the special value `transparent` (as in footer) to keep the grid bg color
 - `padding`: add vertical space above and below the header / footer text
 
 > a note about colors (either font or background, in all the `Plot Config` nodes):\
@@ -83,7 +83,7 @@ Execute the workflow.
 
 What did we do?
 
-First, in the `Plot Config: Grid` node, we set the `background color` to the special value `transparent`:
+First, in the `Plot Config: Grid` node, we set the `background color` to the special value `transparent`, it will make the image RGBA:\
 ![transparent background](./details/detail%20-%20part%203%20-%20background.jpg)
 
 Then, we pipe the `grid` output from `XY Plot: Render` to the standard node `Split Image with Alpha`, then IMAGE and MASK to `ImageCompositeMasked`:

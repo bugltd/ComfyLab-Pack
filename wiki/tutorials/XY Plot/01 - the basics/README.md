@@ -37,7 +37,7 @@ What do we see?
 
 #### The inputs
 
-The `Queue` node takes lists as inputs. For this we use the nodes `Format: from Multiline` and `Format: from String`, available in the ComfyLab extension.\
+The `Queue` node takes lists as inputs. For this we use the nodes `List: from Multiline` and `List: from String`, available in the ComfyLab extension.\
 Of course, you can choose nodes from other extensions, as long as they provide lists.
 
 > There are other list-related nodes in the ComfyLab collection if you need
@@ -79,7 +79,7 @@ Let's do our first customizations, that will be short:
 
 - in the dim1 multiline input, you can see that all lines start with `a photograpgy of`
   - that's redundant, and make row headers too long: let's optimize this
-- in the grid, the columns just display the CFG values. Let's add a prefix `CFG: `
+- in the grid, the columns just display the CFG values. Let's add prefix `CFG: `
 
 **Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI**.\
 Execute the workflow.

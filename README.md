@@ -14,7 +14,7 @@
 
 **The complete list of nodes can be found in the [wiki / node list](./wiki/node_list.md)**
 
-## XY Plot - build beautiful and unique grids
+## XY Plot - _build beautiful and unique grids_
 
 **Auto-queue**, make virtually **anything vary** (checkpoints, LoRAs, ...), **not restricted to KSampler**, pagination, ...\
 **Many configuration options**: page header / footer, custom fonts (even your own), background,...\
@@ -45,7 +45,7 @@
 > More information in the [XY Plot node reference](./wiki/node%20reference/xy%20plot/) and the [dedicated tutorials](./wiki/tutorials/XY%20Plot/), from simple to advanced.\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-## Output Config - dynamic outputs from a config file
+## Output Config - _dynamic outputs from a config file_
 
 The `Output Config` nodes allow you to load custom config files, to **dynamically create any number of custom outputs**, that you can later connect to other nodes before executing the workflow.\
 Very **useful to standardize your workflows**, and keep a collection of configurations / test cases separately. Or many more, depending on you specific case...
@@ -63,7 +63,7 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 > More information in the [Output Config node reference](./wiki/node%20reference/output%20config.md) and the [dedicated tutorials](./wiki/tutorials/Output%20Config/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-## Format String - one node to rule them all
+## Format String - _one node to rule them all_
 
 Take advantage of the powerful **Python string `format()`** method, to build strings using placeholders.\
 Very useful for many operations: **replace, concatenate, prefix / append, pad, limit**, ...\
@@ -75,12 +75,12 @@ Safe to use (no arbitary code execution, ...): a well-proven, standard Python me
 > More information in the [Format String node reference](./wiki/node%20reference/format.md) and the [dedicated tutorials](./wiki/tutorials/Format/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
-## Queue - efficient and simple to use
+## Queue - _efficient and simple to use_
 
 Exist in 3 flavors: **Generic**, **File**, **Image**.\
 Very simple to use: **auto-queuing** (with error / interruption detection), no counter to reset or batch size to set.
 
-## List utilities - make lists as you want
+## List utilities - _make lists as you want_
 
 A set of nodes to **create lists** (from string, file, individual elements).\
 **Parse and convert** strings to integers, floats, ...\

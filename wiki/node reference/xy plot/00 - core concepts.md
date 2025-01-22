@@ -10,7 +10,7 @@ What is processed between them (from `dim1 value` / `dim2 value` outputs of `Que
 
 ## XY Plot: Queue
 
-As you can see in the screenshot, there is no concept of row / column or X / Y here, as in many other plot / grid implementations:
+As you can see in the screenshot, there is no concept of row / column or X / Y in the `Queue` node, as in many other plot / grid implementations:
 
 - instead, we talk about `dim1` and `dim2` (dimensions 1 & 2)
   - this is intended, to improve performance: but we'll talk about that later
