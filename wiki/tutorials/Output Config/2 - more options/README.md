@@ -93,7 +93,7 @@ And, of course, the status at the bottom of the node is updated accordingly:
 With this second tutorial, we have seen:
 
 - the other available options: `shape`, `color_on`, `color_off`, `type`
-- `type` is probably not useful is most cases, as the output type is deducted from the value: string, integer / float, boolean, list, ...
+- `type` is probably not useful in most cases, as the output type is deducted from the value: string, integer / float, boolean, list, ...
 - however, sometimes we may need to use `type: "*"`, to bypass the typing checks (for combo widgets in particular)
 - detailed validation errors can be displayed, to help you understand what needs to be corrected in your config
 
