@@ -66,10 +66,10 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 ## Format String - _one node to rule them all_
 
 Take advantage of the powerful **Python string `format()`** method, to build strings using placeholders.\
-Very useful for many operations: **replace, concatenate, prefix / append, pad, limit**, ...\
+Very useful for many operations: **replace, concatenate, prefix / append, pad, truncate**, ...\
 **Any number of inputs** _(credits to [@melMass](https://github.com/melMass) and his [comfy_mtb](https://github.com/melMass/comfy_mtb) extension for the trick!)_.\
 Compatible with **integers, floats, booleans.**\
-Exist in 2 flavors: **simple string and multiline**.\
+Exist in 2 flavors: **simple string and multiline**.
 
 > More information in the [Format String node reference](./wiki/node%20reference/format.md) and the [dedicated tutorials](./wiki/tutorials/Format/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
