@@ -4,6 +4,12 @@
 
 ## v0.0
 
+## v0.0.2 (2025-01-22): more wiki
+
+- init main README
+- wiki: add XY Plot node references, various improvements
+- change icon
+
 ## v0.0.1 (2025-01-21): initial version
 
 Very first version:
