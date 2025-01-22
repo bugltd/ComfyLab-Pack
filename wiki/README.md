@@ -16,12 +16,18 @@ That being said, have a good read, dear friends!
 
 ---
 
+**[Comprehensive list of nodes](../node_list.md)**
+
+---
+
 **[Node reference](./node%20reference/README.md)**:
 
 - [Output Config (Load / Retrieve)](./node%20reference/output%20config.md)
 - [Format (String / Multiline)](./node%20reference/format.md)
 - [XY Plot](./node%20reference/xy%20plot/)
   - [00 - Core concepts](./node%20reference/xy%20plot/00%20-%20core%20concepts.md)
+  - [01 - Queue and Render](./01%20-%20queue%20and%20render.md)
+  - [02 - Config nodes](./02%20-%20config%20nodes.md)
 
 ---
 
