@@ -67,7 +67,7 @@ However, as you can see, in some cases it can open locked doors, and make your c
 
 Last but not least, we need to cover one aspect you will most certainly face: validation errors.
 
-The config must follow strict rules, checked before the outputs are created. For those interested, this validation is performed thanks to a JSON schema, that can be found [here](https://github.com/bugltd/ComfyLab-Pack/blob/doc/src/schema/config.output.schema.json).
+The config must follow strict rules, checked before the outputs are created. For those interested, this validation is performed thanks to a JSON schema, that can be found [here](https://github.com/bugltd/ComfyLab-Pack/blob/main/src/schema/config.output.schema.json).
 
 To help you identify errors in your config, the `Output Config: Load` node can inform you about what failed.
 
