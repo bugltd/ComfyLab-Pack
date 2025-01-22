@@ -4,7 +4,7 @@
 
 ## Node overview
 
-![standard nodes](./images/nodes.jpg)
+<img src="./images/nodes.jpg" alt="standard nodes" width="60%">
 
 ### XY Plot: Render
 
