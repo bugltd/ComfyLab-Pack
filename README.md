@@ -70,7 +70,6 @@ Very useful for many operations: **replace, concatenate, prefix / append, pad, l
 **Any number of inputs** _(credits to [@melMass](https://github.com/melMass) and his [comfy_mtb](https://github.com/melMass/comfy_mtb) extension for the trick!)_.\
 Compatible with **integers, floats, booleans.**\
 Exist in 2 flavors: **simple string and multiline**.\
-Safe to use (no arbitary code execution, ...): a well-proven, standard Python method.
 
 > More information in the [Format String node reference](./wiki/node%20reference/format.md) and the [dedicated tutorials](./wiki/tutorials/Format/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
