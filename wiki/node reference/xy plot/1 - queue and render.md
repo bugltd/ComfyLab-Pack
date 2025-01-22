@@ -29,10 +29,10 @@ For more detailed explanations, please check the [core concepts](./0%20-%20core%
 
 #### Widgets
 
-|    widget name     |  type   |        description         | comment        |
-| :----------------: | :-----: | :------------------------: | :------------- |
-| dim1: max per page | INTEGER | pagination for dim1 values | `0` to disable |
-| dim2: max per page | INTEGER | pagination for dim2 values | `0` to disable |
+|    widget name     | type |        description         | comment        |
+| :----------------: | :--: | :------------------------: | :------------- |
+| dim1: max per page | INT  | pagination for dim1 values | `0` to disable |
+| dim2: max per page | INT  | pagination for dim2 values | `0` to disable |
 
 #### Outputs
 
