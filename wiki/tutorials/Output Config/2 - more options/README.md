@@ -1,6 +1,6 @@
-# Tutorials / Output Config: 02 - more options
+# Tutorials / Output Config: 2 - more options
 
-In [the first tutorial](<../01%20-%20simple%20(value%20and%20label)/>), we have seen how to use and modify a config file to add any number of custom outputs, setting the value and optionally the label.
+In [the first tutorial](<../1%20-%20simple%20(value%20and%20label)/>), we have seen how to use and modify a config file to add any number of custom outputs, setting the value and optionally the label.
 
 In this second tutorial, we are going to see more configuration options, and also how validation errors are handled. \
 While I don't recommend to customize the color or shape too much, to preserve the standard look of ComfyUI, these options exist in the standard code so they are available for you to play with in your configs. Once again, your config, your choice!
@@ -11,7 +11,7 @@ If you have no time yet to follow it, you can jump to [the conclusion](#tldr--co
 
 ### Init the workflow
 
-We will start with the same workflow as in [the first tutorial](<../01%20-%20simple%20(value%20and%20label)/>), so you can either reuse it or download it from here (it's the same).
+We will start with the same workflow as in [the first tutorial](<../1%20-%20simple%20(value%20and%20label)/>), so you can either reuse it or download it from here (it's the same).
 
 ### Let's make our eyes bleed (a little)
 

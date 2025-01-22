@@ -7,9 +7,9 @@ They will also help you understand how you can solve some issues (checkpoints co
 
 If needed, you can also check the [node reference](../../node%20reference/output%20config.md).
 
-## Tutorial 01 - simple (value & label)
+## Tutorial 1 - simple (value & label)
 
-**[>> Go to the tutorial](<./01%20-%20simple%20(value%20and%20label)/>)**
+**[>> Go to the tutorial](<./1%20-%20simple%20(value%20and%20label)/>)**
 
 Contents:
 
@@ -17,9 +17,9 @@ Contents:
 - how to set output name and value, as well as a custom label
 - automatic deduction of the value type
 
-## Tutorial 02 - more options
+## Tutorial 2 - more options
 
-**[>> Go to the tutorial](./02%20-%20more%20options/)**
+**[>> Go to the tutorial](./2%20-%20more%20options/)**
 
 Contents:
 

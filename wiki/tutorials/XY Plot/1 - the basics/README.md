@@ -1,4 +1,4 @@
-# Tutorials / XY Plot: 01 - the basics
+# Tutorials / XY Plot: 1 - the basics
 
 In this first tutorial, we are going to generate our first grids, using the 2 standard XY Plot nodes.
 We will also focus a bit on some useful utility nodes, and play with string templating, pagination, and switch rows / headers as we wish.
@@ -150,4 +150,4 @@ We have covered many important things in this first tutorial:
 
 Okay, that's nice, we have created grids, but TBH they have nothing special for the moment...\
 **Where ComfyLab's XY Plot really shines is its configurability**, to help you design the grids you want, like you want:\
-That's exactly what we are going to see in the **next tutoral: [02 - pimp my grid](../02%20-%20pimp%20my%20grid/)**
+That's exactly what we are going to see in the **next tutoral: [2 - pimp my grid](../2%20-%20pimp%20my%20grid/)**

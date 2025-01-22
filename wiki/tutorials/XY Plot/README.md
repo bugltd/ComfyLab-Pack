@@ -19,9 +19,9 @@ The `XY Plot` nodes allow you to create the grids you want, with virtually no li
 
 If needed, you can also check the [node references](../../node%20reference/xy%20plot/) for the [core concepts](../../node%20reference/xy%20plot/0%20-%20core%20concepts.md) and detailed node information.
 
-## Tutorial 01 - the basics
+## Tutorial 1 - the basics
 
-**[>> Go to the tutorial](./01%20-%20the%20basics/)**
+**[>> Go to the tutorial](./1%20-%20the%20basics/)**
 
 Contents:
 
@@ -29,9 +29,9 @@ Contents:
 - string templating
 - rows / columns and pagination
 
-## Tutorial 02 - pimp my grid
+## Tutorial 2 - pimp my grid
 
-**[>> Go to the tutorial](./02%20-%20pimp%20my%20grid/)**
+**[>> Go to the tutorial](./2%20-%20pimp%20my%20grid/)**
 
 Contents:
 
@@ -40,9 +40,9 @@ Contents:
 - make the grid RGBA to add a custom background inage
 - display 'page X / Y'
 
-## Tutorial 03 - advanced techniques
+## Tutorial 3 - advanced techniques
 
-**[>> Go to the tutorial](./03%20-%20advanced%20techniques/)**
+**[>> Go to the tutorial](./3%20-%20advanced%20techniques/)**
 
 Contents:
 

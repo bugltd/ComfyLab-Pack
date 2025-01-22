@@ -1,4 +1,4 @@
-# Tutorials / XY Plot: 02 - pimp my grid
+# Tutorials / XY Plot: 2 - pimp my grid
 
 In this second tutorial, we are going to discover the true power of ComfyLab's XY Plot: its configurability.\
 First by tweaking the grid itself, then by adding header and footer to the page.\
@@ -148,11 +148,11 @@ But please note there are **many advanced techniques you can apply with ComfyLab
   - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
-If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 03 - advanced techniques**.\
+If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 3 - advanced techniques**.\
 But before doing that, please note:
 
 - it addresses some edge cases that may not be needed for most
 - it is not as detailed as those 2 first tutorials, we'll go faster
 - if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
 
-Interested? Let's go to the next tutorial: **[03 - advanced techniques](../03%20-%20advanced%20techniques/)**
+Interested? Let's go to the next tutorial: **[3 - advanced techniques](../3%20-%20advanced%20techniques/)**

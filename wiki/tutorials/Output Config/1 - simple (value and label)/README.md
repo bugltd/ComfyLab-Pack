@@ -1,4 +1,4 @@
-# Tutorials / Output Config: 01 - simple (value & label)
+# Tutorials / Output Config: 1 - simple (value & label)
 
 In this first tutorial, we cover the core principles of `Output Config: Load` with the good old KSampler workflow, and some basic output configuration.
 
@@ -94,4 +94,4 @@ We have covered most of the core principles of the `Output Config: Load` node:
 
 In the next tutorial, we will see other configuration options (to make your node look like a christmas garland if you wish), and how validation errors are handled.
 
-To jump to it: **[follow the link](../02%20-%20more%20options/)**
+To jump to it: **[follow the link](../2%20-%20more%20options/)**
