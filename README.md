@@ -85,6 +85,10 @@ A set of nodes to **create lists** (from string, file, individual elements).\
 **Parse and convert** strings to integers, floats, ...\
 **Merge / limit** lists.
 
+## More utilities
+
+Please check the [node list](./wiki/node_list.md).
+
 # Documentation
 
 <ins>Important note:</ins> all nodes in this extension has been adjusted with custom tooltips.\
@@ -92,6 +96,7 @@ By simply **moving the mouse pointer over** a node or its inputs / widgets / out
 
 In addition, more detailed information in the [wiki](./wiki/):
 
+- [Node list](./wiki/node_list.md)
 - [Node reference](./wiki/node%20reference/)
 - [Tutorials](./wiki/tutorials/)
 - [Examples](./wiki/examples/)
