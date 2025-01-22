@@ -1,8 +1,8 @@
-# Node reference / XY Plot: 00 - Core concepts
+# Node reference / XY Plot: 0 - Core concepts
 
 As a minimum, to use the `XY Plot`, you need to integrate 2 nodes, `XY Plot: Queue` and `XY Plot: Render`: the first one will organize the queue, the second one will render the grid(s).
 
-![standard nodes](./images/nodes.jpg)
+<img src="./images/queue_render.jpg" alt="XY Plot standard nodes" width="80%">
 
 They must be connected by the specific `XY plot data` link : that is the way the queue can inform the render node about the current processing state.
 
@@ -10,7 +10,7 @@ What is processed between them (from `dim1 value` / `dim2 value` outputs of `Que
 
 ## XY Plot: Queue
 
-As you can see in the screenshot, there is no concept of row / column or X / Y here, as in many other plot / grid implementations:
+As you can see in the screenshot, there is no concept of row / column or X / Y in the `Queue` node, as in many other plot / grid implementations:
 
 - instead, we talk about `dim1` and `dim2` (dimensions 1 & 2)
   - this is intended, to improve performance: but we'll talk about that later

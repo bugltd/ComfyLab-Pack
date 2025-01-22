@@ -1,6 +1,6 @@
-# Tutorials / Output Config: 02 - more options
+# Tutorials / Output Config: 2 - more options
 
-In [the first tutorial](<../01%20-%20simple%20(value%20and%20label)/>), we have seen how to use and modify a config file to add any number of custom outputs, setting the value and optionally the label.
+In [the first tutorial](<../1%20-%20simple%20(value%20and%20label)/>), we have seen how to use and modify a config file to add any number of custom outputs, setting the value and optionally the label.
 
 In this second tutorial, we are going to see more configuration options, and also how validation errors are handled. \
 While I don't recommend to customize the color or shape too much, to preserve the standard look of ComfyUI, these options exist in the standard code so they are available for you to play with in your configs. Once again, your config, your choice!
@@ -11,7 +11,7 @@ If you have no time yet to follow it, you can jump to [the conclusion](#tldr--co
 
 ### Init the workflow
 
-We will start with the same workflow as in [the first tutorial](<../01%20-%20simple%20(value%20and%20label)/>), so you can either reuse it or download it from here (it's the same).
+We will start with the same workflow as in [the first tutorial](<../1%20-%20simple%20(value%20and%20label)/>), so you can either reuse it or download it from here (it's the same).
 
 ### Let's make our eyes bleed (a little)
 
@@ -67,7 +67,7 @@ However, as you can see, in some cases it can open locked doors, and make your c
 
 Last but not least, we need to cover one aspect you will most certainly face: validation errors.
 
-The config must follow strict rules, checked before the outputs are created. For those interested, this validation is performed thanks to a JSON schema, that can be found [here](https://github.com/bugltd/ComfyLab-Pack/blob/doc/src/schema/config.output.schema.json).
+The config must follow strict rules, checked before the outputs are created. For those interested, this validation is performed thanks to a JSON schema, that can be found [here](https://github.com/bugltd/ComfyLab-Pack/blob/main/src/schema/config.output.schema.json).
 
 To help you identify errors in your config, the `Output Config: Load` node can inform you about what failed.
 
@@ -93,7 +93,7 @@ And, of course, the status at the bottom of the node is updated accordingly:
 With this second tutorial, we have seen:
 
 - the other available options: `shape`, `color_on`, `color_off`, `type`
-- `type` is probably not useful is most cases, as the output type is deducted from the value: string, integer / float, boolean, list, ...
+- `type` is probably not useful in most cases, as the output type is deducted from the value: string, integer / float, boolean, list, ...
 - however, sometimes we may need to use `type: "*"`, to bypass the typing checks (for combo widgets in particular)
 - detailed validation errors can be displayed, to help you understand what needs to be corrected in your config
 

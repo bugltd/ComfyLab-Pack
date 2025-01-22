@@ -33,7 +33,7 @@ For more details and advanced techniques, you can check:
 
 - [the tutorials of the `Format` nodes](../tutorials/Format/)
 - [a guide with different possible techniques (padding, ...)](https://pyformat.info/)
-- [the official page on python.org](https://docs.python.org/3/tutorial/inputoutput.html#the-string-format-method)
+- [format specification mini-language (python.org)](https://docs.python.org/3/library/string.html#format-specification-mini-language)
 
 ## Inputs / Widgets / Outputs
 

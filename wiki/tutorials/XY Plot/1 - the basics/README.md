@@ -1,4 +1,4 @@
-# Tutorials / XY Plot: 01 - the basics
+# Tutorials / XY Plot: 1 - the basics
 
 In this first tutorial, we are going to generate our first grids, using the 2 standard XY Plot nodes.
 We will also focus a bit on some useful utility nodes, and play with string templating, pagination, and switch rows / headers as we wish.
@@ -10,7 +10,7 @@ Tutorial sections:
 - [Part 3 - rows / columns and pagination](#part-3---rows--columns-and-pagination)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
-To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md).
+To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md).
 
 > As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
@@ -25,7 +25,7 @@ And as always, if you do not want to follow all the steps, you can jump directly
 Adjust the checkpoint to one available in your ComfyUI instance.\
 Execute the workflow.
 
-You should get something like this (obviously not exactly the same images):
+You should get something like this (obviously not exactly the same images):\
 ![result - part 1](./details/result%20-%20part%201.jpg)
 
 What do we see?
@@ -37,7 +37,7 @@ What do we see?
 
 #### The inputs
 
-The `Queue` node takes lists as inputs. For this we use the nodes `Format: from Multiline` and `Format: from String`, available in the ComfyLab extension.\
+The `Queue` node takes lists as inputs. For this we use the nodes `List: from Multiline` and `List: from String`, available in the ComfyLab extension.\
 Of course, you can choose nodes from other extensions, as long as they provide lists.
 
 > There are other list-related nodes in the ComfyLab collection if you need
@@ -46,22 +46,31 @@ Let's focus a bit:
 
 ##### prompt input (multiline)
 
-If you look at the first one, you'll see that we haven't generated images of an astronaut. That's because the line starts with a `#`, and the node is set to strip comments.\
-![strip comments](./details/detail%20-%20part%201%20-%20comments.jpg)\
+<p>
+<img src="./details/detail%20-%20part%201%20-%20comments.jpg" alt="strip comments" align="left" hspace="20"/>
+If you look at the first input, you see that we haven't generated images of an astronaut.<br/>
+<br/>
+That's because the line starts with a `#`, and the node is set to strip comments.<br/>
+<br/>
 Just remove the `#` and you will get an astronaut!
+</p>
+<br clear="left"/>
 
 ##### CFG input (string with seperator)
 
-![float conversion](./details/detail%20-%20part%201%20-%20float.jpg)\
+<img src="./details/detail%20-%20part%201%20-%20float.jpg" alt="float conversion" hspace="20"/>
 
 - we have set the values in a string, separated by `, `: `5.5, 7, 10.5`
   - the separator is configured accordingly, you can use any character you want: `/`, `|`, `&`, ...
 - and we have configured the conversion: `convert: float`
-  - that is a very important [core concept](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md):
+  - that is a very important [core concept](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md):
     - the `Queue` node cannot determine to which input you will connect the dim values
     - that is why the output type is `*` (Any): you can connect them anywhere, but **you must ensure the type of input values corresponds to where you will use them**
 
-For the test, just set the `convert` widget to `disabled`. You will get an error on execution: CFG expects a float, and we sent strings.\
+<br/>
+
+For the test, just set the `convert` widget to `disabled`.\
+You will get an error on execution: CFG expects a float, and we sent strings.\
 ![conversion error](./details/detail%20-%20part%201%20-%20convert%20error.jpg)
 
 #### processing / auto-queuing
@@ -79,7 +88,7 @@ Let's do our first customizations, that will be short:
 
 - in the dim1 multiline input, you can see that all lines start with `a photograpgy of`
   - that's redundant, and make row headers too long: let's optimize this
-- in the grid, the columns just display the CFG values. Let's add a prefix `CFG: `
+- in the grid, the columns just display the CFG values. Let's add prefix `CFG: `
 
 **Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI**.\
 Execute the workflow.
@@ -93,7 +102,7 @@ What did we change?
 
 First, we have inserted the [`Format: String` node](../../../node%20reference/format.md), between the dim1 output of the queue, and the CLIP Text Encode node.\
 ![format node](./details/detail%20-%20part%202%20-%20prompt.jpg)\
-It is as simple as it is powerful:
+It is as powerful as it is simple to use:
 
 - it takes advantage of Python string `format()` method, to allow string replacement, and many other things, by using placeholders: here `{arg0}`, as the name of the input
 - this node also takes any number of inputs, even though we have just used one here
@@ -141,4 +150,4 @@ We have covered many important things in this first tutorial:
 
 Okay, that's nice, we have created grids, but TBH they have nothing special for the moment...\
 **Where ComfyLab's XY Plot really shines is its configurability**, to help you design the grids you want, like you want:\
-That's exactly what we are going to see in the **next tutoral: [02 - pimp my grid](../02%20-%20pimp%20my%20grid/)**
+That's exactly what we are going to see in the **next tutoral: [2 - pimp my grid](../2%20-%20pimp%20my%20grid/)**

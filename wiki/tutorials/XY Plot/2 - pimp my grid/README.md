@@ -1,4 +1,4 @@
-# Tutorials / XY Plot: 02 - pimp my grid
+# Tutorials / XY Plot: 2 - pimp my grid
 
 In this second tutorial, we are going to discover the true power of ComfyLab's XY Plot: its configurability.\
 First by tweaking the grid itself, then by adding header and footer to the page.\
@@ -39,7 +39,7 @@ In details:
   - either one of the fonts shipped in the extension: _Roboto-Regular.ttf_ / _Roboto-Bold.ttf_ / _Roboto-Italic.ttf_ / _Roboto-BoldItalic.ttf_,
   - or the full path to a locally-installed TTF font
   - this way you can make your grid really different
-- `padding`: you can adjust the space surrounding the row / col headers
+- `padding`: adjust the space surrounding the row / col headers
 - `wrap`: wrap the row / col headers to a given number of characters, if they are too long
 
 With just this simple optional node, we have already completely changed the look of our grid.\
@@ -61,9 +61,9 @@ This way **you can configure them separately, or just add a footer for example**
 
 Some of the configuration options are similar to the `Plot Config: Grid` (font, ...), and some are new:
 
-- `text`: you add text, and position it either at left / center / right
+- `text`: add some text, either at left / center / right
   - of course you can add multiple texts, as we have done in the footer
-- `background color`: you can set a color (as in header), or use the special value `transparent` (as in footer) to keep the grid bg color
+- `background color`: set a color (as in header), or use the special value `transparent` (as in footer) to keep the grid bg color
 - `padding`: add vertical space above and below the header / footer text
 
 > a note about colors (either font or background, in all the `Plot Config` nodes):\
@@ -83,7 +83,7 @@ Execute the workflow.
 
 What did we do?
 
-First, in the `Plot Config: Grid` node, we set the `background color` to the special value `transparent`:
+First, in the `Plot Config: Grid` node, we set the `background color` to the special value `transparent`, it will make the image RGBA:\
 ![transparent background](./details/detail%20-%20part%203%20-%20background.jpg)
 
 Then, we pipe the `grid` output from `XY Plot: Render` to the standard node `Split Image with Alpha`, then IMAGE and MASK to `ImageCompositeMasked`:
@@ -148,11 +148,11 @@ But please note there are **many advanced techniques you can apply with ComfyLab
   - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
-If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 03 - advanced techniques**.\
+If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 3 - advanced techniques**.\
 But before doing that, please note:
 
 - it addresses some edge cases that may not be needed for most
 - it is not as detailed as those 2 first tutorials, we'll go faster
-- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/00%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
+- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
 
-Interested? Let's go to the next tutorial: **[03 - advanced techniques](../03%20-%20advanced%20techniques/)**
+Interested? Let's go to the next tutorial: **[3 - advanced techniques](../3%20-%20advanced%20techniques/)**
