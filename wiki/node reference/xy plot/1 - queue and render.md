@@ -1,10 +1,8 @@
 # Node reference / XY Plot: 1 - Queue and Render
 
-**Work in Progress**
-
 ## Node overview
 
-<img src="./images/nodes.jpg" alt="standard nodes" width="80%">
+<img src="./images/queue_render.jpg" alt="XY Plot standard nodes" width="80%">
 
 ## XY Plot: Queue
 
