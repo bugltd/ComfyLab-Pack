@@ -47,8 +47,8 @@
 
 ## Output Config - _dynamic outputs from a config file_
 
-The `Output Config` nodes allow you to load custom config files, to **dynamically create any number of custom outputs**, that you can later connect to other nodes before executing the workflow.\
-Very **useful to standardize your workflows**, and keep a collection of configurations / test cases separately. Or many more, depending on you specific case...
+Use the `Output Config` nodes to load custom config files, and **dynamically create any number of custom outputs**, that you can later connect to other nodes before executing the workflow.\
+Very **useful to standardize your workflows**, and keep a collection of configurations / test cases separately, share them with others... and many other applications.
 
 <details>
 <summary><strong>Detailed features</strong> <i>(click to show)</i></summary>
