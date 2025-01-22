@@ -16,7 +16,7 @@ That being said, have a good read, dear friends!
 
 ---
 
-**[Comprehensive list of nodes](../node_list.md)**
+**[Comprehensive list of nodes](./node_list.md)**
 
 ---
 
