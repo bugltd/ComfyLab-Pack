@@ -25,7 +25,7 @@ And as always, if you do not want to follow all the steps, you can jump directly
 Adjust the checkpoint to one available in your ComfyUI instance.\
 Execute the workflow.
 
-You should get something like this (obviously not exactly the same images):
+You should get something like this (obviously not exactly the same images):\
 ![result - part 1](./details/result%20-%20part%201.jpg)
 
 What do we see?
@@ -46,13 +46,19 @@ Let's focus a bit:
 
 ##### prompt input (multiline)
 
-If you look at the first one, you'll see that we haven't generated images of an astronaut. That's because the line starts with a `#`, and the node is set to strip comments.\
-![strip comments](./details/detail%20-%20part%201%20-%20comments.jpg)\
+<p>
+<img src="./details/detail%20-%20part%201%20-%20comments.jpg" alt="strip comments" align="left" hspace="20"/>
+If you look at the first input, you see that we haven't generated images of an astronaut.<br/>
+<br/>
+That's because the line starts with a `#`, and the node is set to strip comments.<br/>
+<br/>
 Just remove the `#` and you will get an astronaut!
+</p>
+<br clear="left"/>
 
 ##### CFG input (string with seperator)
 
-![float conversion](./details/detail%20-%20part%201%20-%20float.jpg)\
+<img src="./details/detail%20-%20part%201%20-%20float.jpg" alt="float conversion" hspace="20"/>
 
 - we have set the values in a string, separated by `, `: `5.5, 7, 10.5`
   - the separator is configured accordingly, you can use any character you want: `/`, `|`, `&`, ...
@@ -61,8 +67,19 @@ Just remove the `#` and you will get an astronaut!
     - the `Queue` node cannot determine to which input you will connect the dim values
     - that is why the output type is `*` (Any): you can connect them anywhere, but **you must ensure the type of input values corresponds to where you will use them**
 
-For the test, just set the `convert` widget to `disabled`. You will get an error on execution: CFG expects a float, and we sent strings.\
+<br/>
+
+For the test, just set the `convert` widget to `disabled`.]
+You will get an error on execution: CFG expects a float, and we sent strings.\
 ![conversion error](./details/detail%20-%20part%201%20-%20convert%20error.jpg)
+
+For the test, just set the `convert` widget to `disabled`.<br/>
+
+<p>
+You will get an error on execution:<br/>CFG expects a float, and we sent strings.
+<img src="./details/detail%20-%20part%201%20-%20convert%20error.jpg" hspace="20"/>
+</p>
+<br/>
 
 #### processing / auto-queuing
 
