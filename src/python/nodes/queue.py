@@ -100,15 +100,8 @@ class FileQueue:
         self.files = []
         self.total = -1
 
-        try:
-            print('----------------------------')
-            print('folder', folder)
-            print('Path(folder).resolve()', Path(folder).resolve())
-            # self.root = Path(folder).resolve()
-            self.root = Path(folder)
-        except:
-            raise Exception("Path '{}' does not exist".format(self.root))
-
+        # do not resolve, to ensure relative path is accurate
+        self.root = Path(folder)
         if not self.root.exists():  # follows symlinks
             raise Exception("Path '{}' does not exist".format(self.root))
         if not self.root.is_dir():
@@ -126,10 +119,6 @@ class FileQueue:
             matches = glob.glob(str(glob_pattern), recursive=recursive)
             for match in matches:
                 file = Path(match)
-                print('~~~~')
-                print('match: ', match)
-                print('file: ', file)
-                print('file.resolve(): ', file.resolve())
                 if file.is_file():
                     self.files.append(file)
         # remove duplicates
@@ -156,7 +145,7 @@ class FileQueue:
         return {
             'result': (
                 str(file.name) if with_extension else file.stem,
-                # str(file.resolve()),
+                # do not resolve, to ensure relative path is accurate
                 str(file),
                 str(file.relative_to(self.root)),
                 index + 1,
