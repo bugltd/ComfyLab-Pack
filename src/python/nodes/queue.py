@@ -104,12 +104,12 @@ class FileQueue:
             print('----------------------------')
             print('folder', folder)
             print('Path(folder).resolve()', Path(folder).resolve())
-            self.root = Path(folder).resolve()
+            # self.root = Path(folder).resolve()
+            self.root = Path(folder)
         except:
             raise Exception("Path '{}' does not exist".format(self.root))
 
-        # should not be useful
-        if not self.root.exists():
+        if not self.root.exists():  # follows symlinks
             raise Exception("Path '{}' does not exist".format(self.root))
         if not self.root.is_dir():
             raise Exception("'{}' is not a directory".format(self.root))
@@ -120,7 +120,7 @@ class FileQueue:
             # it = self.root.rglob(p.strip()) if recursive else self.root.glob(p.strip())
             # self.files += [file for file in it if file.is_file()]
 
-            # TODO: go back to Path().glob() with recurse_symlinks=True when Python version is 3.13
+            # TODO: go back to Path().glob() with recurse_symlinks=True when Python version is > 3.13
             # in the meantime, we use glob as it follows links by default
             glob_pattern = self.root / '**' / p if recursive else self.root / p
             matches = glob.glob(str(glob_pattern), recursive=recursive)
@@ -156,7 +156,8 @@ class FileQueue:
         return {
             'result': (
                 str(file.name) if with_extension else file.stem,
-                str(file.resolve()),
+                # str(file.resolve()),
+                str(file),
                 str(file.relative_to(self.root)),
                 index + 1,
                 self.total,
