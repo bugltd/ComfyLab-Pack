@@ -1,5 +1,6 @@
 from typing import Any
 from pathlib import Path
+import glob
 from PIL import Image
 
 
@@ -96,10 +97,18 @@ class FileQueue:
     def scan_folder(
         self, folder: str, pattern: str, recursive: bool
     ) -> tuple[Path, list[Path], int]:
-        self.root = Path(folder)
         self.files = []
         self.total = -1
 
+        try:
+            print('----------------------------')
+            print('folder', folder)
+            print('Path(folder).resolve()', Path(folder).resolve())
+            self.root = Path(folder).resolve()
+        except:
+            raise Exception("Path '{}' does not exist".format(self.root))
+
+        # should not be useful
         if not self.root.exists():
             raise Exception("Path '{}' does not exist".format(self.root))
         if not self.root.is_dir():
@@ -108,8 +117,21 @@ class FileQueue:
         patterns = pattern.split(',')
         self.files = []
         for p in patterns:
-            it = self.root.rglob(p.strip()) if recursive else self.root.glob(p.strip())
-            self.files += [file for file in it if file.is_file()]
+            # it = self.root.rglob(p.strip()) if recursive else self.root.glob(p.strip())
+            # self.files += [file for file in it if file.is_file()]
+
+            # TODO: go back to Path().glob() with recurse_symlinks=True when Python version is 3.13
+            # in the meantime, we use glob as it follows links by default
+            glob_pattern = self.root / '**' / p if recursive else self.root / p
+            matches = glob.glob(str(glob_pattern), recursive=recursive)
+            for match in matches:
+                file = Path(match)
+                print('~~~~')
+                print('match: ', match)
+                print('file: ', file)
+                print('file.resolve(): ', file.resolve())
+                if file.is_file():
+                    self.files.append(file)
         # remove duplicates
         self.files = list(set(self.files))
         # list files in current folder first
