@@ -4,6 +4,12 @@
 
 ## v0.0
 
+## v0.0.3 (2025-01-23): bugfix #6
+
+- fix bugs (issue #6)
+  - Grid: wrong path to `static` folder (for fonts)
+  - FileQueue: allow symlinks
+
 ## v0.0.2 (2025-01-22): more wiki
 
 - init main README
