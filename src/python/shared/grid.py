@@ -6,7 +6,7 @@ from dataclasses import asdict
 
 from .plot_data import PlotConfigGridData, PlotConfigHFData, PlotVars
 
-STATIC_DIR = Path(__file__).parent.parent.parent / 'static'
+STATIC_DIR = (Path(__file__).parent.parent.parent.parent / 'static').resolve()
 
 
 class Grid:
@@ -133,13 +133,16 @@ class Grid:
         return image
 
     def _load_font(self, font_name: str, font_size: int) -> ImageFont:
-        if not Path(font_name).is_absolute():
-            font = ImageFont.truetype(
-                str(STATIC_DIR / font_name),
-                size=font_size,
-            )
-        else:
-            font = ImageFont.truetype(str(Path(font_name)), size=font_size)
+        full_path = (
+            STATIC_DIR / font_name
+            if not Path(font_name).is_absolute()
+            else Path(font_name)
+        )
+        try:
+            full_path = full_path.resolve(strict=True)
+        except:
+            raise Exception("TTF font not found: '{}'".format(full_path))
+        font = ImageFont.truetype(str(full_path), size=font_size)
         return font
 
     def _normalize_headers(self, headers: list[str], wrap: int) -> list[str]:
