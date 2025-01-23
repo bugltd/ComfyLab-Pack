@@ -6,7 +6,7 @@ from dataclasses import asdict
 
 from .plot_data import PlotConfigGridData, PlotConfigHFData, PlotVars
 
-STATIC_DIR = Path(__file__).parent.parent.parent / 'static'
+STATIC_DIR = Path(__file__).parent.parent.parent.parent / 'static'
 
 
 class Grid:
