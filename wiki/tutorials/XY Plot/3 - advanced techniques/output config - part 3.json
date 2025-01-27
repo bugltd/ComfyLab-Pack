@@ -1,0 +1,24 @@
+{
+  "checkpoints": {
+    "value": ["sd_xl_base_1.0", "Juggernaut-XI-byRunDiffusion"]
+  },
+  "seeds": {
+    "value": [156680208700286, 715168739510668, 568208062071311]
+  },
+  "prompt": "beautiful scenery nature glass bottle landscape, purple galaxy bottle,",
+  "steps": 20,
+  "cfg": {
+    "value": 8,
+    "label": "CFG"
+  },
+  "sampler": {
+    "value": "euler",
+    "type": "*"
+  },
+  "scheduler": {
+    "value": "normal",
+    "type": "*"
+  },
+  "width": 1024,
+  "height": 1024
+}

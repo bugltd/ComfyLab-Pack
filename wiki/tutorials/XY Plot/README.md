@@ -48,3 +48,4 @@ Contents:
 
 - various checkpoints (or virtually any model, LoRA, ...)
 - integrate various image resolutions / aspect ratios in the grid
+- combine the XY Plot with the `Output Config` node

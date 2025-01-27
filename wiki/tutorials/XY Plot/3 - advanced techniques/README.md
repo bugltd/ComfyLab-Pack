@@ -12,6 +12,7 @@ Tutorial sections:
 
 - [Part 1 - Various checkpoints (or LoRAs, ...)](#part-1---various-checkpoints-or-loras-)
 - [Part 2 - Various resolutions and aspect ratios](#part-2---various-resolutions-and-aspect-ratios)
+- [Part 3 - Using the Output Config node](#part-3---using-the-output-config-node)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
 > As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
@@ -34,7 +35,7 @@ Execute the workflow.
 
 Here we build a grid with 2 different checkpoints, vs a list of predefined seeds.
 
-What is to be noticed:
+What should be noticed:
 
 - checkpoints:
   - we have chosen not to include the `.safetensors` extension in the input
@@ -78,6 +79,30 @@ What we did:
 
 While probably not the most useful as such, this example demonstrates **the ability of the ComfyLab XY Plot to handle various resolutions or aspect ratios within the same grid**.
 
+## Part 3 - Using the Output Config node
+
+Here the workflow is similar to [Part1](#part-1---various-checkpoints-or-loras-), except that we use the `Output Config` node, to simplify and standardize our workflow.
+
+**Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
+**Copy one of the `output config - part 3.*` file, adjust the checkpoints to your env, and load it into the `Output Config` node.**\
+Execute the workflow.
+
+![result - part 3](./details/result%20-%20part%201.jpg)
+
+As expected, we have strictly the same results as in [Part 1](#part-1---various-checkpoints-or-loras-).
+
+What should be noticed:
+
+- the output config file is available in 3 different formats: JSON, JSON5 and YAML
+- we replaced the input lists by a single `Output Config` node
+  - we also added more outputs to the config file: CFG, steps, sampler, ... quite a lot indeed
+  - of course, we could have used 2 different `Output Config` nodes, one for the XY Plot itself, and another one for the other values: it's up to you to define how you want to standardize your configs
+- note how the `Output Config` node auto-detects the type from output values:
+  - for example, `cfg` is written without quotes, so it's detected as a string
+  - but for more combo widgets (sampler, scheduler), we have to force type to be Any (`*`)
+
+We won't go into details here about the configuration file itself, but you can find more information in the corresponding [node reference](../../../node%20reference/output%20config.md) and the [dedicated tutorials](../../../tutorials/Output%20Config/).
+
 ## TL;DR / Conclusion
 
 In this tutorial, we have:
@@ -85,6 +110,7 @@ In this tutorial, we have:
 - seen how to handle various checkpoints (or virtually any sort of model)
   - and optimized the grid display at the same time
 - demonstrated the ability of the XY Plot to include images or various dimensions / apect ratios within the same grid
+- shown how we can use the `Output Config` node, to keep a collection of configs, while standardizing our workflow
 
 This tutorial is still in construction, so I will certainly add most techniques in the future, be sure to check.
 
