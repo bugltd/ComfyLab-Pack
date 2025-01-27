@@ -41,3 +41,11 @@ That being said, have a good read!
   - [2 - pimp my grid](./tutorials/XY%20Plot/2%20-%20pimp%20my%20grid/)
   - [3 - advanced techniques](./tutorials/XY%20Plot/3%20-%20advanced%20techniques/)
 - [Format](./tutorials/Format/)
+
+---
+
+**[Examples](./examples/)**:
+
+- [XY Plot](./examples/XY%20Plot/)
+  - [LoRA testing](./examples/XY%20Plot/LoRA%20testing/)
+    - [Epochs vs Seeds](./examples/XY%20Plot/LoRA%20testing/Epochs%20vs%20Seeds/)
