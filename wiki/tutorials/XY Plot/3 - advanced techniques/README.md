@@ -84,7 +84,7 @@ While probably not the most useful as such, this example demonstrates **the abil
 Here the workflow is similar to [Part1](#part-1---various-checkpoints-or-loras-), except that we use the `Output Config` node, to simplify and standardize our workflow.
 
 **Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
-**Copy one of the `output config - part 3.*` file, adjust the checkpoints to your env, and load it into the `Output Config` node.**\
+**Copy one of the `output config - part 3.*` file, adjust the checkpoints to your env, and load it into the `Output Config` node.**
 
 - you should get outputs like this (more than the 4 displayed here):
 - ![outputs](./details/detail%20-%20part%203%20-%20output%20config.jpg)
