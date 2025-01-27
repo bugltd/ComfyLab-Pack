@@ -22,7 +22,8 @@ Sections:
 
 ## Overview
 
-The following examples demonstrates the ability to test multiple LoRA epochs vs seeds.\
+The following examples demonstrate the ability to test multiple LoRA epochs vs seeds.
+
 This can be done in a "traditional" way, with separate input nodes for the LoRA prefix, epochs and seed list: see example [Epochs vs Fixed seeds](#epochs-vs-fixed-seeds).\
 Or we can simplify the inputs (and more), by using the ComfyLab `Output Config` node: [Epochs vs Fixed seeds (with Output Config)](#epochs-vs-fixed-seeds-with-output-config)
 
@@ -34,7 +35,7 @@ Load either `LoRA testing - epochs vs fixed seeds.json` or `LoRA testing - epoch
 
 ### Epochs vs Fixed seeds (with Output Config)
 
-Load either `LoRA testing - epochs vs fixed seeds.json (with Output Config)` or `LoRA testing - epochs vs fixed seeds (with Output Config).png` into ComfyUI.
+Load either `LoRA testing - epochs vs fixed seeds (with Output Config).json` or `LoRA testing - epochs vs fixed seeds (with Output Config).png` into ComfyUI.
 
 Here we have replaced the 3 input nodes by a single `Output Config` node, and loaded the file `output config.yaml` provided in this folder.
 
@@ -43,7 +44,7 @@ Some remarks:
 - the config file is in YAML format, but we could have used a JSON or JSON5 file the same way
   - YAML and JSON5 allow comments, which is pretty convenient
 - note how we have defined both dim1 / dim2 input lists, but in 2 different ways
-- no need to convert the seed values to integers: that is automatically deducted, as the values are not quoted, so the `Output Config` node understand they are integers
+- no need to convert the seed values to integers: that is automatically deducted, as the values are not quoted, so the `Output Config` node understands they are integers
 - we also added the prompt, we could have defined the CFG, steps, sampler, ... the same way
 
 More details about the `Output Config` node in the [node reference](../../../../node%20reference/output%20config.md) and [tutorials](../../../../tutorials/Output%20Config/).
