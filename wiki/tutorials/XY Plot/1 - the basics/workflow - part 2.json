@@ -369,76 +369,9 @@
         "5.5, 7, 10.5",
         ",",
         "float"
-      ]
-    },
-    {
-      "id": 10,
-      "type": "XYPlotQueue",
-      "pos": [
-        30,
-        100
       ],
-      "size": [
-        315,
-        146
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "dim1",
-          "type": "LIST",
-          "link": 16,
-          "shape": 6
-        },
-        {
-          "name": "dim2",
-          "type": "LIST",
-          "link": 17,
-          "shape": 6,
-          "label": "dim2 (opt)"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "xy_plot_data",
-          "type": "XY_PLOT_DATA",
-          "links": [
-            11
-          ],
-          "slot_index": 0,
-          "label": "XY plot data",
-          "color_off": "#52395B",
-          "color_on": "#9521c3"
-        },
-        {
-          "name": "dim1_value",
-          "type": "*",
-          "links": [
-            18
-          ],
-          "slot_index": 1,
-          "label": "dim1 value"
-        },
-        {
-          "name": "dim2_value",
-          "type": "*",
-          "links": [
-            13
-          ],
-          "slot_index": 2,
-          "label": "dim2 value"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "XYPlotQueue"
-      },
-      "widgets_values": [
-        0,
-        0,
-        0
-      ]
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 16,
@@ -482,48 +415,9 @@
       },
       "widgets_values": [
         "photography of {arg0}"
-      ]
-    },
-    {
-      "id": 14,
-      "type": "ListFromMultiline",
-      "pos": [
-        -370,
-        100
       ],
-      "size": [
-        300,
-        220
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "list",
-          "type": "LIST",
-          "links": [
-            16
-          ],
-          "slot_index": 0,
-          "shape": 6
-        },
-        {
-          "name": "count",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ListFromMultiline"
-      },
-      "widgets_values": [
-        0,
-        true,
-        "disabled",
-        "a dog in a park\na man in a restaurant\n#an astronaut on Mars\na woman on a balcony"
-      ]
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 11,
@@ -600,7 +494,123 @@
         "{dim1}",
         "CFG: {dim2}",
         true
-      ]
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 14,
+      "type": "ListFromMultiline",
+      "pos": [
+        -370,
+        100
+      ],
+      "size": [
+        300,
+        220
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            16
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "disabled",
+        "a dog in a park\na man in a restaurant\n#an astronaut on Mars\na woman on a balcony"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "XYPlotQueue",
+      "pos": [
+        30,
+        100
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dim1",
+          "type": "LIST",
+          "link": 16,
+          "shape": 6
+        },
+        {
+          "name": "dim2",
+          "type": "LIST",
+          "link": 17,
+          "shape": 6,
+          "label": "dim2 (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "links": [
+            11
+          ],
+          "slot_index": 0,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "dim1_value",
+          "type": "*",
+          "links": [
+            18
+          ],
+          "slot_index": 1,
+          "label": "dim1 value"
+        },
+        {
+          "name": "dim2_value",
+          "type": "*",
+          "links": [
+            13
+          ],
+          "slot_index": 2,
+          "label": "dim2 value"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotQueue"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -745,15 +755,15 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 0.8264462809917354,
       "offset": [
-        31,
-        115
+        481.5315864539793,
+        241.38978233854036
       ]
     },
     "node_versions": {
       "comfy-core": "0.3.10",
-      "ComfyLab-Pack": "e957a7e4d74579f81e3f4457b8d672327c8ac7f7"
+      "ComfyLab-Pack": "1985411cc05fb8b6faa361d2fc18c3d867e9bdb5"
     }
   },
   "version": 0.4

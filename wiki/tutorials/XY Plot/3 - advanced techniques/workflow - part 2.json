@@ -255,47 +255,6 @@
       ]
     },
     {
-      "id": 14,
-      "type": "ListFromMultiline",
-      "pos": [
-        -410,
-        -110
-      ],
-      "size": [
-        220,
-        210
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "list",
-          "type": "LIST",
-          "links": [
-            15
-          ],
-          "slot_index": 0,
-          "shape": 6
-        },
-        {
-          "name": "count",
-          "type": "INT",
-          "links": null
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ListFromMultiline"
-      },
-      "widgets_values": [
-        0,
-        true,
-        "disabled",
-        "# image dimensions\n1024 x 1024\n896 x 1152\n1216 x 832"
-      ]
-    },
-    {
       "id": 15,
       "type": "ListFromMultiline",
       "pos": [
@@ -307,7 +266,7 @@
         220
       ],
       "flags": {},
-      "order": 2,
+      "order": 1,
       "mode": 0,
       "inputs": [],
       "outputs": [
@@ -334,76 +293,9 @@
         true,
         "disabled",
         "# rotations\nnone\n90 degrees"
-      ]
-    },
-    {
-      "id": 13,
-      "type": "XYPlotQueue",
-      "pos": [
-        -150,
-        -100
       ],
-      "size": [
-        315,
-        146
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "dim1",
-          "type": "LIST",
-          "link": 15,
-          "shape": 6
-        },
-        {
-          "name": "dim2",
-          "type": "LIST",
-          "link": 18,
-          "shape": 6,
-          "label": "dim2 (opt)"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "xy_plot_data",
-          "type": "XY_PLOT_DATA",
-          "links": [
-            14
-          ],
-          "slot_index": 0,
-          "label": "XY plot data",
-          "color_off": "#52395B",
-          "color_on": "#9521c3"
-        },
-        {
-          "name": "dim1_value",
-          "type": "*",
-          "links": [
-            29
-          ],
-          "slot_index": 1,
-          "label": "dim1 value"
-        },
-        {
-          "name": "dim2_value",
-          "type": "*",
-          "links": [
-            28
-          ],
-          "slot_index": 2,
-          "label": "dim2 value"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "XYPlotQueue"
-      },
-      "widgets_values": [
-        0,
-        0,
-        0
-      ]
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 22,
@@ -453,7 +345,9 @@
       "widgets_values": [
         "1024x1024",
         1
-      ]
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 5,
@@ -580,6 +474,120 @@
       "widgets_values": []
     },
     {
+      "id": 14,
+      "type": "ListFromMultiline",
+      "pos": [
+        -410,
+        -110
+      ],
+      "size": [
+        220,
+        210
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            15
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "disabled",
+        "# image dimensions\n1024 x 1024\n896 x 1152\n1216 x 832"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 13,
+      "type": "XYPlotQueue",
+      "pos": [
+        -150,
+        -100
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dim1",
+          "type": "LIST",
+          "link": 15,
+          "shape": 6
+        },
+        {
+          "name": "dim2",
+          "type": "LIST",
+          "link": 18,
+          "shape": 6,
+          "label": "dim2 (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "links": [
+            14
+          ],
+          "slot_index": 0,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "dim1_value",
+          "type": "*",
+          "links": [
+            29
+          ],
+          "slot_index": 1,
+          "label": "dim1 value"
+        },
+        {
+          "name": "dim2_value",
+          "type": "*",
+          "links": [
+            28
+          ],
+          "slot_index": 2,
+          "label": "dim2 value"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotQueue"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
       "id": 12,
       "type": "XYPlotRender",
       "pos": [
@@ -654,7 +662,9 @@
         "{dim1}",
         "{dim2}",
         false
-      ]
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -815,15 +825,15 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 1.1000000000000003,
       "offset": [
-        520.672463652246,
-        237.231567790153
+        458.9711582045418,
+        260.08436179702727
       ]
     },
     "node_versions": {
       "comfy-core": "0.3.10",
-      "ComfyLab-Pack": "3b61f457a25c43f16f76dfa98fafd4a7bbc56c37"
+      "ComfyLab-Pack": "1985411cc05fb8b6faa361d2fc18c3d867e9bdb5"
     }
   },
   "version": 0.4

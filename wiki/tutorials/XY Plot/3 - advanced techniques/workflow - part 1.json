@@ -344,7 +344,121 @@
         true,
         "disabled",
         "# here we list seed values\n156680208700286\n715168739510668\n568208062071311"
-      ]
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 10,
+      "type": "PreviewImage",
+      "pos": [
+        1820,
+        180
+      ],
+      "size": [
+        440,
+        320
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 12
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 20,
+      "type": "FormatString",
+      "pos": [
+        470,
+        -100
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 19,
+          "label": "arg0"
+        },
+        {
+          "name": "arg1",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "formatted",
+          "type": "STRING",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FormatString"
+      },
+      "widgets_values": [
+        "{arg0}.safetensors"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 19,
+      "type": "ConvertToAny",
+      "pos": [
+        730,
+        -100
+      ],
+      "size": [
+        168,
+        26
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value_any",
+          "type": "*",
+          "links": [
+            21
+          ],
+          "slot_index": 0,
+          "label": "value (Any)"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConvertToAny"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 14,
@@ -385,7 +499,9 @@
         true,
         "disabled",
         "# here we list the checkpoints\n# do not add the '.safetensors' extension, it will be appended later\nsd_xl_base_1.0\nJuggernaut-XI-byRunDiffusion"
-      ]
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
     },
     {
       "id": 13,
@@ -454,34 +570,9 @@
         0,
         0,
         0
-      ]
-    },
-    {
-      "id": 10,
-      "type": "PreviewImage",
-      "pos": [
-        1820,
-        180
       ],
-      "size": [
-        440,
-        320
-      ],
-      "flags": {},
-      "order": 12,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "images",
-          "type": "IMAGE",
-          "link": 12
-        }
-      ],
-      "outputs": [],
-      "properties": {
-        "Node name for S&R": "PreviewImage"
-      },
-      "widgets_values": []
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     },
     {
       "id": 12,
@@ -558,88 +649,9 @@
         "{dim1}",
         "{dim2}",
         true
-      ]
-    },
-    {
-      "id": 20,
-      "type": "FormatString",
-      "pos": [
-        470,
-        -100
       ],
-      "size": [
-        210,
-        78
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "arg0",
-          "type": "STRING,INT,FLOAT,BOOLEAN",
-          "link": 19,
-          "label": "arg0"
-        },
-        {
-          "name": "arg1",
-          "type": "STRING,INT,FLOAT,BOOLEAN",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "formatted",
-          "type": "STRING",
-          "links": [
-            20
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "FormatString"
-      },
-      "widgets_values": [
-        "{arg0}.safetensors"
-      ]
-    },
-    {
-      "id": 19,
-      "type": "ConvertToAny",
-      "pos": [
-        730,
-        -100
-      ],
-      "size": [
-        168,
-        26
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "*",
-          "link": 20
-        }
-      ],
-      "outputs": [
-        {
-          "name": "value_any",
-          "type": "*",
-          "links": [
-            21
-          ],
-          "slot_index": 0,
-          "label": "value (Any)"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ConvertToAny"
-      },
-      "widgets_values": []
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
     }
   ],
   "links": [
@@ -792,15 +804,15 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1,
+      "scale": 1.1000000000000003,
       "offset": [
-        508.67246365224605,
-        354.231567790153
+        478.0620672954512,
+        266.4479981606637
       ]
     },
     "node_versions": {
       "comfy-core": "0.3.10",
-      "ComfyLab-Pack": "61510174fd470093c9f63ec385cdc72f8a2f0894"
+      "ComfyLab-Pack": "1985411cc05fb8b6faa361d2fc18c3d867e9bdb5"
     }
   },
   "version": 0.4
