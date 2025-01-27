@@ -1,0 +1,1253 @@
+{
+  "last_node_id": 30,
+  "last_link_id": 49,
+  "nodes": [
+    {
+      "id": 10,
+      "type": "KSampler",
+      "pos": [
+        860,
+        190
+      ],
+      "size": [
+        315,
+        262
+      ],
+      "flags": {},
+      "order": 16,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 30
+        },
+        {
+          "name": "positive",
+          "type": "CONDITIONING",
+          "link": 19
+        },
+        {
+          "name": "negative",
+          "type": "CONDITIONING",
+          "link": 21
+        },
+        {
+          "name": "latent_image",
+          "type": "LATENT",
+          "link": 13
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 49,
+          "widget": {
+            "name": "seed"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            15
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "KSampler"
+      },
+      "widgets_values": [
+        0,
+        "randomize",
+        20,
+        8,
+        "euler",
+        "normal",
+        1
+      ]
+    },
+    {
+      "id": 12,
+      "type": "CLIPTextEncode",
+      "pos": [
+        420,
+        190
+      ],
+      "size": [
+        400,
+        150
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 28
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            19
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
+      ]
+    },
+    {
+      "id": 13,
+      "type": "CLIPTextEncode",
+      "pos": [
+        420,
+        380
+      ],
+      "size": [
+        400,
+        120
+      ],
+      "flags": {},
+      "order": 15,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 29
+        }
+      ],
+      "outputs": [
+        {
+          "name": "CONDITIONING",
+          "type": "CONDITIONING",
+          "links": [
+            21
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CLIPTextEncode"
+      },
+      "widgets_values": [
+        ""
+      ]
+    },
+    {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        473,
+        609
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            13
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1216,
+        832,
+        1
+      ]
+    },
+    {
+      "id": 14,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        20,
+        350
+      ],
+      "size": [
+        320,
+        98
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            26
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            27
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            25
+          ]
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ]
+    },
+    {
+      "id": 15,
+      "type": "LoraLoader",
+      "pos": [
+        30,
+        500
+      ],
+      "size": [
+        310,
+        126
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 26
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 27
+        },
+        {
+          "name": "lora_name",
+          "type": "COMBO",
+          "link": 40,
+          "widget": {
+            "name": "lora_name"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            30
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            28,
+            29
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoraLoader"
+      },
+      "widgets_values": [
+        "SDXLHighDetail_v6-000005.safetensors",
+        1,
+        1
+      ]
+    },
+    {
+      "id": 18,
+      "type": "PreviewImage",
+      "pos": [
+        1850,
+        170
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 19,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 11,
+      "type": "VAEDecode",
+      "pos": [
+        1210,
+        190
+      ],
+      "size": [
+        210,
+        46
+      ],
+      "flags": {},
+      "order": 17,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 15
+        },
+        {
+          "name": "vae",
+          "type": "VAE",
+          "link": 25
+        }
+      ],
+      "outputs": [
+        {
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            31
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "VAEDecode"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 19,
+      "type": "PreviewImage",
+      "pos": [
+        1500,
+        430
+      ],
+      "size": [
+        210,
+        26
+      ],
+      "flags": {},
+      "order": 20,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 33
+        }
+      ],
+      "outputs": [],
+      "properties": {
+        "Node name for S&R": "PreviewImage"
+      },
+      "widgets_values": []
+    },
+    {
+      "id": 21,
+      "type": "ListFromString",
+      "pos": [
+        -130,
+        -90
+      ],
+      "size": [
+        230,
+        126
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            34
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromString"
+      },
+      "widgets_values": [
+        "80, 90, 100",
+        ",",
+        "disabled"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 22,
+      "type": "ListFromMultiline",
+      "pos": [
+        -130,
+        90
+      ],
+      "size": [
+        230,
+        200
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            35
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "integer",
+        "1041687666075194\n668849508521090\n1038846581112800\n"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 23,
+      "type": "FormatString",
+      "pos": [
+        180,
+        50
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 37,
+          "label": "arg0"
+        },
+        {
+          "name": "arg1",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 38,
+          "label": "arg1"
+        },
+        {
+          "name": "arg2",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "formatted",
+          "type": "STRING",
+          "links": [
+            39
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FormatString"
+      },
+      "widgets_values": [
+        "{arg0}-{arg1:0>6}.safetensors"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 24,
+      "type": "ConvertToAny",
+      "pos": [
+        430,
+        50
+      ],
+      "size": [
+        168,
+        26
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "link": 39
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value_any",
+          "type": "*",
+          "links": [
+            40
+          ],
+          "slot_index": 0,
+          "label": "value (Any)"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConvertToAny"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 20,
+      "type": "InputString",
+      "pos": [
+        -130,
+        -210
+      ],
+      "size": [
+        230,
+        60
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "string",
+          "type": "STRING",
+          "links": [
+            37,
+            41
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "InputString"
+      },
+      "widgets_values": [
+        "mylora"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 26,
+      "type": "XYPlotDataSplit",
+      "pos": [
+        700,
+        -140
+      ],
+      "size": [
+        211.60000610351562,
+        70
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "link": 42,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "current_page",
+          "type": "INT",
+          "links": [
+            43
+          ],
+          "slot_index": 0,
+          "label": "current page"
+        },
+        {
+          "name": "total_pages",
+          "type": "INT",
+          "links": [
+            44
+          ],
+          "slot_index": 1,
+          "label": "total pages"
+        },
+        {
+          "name": "complete",
+          "type": "BOOLEAN",
+          "links": null,
+          "label": "complete?"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotDataSplit"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 27,
+      "type": "FormatString",
+      "pos": [
+        1010,
+        -140
+      ],
+      "size": [
+        210,
+        98
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 43,
+          "label": "arg0"
+        },
+        {
+          "name": "arg1",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 44,
+          "label": "arg1"
+        },
+        {
+          "name": "arg2",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "formatted",
+          "type": "STRING",
+          "links": [
+            46
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FormatString"
+      },
+      "widgets_values": [
+        "page {arg0} / {arg1}"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 25,
+      "type": "FormatString",
+      "pos": [
+        530,
+        -280
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 41,
+          "label": "arg0"
+        },
+        {
+          "name": "arg1",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "formatted",
+          "type": "STRING",
+          "links": [
+            45
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FormatString"
+      },
+      "widgets_values": [
+        "LoRA testing: {arg0}"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 28,
+      "type": "PlotConfigHF",
+      "pos": [
+        1350,
+        -400
+      ],
+      "size": [
+        295.6000061035156,
+        202
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_center",
+          "type": "STRING",
+          "link": 45,
+          "widget": {
+            "name": "text_center"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plot_config_hf",
+          "type": "PLOT_CONFIG_HF",
+          "links": [
+            47
+          ],
+          "slot_index": 0,
+          "label": "config: header / footer"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlotConfigHF"
+      },
+      "widgets_values": [
+        "",
+        "",
+        "",
+        "#aaa",
+        "Roboto-Bold.ttf",
+        60,
+        "#222",
+        30
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 16,
+      "type": "XYPlotQueue",
+      "pos": [
+        180,
+        -160
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dim1",
+          "type": "LIST",
+          "link": 34,
+          "shape": 6
+        },
+        {
+          "name": "dim2",
+          "type": "LIST",
+          "link": 35,
+          "shape": 6,
+          "label": "dim2 (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "links": [
+            36,
+            42
+          ],
+          "slot_index": 0,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "dim1_value",
+          "type": "*",
+          "links": [
+            38
+          ],
+          "slot_index": 1,
+          "label": "dim1 value"
+        },
+        {
+          "name": "dim2_value",
+          "type": "*",
+          "links": [
+            49
+          ],
+          "slot_index": 2,
+          "label": "dim2 value"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotQueue"
+      },
+      "widgets_values": [
+        0,
+        4,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 17,
+      "type": "XYPlotRender",
+      "pos": [
+        1450,
+        170
+      ],
+      "size": [
+        315,
+        186
+      ],
+      "flags": {},
+      "order": 18,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "link": 36,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "link": 31
+        },
+        {
+          "name": "plot_config_grid",
+          "type": "PLOT_CONFIG_GRID",
+          "link": null,
+          "shape": 7,
+          "label": "config: grid (opt)"
+        },
+        {
+          "name": "plot_config_header",
+          "type": "PLOT_CONFIG_HF",
+          "link": 47,
+          "shape": 7,
+          "label": "config: header (opt)"
+        },
+        {
+          "name": "plot_config_footer",
+          "type": "PLOT_CONFIG_HF",
+          "link": 48,
+          "shape": 7,
+          "label": "config: footer (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "grid",
+          "type": "IMAGE",
+          "links": [
+            32
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "image",
+          "type": "IMAGE",
+          "links": [
+            33
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotRender"
+      },
+      "widgets_values": [
+        "epoch:\\n{dim1}",
+        "{dim2}",
+        true
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 29,
+      "type": "PlotConfigHF",
+      "pos": [
+        1350,
+        -140
+      ],
+      "size": [
+        300,
+        202
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "text_right",
+          "type": "STRING",
+          "link": 46,
+          "widget": {
+            "name": "text_right"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "plot_config_hf",
+          "type": "PLOT_CONFIG_HF",
+          "links": [
+            48
+          ],
+          "slot_index": 0,
+          "label": "config: header / footer"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "PlotConfigHF"
+      },
+      "widgets_values": [
+        "made with ComfyLab",
+        "",
+        "",
+        "transparent",
+        "Roboto-Italic.ttf",
+        40,
+        "#888",
+        30
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    }
+  ],
+  "links": [
+    [
+      13,
+      5,
+      0,
+      10,
+      3,
+      "LATENT"
+    ],
+    [
+      15,
+      10,
+      0,
+      11,
+      0,
+      "LATENT"
+    ],
+    [
+      19,
+      12,
+      0,
+      10,
+      1,
+      "CONDITIONING"
+    ],
+    [
+      21,
+      13,
+      0,
+      10,
+      2,
+      "CONDITIONING"
+    ],
+    [
+      25,
+      14,
+      2,
+      11,
+      1,
+      "VAE"
+    ],
+    [
+      26,
+      14,
+      0,
+      15,
+      0,
+      "MODEL"
+    ],
+    [
+      27,
+      14,
+      1,
+      15,
+      1,
+      "CLIP"
+    ],
+    [
+      28,
+      15,
+      1,
+      12,
+      0,
+      "CLIP"
+    ],
+    [
+      29,
+      15,
+      1,
+      13,
+      0,
+      "CLIP"
+    ],
+    [
+      30,
+      15,
+      0,
+      10,
+      0,
+      "MODEL"
+    ],
+    [
+      31,
+      11,
+      0,
+      17,
+      1,
+      "IMAGE"
+    ],
+    [
+      32,
+      17,
+      0,
+      18,
+      0,
+      "IMAGE"
+    ],
+    [
+      33,
+      17,
+      1,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      34,
+      21,
+      0,
+      16,
+      0,
+      "LIST"
+    ],
+    [
+      35,
+      22,
+      0,
+      16,
+      1,
+      "LIST"
+    ],
+    [
+      36,
+      16,
+      0,
+      17,
+      0,
+      "XY_PLOT_DATA"
+    ],
+    [
+      37,
+      20,
+      0,
+      23,
+      0,
+      "STRING,INT,FLOAT,BOOLEAN"
+    ],
+    [
+      38,
+      16,
+      1,
+      23,
+      1,
+      "STRING,INT,FLOAT,BOOLEAN"
+    ],
+    [
+      39,
+      23,
+      0,
+      24,
+      0,
+      "*"
+    ],
+    [
+      40,
+      24,
+      0,
+      15,
+      2,
+      "COMBO"
+    ],
+    [
+      41,
+      20,
+      0,
+      25,
+      0,
+      "STRING,INT,FLOAT,BOOLEAN"
+    ],
+    [
+      42,
+      16,
+      0,
+      26,
+      0,
+      "XY_PLOT_DATA"
+    ],
+    [
+      43,
+      26,
+      0,
+      27,
+      0,
+      "STRING,INT,FLOAT,BOOLEAN"
+    ],
+    [
+      44,
+      26,
+      1,
+      27,
+      1,
+      "STRING,INT,FLOAT,BOOLEAN"
+    ],
+    [
+      45,
+      25,
+      0,
+      28,
+      0,
+      "STRING"
+    ],
+    [
+      46,
+      27,
+      0,
+      29,
+      0,
+      "STRING"
+    ],
+    [
+      47,
+      28,
+      0,
+      17,
+      3,
+      "PLOT_CONFIG_HF"
+    ],
+    [
+      48,
+      29,
+      0,
+      17,
+      4,
+      "PLOT_CONFIG_HF"
+    ],
+    [
+      49,
+      16,
+      2,
+      10,
+      4,
+      "INT"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 1.3310000000000004,
+      "offset": [
+        208.00196211138075,
+        387.0482985260866
+      ]
+    },
+    "node_versions": {
+      "comfy-core": "0.3.10",
+      "ComfyLab-Pack": "1985411cc05fb8b6faa361d2fc18c3d867e9bdb5"
+    }
+  },
+  "version": 0.4
+}
