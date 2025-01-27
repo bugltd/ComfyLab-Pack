@@ -85,6 +85,10 @@ Here the workflow is similar to [Part1](#part-1---various-checkpoints-or-loras-)
 
 **Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
 **Copy one of the `output config - part 3.*` file, adjust the checkpoints to your env, and load it into the `Output Config` node.**\
+
+- you should get outputs like this (more than the 4 displayed here):
+- ![outputs](./details/detail%20-%20part%203%20-%20output%20config.jpg)
+
 Execute the workflow.
 
 ![result - part 3](./details/result%20-%20part%201.jpg)
