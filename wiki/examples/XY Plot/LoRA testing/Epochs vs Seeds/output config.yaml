@@ -1,0 +1,14 @@
+# examples / XY Plot / LoRA testing / Epochs vs Seeds
+# more details about the config format in the node reference and tutorials
+lora_prefix:
+  value: mylora
+  label: 'LoRA prefix'
+epochs:
+  value: [80, 90, 100]
+seeds:
+  value: # YAML allows defining lists this way, too
+    - 1041687666075194
+    - 668849508521090
+    - 1038846581112800
+prompt: 'beautiful scenery nature glass bottle landscape, purple galaxy bottle,'
+# we could also add the CFG, steps, sampler, ...

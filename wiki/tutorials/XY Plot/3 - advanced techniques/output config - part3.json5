@@ -1,0 +1,28 @@
+/*
+  Tutorials / XY Plot / 3 - Advanced techniques / Part 3
+  more details about the config format in the Output Config node reference and tutorials
+*/
+{
+  checkpoints: {
+    value: ['sd_xl_base_1.0', 'Juggernaut-XI-byRunDiffusion'],
+  },
+  seeds: {
+    value: [156680208700286, 715168739510668, 568208062071311],
+  },
+  prompt: 'beautiful scenery nature glass bottle landscape, purple galaxy bottle,',
+  steps: 20, // we can define the value directly
+  cfg: {
+    value: 8,
+    label: 'CFG', // custom label
+  },
+  sampler: {
+    value: 'euler',
+    type: '*', // required as widget is a combo (pre-defined list)
+  },
+  scheduler: {
+    value: 'normal',
+    type: '*', // required as widget is a combo (pre-defined list)
+  },
+  width: 1024,
+  height: 1024,
+}
