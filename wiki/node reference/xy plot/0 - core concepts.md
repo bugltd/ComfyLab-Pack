@@ -12,23 +12,32 @@ What is processed between them (from `dim1 value` / `dim2 value` outputs of `Que
 
 As you can see in the screenshot, there is no concept of row / column or X / Y in the `Queue` node, as in many other plot / grid implementations:
 
-- instead, we talk about `dim1` and `dim2` (dimensions 1 & 2)
-  - this is intended, to improve performance: but we'll talk about that later
-  - just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
-  - whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (`direction` toggle)
-- `dim1` and `dim2` (optional) **take lists as inputs**
-  - in ComfyUI, a LIST is a LIST, but we cannot know if it's a list of strings, numbers, images, ...
-  - so another important rule: **what you send is what you get**
-    - said differently: if you send a list of numbers, you will get number values in output
-    - or one could say: sh\*t in, sh\*t out...
-- for the reason above, the `Queue` node cannot determine what it will get in input, so the type of the outputs is set to `"*"` (Any)
-  - this makes the `dim1 value` and `dim2 value` outputs very flexible, as you can basically connect them anywhere
-  - but it comes at a price: **you must ensure that the data in input correspond to the expected data in output**
-    - for example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats. If you send strings, you will obviously get an error when running the workflow
-- one of the main features of the `Queue` node is **auto-queuing**
-  - no need to reset a counter, or manually increase the batch size
-  - **the `Queue` node will take care of that for you**
-  - in fact, you should definitely **not set the batch size to anything else than `1`**
+Instead, we talk about `dim1` and `dim2` (dimensions 1 & 2): this is intended, to improve performance: but we'll talk about that later.
+
+> [!IMPORTANT]
+> just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
+> whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (`direction` toggle)
+
+`dim1` and `dim2` (optional) **take lists as inputs**:
+
+- in ComfyUI, a LIST is a LIST, but we cannot know if it's a list of strings, numbers, images, ...
+- so another important rule: **what you send is what you get**
+  - said differently: if you send a list of numbers, you will get number values in output
+  - or one could say: sh\*t in, sh\*t out...
+
+For the reason above, the `Queue` node cannot determine what it will get in input, so the type of the outputs is set to `"*"` (Any).\
+This makes the `dim1 value` and `dim2 value` outputs very versatile, as you can basically connect them anywhere.
+
+But it commes ar a price:
+
+> [!IMPORTANT] > **You must ensure that the data in input correspond to the expected data in output**
+> For example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats. If you send strings, you will obviously get an error when running the workflow
+
+One of the main features of the `Queue` node is **auto-queuing**
+
+- no need to reset a counter, or manually increase the batch size
+- **the `Queue` node will take care of that for you**
+- in fact, you should definitely **not set the batch size to anything else than `1`**
 
 ## XY Plot: Render
 

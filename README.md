@@ -94,7 +94,7 @@ Please check the [node list](./wiki/node_list.md).
 
 # Documentation
 
-> [!IMPORTANT]
+> [!TIP]
 > All nodes in this extension has been adjusted with custom tooltips.\
 > By simply **moving the mouse pointer over** a node or its inputs / widgets / outputs, you can get useful **contextual information**.
 
