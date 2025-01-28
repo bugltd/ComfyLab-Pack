@@ -1,6 +1,6 @@
 {
-  "last_node_id": 22,
-  "last_link_id": 31,
+  "last_node_id": 20,
+  "last_link_id": 22,
   "nodes": [
     {
       "id": 7,
@@ -14,7 +14,7 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 4,
+      "order": 8,
       "mode": 0,
       "inputs": [
         {
@@ -38,6 +38,64 @@
       },
       "widgets_values": [
         "text, watermark"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        26,
+        474
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "ckpt_name",
+          "type": "COMBO",
+          "link": 21,
+          "widget": {
+            "name": "ckpt_name"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            8
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "v1-5-pruned-emaonly.ckpt"
       ]
     },
     {
@@ -120,7 +178,7 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 3,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
@@ -144,55 +202,6 @@
       },
       "widgets_values": [
         "beautiful scenery nature glass bottle landscape, , purple galaxy bottle,"
-      ]
-    },
-    {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        26,
-        474
-      ],
-      "size": [
-        315,
-        98
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            1
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            3,
-            5
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            8
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "sd_xl_base_1.0.safetensors"
       ]
     },
     {
@@ -228,7 +237,15 @@
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 26
+          "link": 2
+        },
+        {
+          "name": "seed",
+          "type": "INT",
+          "link": 22,
+          "widget": {
+            "name": "seed"
+          }
         }
       ],
       "outputs": [
@@ -245,7 +262,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        134178653729123,
+        440313153020244,
         "randomize",
         20,
         8,
@@ -255,15 +272,49 @@
       ]
     },
     {
+      "id": 5,
+      "type": "EmptyLatentImage",
+      "pos": [
+        473,
+        609
+      ],
+      "size": [
+        315,
+        106
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            2
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "EmptyLatentImage"
+      },
+      "widgets_values": [
+        1024,
+        1024,
+        1
+      ]
+    },
+    {
       "id": 15,
       "type": "ListFromMultiline",
       "pos": [
-        -410,
-        160
+        -240,
+        180
       ],
       "size": [
-        218.39999389648438,
-        220
+        290,
+        200
       ],
       "flags": {},
       "order": 1,
@@ -292,159 +343,10 @@
         0,
         true,
         "disabled",
-        "# rotations\nnone\n90 degrees"
+        "# here we list seed values\n156680208700286\n715168739510668\n568208062071311"
       ],
       "color": "#232",
       "bgcolor": "#353"
-    },
-    {
-      "id": 22,
-      "type": "ResolutionToDims",
-      "pos": [
-        190,
-        -110
-      ],
-      "size": [
-        252,
-        102
-      ],
-      "flags": {},
-      "order": 6,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "resolution",
-          "type": "STRING",
-          "link": 29,
-          "widget": {
-            "name": "resolution"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "links": [
-            30
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "links": [
-            31
-          ],
-          "slot_index": 1
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ResolutionToDims"
-      },
-      "widgets_values": [
-        "1024x1024",
-        1
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 5,
-      "type": "EmptyLatentImage",
-      "pos": [
-        500,
-        -10
-      ],
-      "size": [
-        315,
-        106
-      ],
-      "flags": {},
-      "order": 7,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "width",
-          "type": "INT",
-          "link": 30,
-          "widget": {
-            "name": "width"
-          }
-        },
-        {
-          "name": "height",
-          "type": "INT",
-          "link": 31,
-          "widget": {
-            "name": "height"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            25
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "EmptyLatentImage"
-      },
-      "widgets_values": [
-        1024,
-        1024,
-        1
-      ]
-    },
-    {
-      "id": 21,
-      "type": "LatentRotate",
-      "pos": [
-        860,
-        10
-      ],
-      "size": [
-        210,
-        70
-      ],
-      "flags": {},
-      "order": 8,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "samples",
-          "type": "LATENT",
-          "link": 25
-        },
-        {
-          "name": "rotation",
-          "type": "COMBO",
-          "link": 28,
-          "widget": {
-            "name": "rotation"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "LATENT",
-          "type": "LATENT",
-          "links": [
-            26
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "LatentRotate"
-      },
-      "widgets_values": [
-        "none"
-      ]
     },
     {
       "id": 10,
@@ -454,8 +356,8 @@
         180
       ],
       "size": [
-        720,
-        640
+        440,
+        320
       ],
       "flags": {},
       "order": 12,
@@ -474,15 +376,100 @@
       "widgets_values": []
     },
     {
+      "id": 20,
+      "type": "FormatString",
+      "pos": [
+        470,
+        -100
+      ],
+      "size": [
+        210,
+        78
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "arg0",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": 19,
+          "label": "arg0"
+        },
+        {
+          "name": "arg1",
+          "type": "STRING,INT,FLOAT,BOOLEAN",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "formatted",
+          "type": "STRING",
+          "links": [
+            20
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "FormatString"
+      },
+      "widgets_values": [
+        "{arg0}.safetensors"
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
+      "id": 19,
+      "type": "ConvertToAny",
+      "pos": [
+        730,
+        -100
+      ],
+      "size": [
+        168,
+        26
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "value",
+          "type": "*",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "value_any",
+          "type": "*",
+          "links": [
+            21
+          ],
+          "slot_index": 0,
+          "label": "value (Any)"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ConvertToAny"
+      },
+      "widgets_values": [],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
       "id": 14,
       "type": "ListFromMultiline",
       "pos": [
-        -410,
-        -110
+        -430,
+        -100
       ],
       "size": [
-        220,
-        210
+        470,
+        200
       ],
       "flags": {},
       "order": 2,
@@ -511,7 +498,7 @@
         0,
         true,
         "disabled",
-        "# image dimensions\n1024 x 1024\n896 x 1152\n1216 x 832"
+        "# here we list the checkpoints\n# do not add the '.safetensors' extension, it will be appended later\nsd_xl_base_1.0\nJuggernaut-XI-byRunDiffusion"
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -520,15 +507,15 @@
       "id": 13,
       "type": "XYPlotQueue",
       "pos": [
-        -150,
-        -100
+        110,
+        -120
       ],
       "size": [
         315,
         146
       ],
       "flags": {},
-      "order": 5,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
@@ -561,7 +548,7 @@
           "name": "dim1_value",
           "type": "*",
           "links": [
-            29
+            19
           ],
           "slot_index": 1,
           "label": "dim1 value"
@@ -570,7 +557,7 @@
           "name": "dim2_value",
           "type": "*",
           "links": [
-            28
+            22
           ],
           "slot_index": 2,
           "label": "dim2 value"
@@ -661,7 +648,7 @@
       "widgets_values": [
         "{dim1}",
         "{dim2}",
-        false
+        true
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
@@ -675,6 +662,14 @@
       3,
       0,
       "MODEL"
+    ],
+    [
+      2,
+      5,
+      0,
+      3,
+      3,
+      "LATENT"
     ],
     [
       3,
@@ -773,51 +768,35 @@
       "LIST"
     ],
     [
-      25,
-      5,
-      0,
-      21,
-      0,
-      "LATENT"
-    ],
-    [
-      26,
-      21,
-      0,
-      3,
-      3,
-      "LATENT"
-    ],
-    [
-      28,
+      19,
       13,
-      2,
-      21,
       1,
+      20,
+      0,
+      "STRING,INT,FLOAT,BOOLEAN"
+    ],
+    [
+      20,
+      20,
+      0,
+      19,
+      0,
+      "*"
+    ],
+    [
+      21,
+      19,
+      0,
+      4,
+      0,
       "COMBO"
     ],
     [
-      29,
+      22,
       13,
-      1,
-      22,
-      0,
-      "STRING"
-    ],
-    [
-      30,
-      22,
-      0,
-      5,
-      0,
-      "INT"
-    ],
-    [
-      31,
-      22,
-      1,
-      5,
-      1,
+      2,
+      3,
+      4,
       "INT"
     ]
   ],
@@ -827,8 +806,8 @@
     "ds": {
       "scale": 1.1000000000000003,
       "offset": [
-        458.9711582045418,
-        260.08436179702727
+        478.0620672954512,
+        266.4479981606637
       ]
     },
     "node_versions": {

@@ -12,9 +12,9 @@ Here, no frills, we'll go straight to the point, to focus of the functionalities
 
 Tutorial sections:
 
-- [Part 1 - Various checkpoints (or LoRAs, ...)](#part-1---various-checkpoints-or-loras-)
-- [Part 2 - Various resolutions and aspect ratios](#part-2---various-resolutions-and-aspect-ratios)
-- [Part 3 - Using the Output Config node](#part-3---using-the-output-config-node)
+- [Part 2 - Various checkpoints (or LoRAs, ...)](#part-1---various-checkpoints-or-loras-)
+- [Part 3 - Various resolutions and aspect ratios](#part-2---various-resolutions-and-aspect-ratios)
+- [Part 4 - Using the Output Config node](#part-3---using-the-output-config-node)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
 > [!TIP]
@@ -24,9 +24,9 @@ And as always, if you do not want to follow all the steps, you can jump directly
 
 ---
 
-## Part 1 - Various checkpoints (or LoRAs, ...)
+## Part 2 - Various checkpoints (or LoRAs, ...)
 
-**Load either `workflow - part 1.json` or `workflow - part 1.png` into ComfyUI.**\
+**Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI.**\
 **Important:**
 
 - in the first input list, adjust to checkpoints that are available in your ComfyUI instance
@@ -34,7 +34,7 @@ And as always, if you do not want to follow all the steps, you can jump directly
 
 Execute the workflow.
 
-![result - part 1](./details/result%20-%20part%201.jpg)
+![result - part 2](./details/result%20-%20part%202.jpg)
 
 Here we build a grid with 2 different checkpoints, vs a list of predefined seeds.
 
@@ -48,7 +48,7 @@ What should be noticed:
 - but by simply doing so, we cannot pipe the text output to the `Load Checkpoint` node, why?
   - the `chkpt_name` widget does not accept any string, but a string that exists in the list
 - so to bypass this limitation we simply convert the text output to Any, thanks to the `Convert to Any` node
-  - ![Any output](./details/detail%20-%20part%201%20-%20any.jpg)
+  - ![Any output](./details/detail%20-%20part%202-%20any.jpg)
 
 > [!NOTE]
 > You can read more about the Any output in the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md), and the [2nd tutorial of the `Output Config` node](../../Output%20Config/2%20-%20more%20options)
@@ -75,13 +75,13 @@ What should be noticed:
 
 Instead of fixed seeds, if you prefer to have a new random set of seeds each time you generate the grid, just replace the `List: ftom Multiline` node with `List: Random Seeds`.
 
-## Part 2 - Various resolutions and aspect ratios
+## Part 3 - Various resolutions and aspect ratios
 
-**Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI.**\
+**Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
 Adjust the checkpoint to one available in your ComfyUI instance.\
 Execute the workflow.
 
-![result - part 2](./details/result%20-%20part%202.jpg)
+![result - part 3](./details/result%20-%20part%203.jpg)
 
 What we did:
 
@@ -92,19 +92,19 @@ What we did:
 
 While probably not the most useful as such, this example demonstrates **the ability of the ComfyLab XY Plot to handle various resolutions or aspect ratios within the same grid**.
 
-## Part 3 - Using the Output Config node
+## Part 4 - Using the Output Config node
 
 Here the workflow is similar to [Part1](#part-1---various-checkpoints-or-loras-), except that we use the `Output Config` node, to simplify and standardize our workflow.
 
-**Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
+**Load either `workflow - part 4.json` or `workflow - part 4.png` into ComfyUI.**\
 **Copy one of the `output config - part 3.*` file, adjust the checkpoints to your env, and load it into the `Output Config` node.**
 
 - you should get outputs like this (more than the 4 displayed here):
-- ![outputs](./details/detail%20-%20part%203%20-%20output%20config.jpg)
+- ![outputs](./details/detail%20-%20part%204%20-%20output%20config.jpg)
 
 Execute the workflow.
 
-![result - part 3](./details/result%20-%20part%201.jpg)
+![result - part 4](./details/result%20-%20part%202.jpg)
 
 As expected, we have strictly the same results as in [Part 1](#part-1---various-checkpoints-or-loras-).
 

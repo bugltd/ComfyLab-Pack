@@ -1,6 +1,6 @@
 {
-  "last_node_id": 21,
-  "last_link_id": 56,
+  "last_node_id": 22,
+  "last_link_id": 31,
   "nodes": [
     {
       "id": 7,
@@ -14,7 +14,7 @@
         180.6060791015625
       ],
       "flags": {},
-      "order": 7,
+      "order": 4,
       "mode": 0,
       "inputs": [
         {
@@ -41,64 +41,6 @@
       ]
     },
     {
-      "id": 4,
-      "type": "CheckpointLoaderSimple",
-      "pos": [
-        26,
-        474
-      ],
-      "size": [
-        315,
-        98
-      ],
-      "flags": {},
-      "order": 5,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "ckpt_name",
-          "type": "COMBO",
-          "link": 21,
-          "widget": {
-            "name": "ckpt_name"
-          }
-        }
-      ],
-      "outputs": [
-        {
-          "name": "MODEL",
-          "type": "MODEL",
-          "links": [
-            1
-          ],
-          "slot_index": 0
-        },
-        {
-          "name": "CLIP",
-          "type": "CLIP",
-          "links": [
-            3,
-            5
-          ],
-          "slot_index": 1
-        },
-        {
-          "name": "VAE",
-          "type": "VAE",
-          "links": [
-            8
-          ],
-          "slot_index": 2
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "CheckpointLoaderSimple"
-      },
-      "widgets_values": [
-        "v1-5-pruned-emaonly.ckpt"
-      ]
-    },
-    {
       "id": 8,
       "type": "VAEDecode",
       "pos": [
@@ -110,7 +52,7 @@
         46
       ],
       "flags": {},
-      "order": 9,
+      "order": 10,
       "mode": 0,
       "inputs": [
         {
@@ -151,7 +93,7 @@
         246
       ],
       "flags": {},
-      "order": 12,
+      "order": 13,
       "mode": 0,
       "inputs": [
         {
@@ -178,21 +120,13 @@
         164.31304931640625
       ],
       "flags": {},
-      "order": 6,
+      "order": 3,
       "mode": 0,
       "inputs": [
         {
           "name": "clip",
           "type": "CLIP",
           "link": 3
-        },
-        {
-          "name": "text",
-          "type": "STRING",
-          "link": 50,
-          "widget": {
-            "name": "text"
-          }
         }
       ],
       "outputs": [
@@ -213,6 +147,55 @@
       ]
     },
     {
+      "id": 4,
+      "type": "CheckpointLoaderSimple",
+      "pos": [
+        26,
+        474
+      ],
+      "size": [
+        315,
+        98
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "MODEL",
+          "type": "MODEL",
+          "links": [
+            1
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            3,
+            5
+          ],
+          "slot_index": 1
+        },
+        {
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            8
+          ],
+          "slot_index": 2
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "CheckpointLoaderSimple"
+      },
+      "widgets_values": [
+        "sd_xl_base_1.0.safetensors"
+      ]
+    },
+    {
       "id": 3,
       "type": "KSampler",
       "pos": [
@@ -224,7 +207,7 @@
         474
       ],
       "flags": {},
-      "order": 8,
+      "order": 9,
       "mode": 0,
       "inputs": [
         {
@@ -245,47 +228,7 @@
         {
           "name": "latent_image",
           "type": "LATENT",
-          "link": 2
-        },
-        {
-          "name": "seed",
-          "type": "INT",
-          "link": 22,
-          "widget": {
-            "name": "seed"
-          }
-        },
-        {
-          "name": "steps",
-          "type": "INT",
-          "link": 51,
-          "widget": {
-            "name": "steps"
-          }
-        },
-        {
-          "name": "cfg",
-          "type": "FLOAT",
-          "link": 52,
-          "widget": {
-            "name": "cfg"
-          }
-        },
-        {
-          "name": "sampler_name",
-          "type": "COMBO",
-          "link": 53,
-          "widget": {
-            "name": "sampler_name"
-          }
-        },
-        {
-          "name": "scheduler",
-          "type": "COMBO",
-          "link": 54,
-          "widget": {
-            "name": "scheduler"
-          }
+          "link": 26
         }
       ],
       "outputs": [
@@ -302,7 +245,7 @@
         "Node name for S&R": "KSampler"
       },
       "widgets_values": [
-        270749964709061,
+        134178653729123,
         "randomize",
         20,
         8,
@@ -312,24 +255,119 @@
       ]
     },
     {
+      "id": 15,
+      "type": "ListFromMultiline",
+      "pos": [
+        -410,
+        160
+      ],
+      "size": [
+        218.39999389648438,
+        220
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            18
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "disabled",
+        "# rotations\nnone\n90 degrees"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 22,
+      "type": "ResolutionToDims",
+      "pos": [
+        190,
+        -110
+      ],
+      "size": [
+        252,
+        102
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "resolution",
+          "type": "STRING",
+          "link": 29,
+          "widget": {
+            "name": "resolution"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "width",
+          "type": "INT",
+          "links": [
+            30
+          ],
+          "slot_index": 0
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": [
+            31
+          ],
+          "slot_index": 1
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ResolutionToDims"
+      },
+      "widgets_values": [
+        "1024x1024",
+        1
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
       "id": 5,
       "type": "EmptyLatentImage",
       "pos": [
-        473,
-        609
+        500,
+        -10
       ],
       "size": [
         315,
         106
       ],
       "flags": {},
-      "order": 2,
+      "order": 7,
       "mode": 0,
       "inputs": [
         {
           "name": "width",
           "type": "INT",
-          "link": 55,
+          "link": 30,
           "widget": {
             "name": "width"
           }
@@ -337,7 +375,7 @@
         {
           "name": "height",
           "type": "INT",
-          "link": 56,
+          "link": 31,
           "widget": {
             "name": "height"
           }
@@ -348,7 +386,7 @@
           "name": "LATENT",
           "type": "LATENT",
           "links": [
-            2
+            25
           ],
           "slot_index": 0
         }
@@ -363,6 +401,52 @@
       ]
     },
     {
+      "id": 21,
+      "type": "LatentRotate",
+      "pos": [
+        860,
+        10
+      ],
+      "size": [
+        210,
+        70
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "samples",
+          "type": "LATENT",
+          "link": 25
+        },
+        {
+          "name": "rotation",
+          "type": "COMBO",
+          "link": 28,
+          "widget": {
+            "name": "rotation"
+          }
+        }
+      ],
+      "outputs": [
+        {
+          "name": "LATENT",
+          "type": "LATENT",
+          "links": [
+            26
+          ],
+          "slot_index": 0
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LatentRotate"
+      },
+      "widgets_values": [
+        "none"
+      ]
+    },
+    {
       "id": 10,
       "type": "PreviewImage",
       "pos": [
@@ -370,11 +454,11 @@
         180
       ],
       "size": [
-        440,
-        320
+        720,
+        640
       ],
       "flags": {},
-      "order": 11,
+      "order": 12,
       "mode": 0,
       "inputs": [
         {
@@ -390,6 +474,120 @@
       "widgets_values": []
     },
     {
+      "id": 14,
+      "type": "ListFromMultiline",
+      "pos": [
+        -410,
+        -110
+      ],
+      "size": [
+        220,
+        210
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [
+        {
+          "name": "list",
+          "type": "LIST",
+          "links": [
+            15
+          ],
+          "slot_index": 0,
+          "shape": 6
+        },
+        {
+          "name": "count",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ListFromMultiline"
+      },
+      "widgets_values": [
+        0,
+        true,
+        "disabled",
+        "# image dimensions\n1024 x 1024\n896 x 1152\n1216 x 832"
+      ],
+      "color": "#232",
+      "bgcolor": "#353"
+    },
+    {
+      "id": 13,
+      "type": "XYPlotQueue",
+      "pos": [
+        -150,
+        -100
+      ],
+      "size": [
+        315,
+        146
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "dim1",
+          "type": "LIST",
+          "link": 15,
+          "shape": 6
+        },
+        {
+          "name": "dim2",
+          "type": "LIST",
+          "link": 18,
+          "shape": 6,
+          "label": "dim2 (opt)"
+        }
+      ],
+      "outputs": [
+        {
+          "name": "xy_plot_data",
+          "type": "XY_PLOT_DATA",
+          "links": [
+            14
+          ],
+          "slot_index": 0,
+          "label": "XY plot data",
+          "color_off": "#52395B",
+          "color_on": "#9521c3"
+        },
+        {
+          "name": "dim1_value",
+          "type": "*",
+          "links": [
+            29
+          ],
+          "slot_index": 1,
+          "label": "dim1 value"
+        },
+        {
+          "name": "dim2_value",
+          "type": "*",
+          "links": [
+            28
+          ],
+          "slot_index": 2,
+          "label": "dim2 value"
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "XYPlotQueue"
+      },
+      "widgets_values": [
+        0,
+        0,
+        0
+      ],
+      "color": "#2a363b",
+      "bgcolor": "#3f5159"
+    },
+    {
       "id": 12,
       "type": "XYPlotRender",
       "pos": [
@@ -401,7 +599,7 @@
         186
       ],
       "flags": {},
-      "order": 10,
+      "order": 11,
       "mode": 0,
       "inputs": [
         {
@@ -463,368 +661,10 @@
       "widgets_values": [
         "{dim1}",
         "{dim2}",
-        true
+        false
       ],
       "color": "#2a363b",
       "bgcolor": "#3f5159"
-    },
-    {
-      "id": 20,
-      "type": "FormatString",
-      "pos": [
-        470,
-        -100
-      ],
-      "size": [
-        210,
-        78
-      ],
-      "flags": {},
-      "order": 3,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "arg0",
-          "type": "STRING,INT,FLOAT,BOOLEAN",
-          "link": 19,
-          "label": "arg0"
-        },
-        {
-          "name": "arg1",
-          "type": "STRING,INT,FLOAT,BOOLEAN",
-          "link": null
-        }
-      ],
-      "outputs": [
-        {
-          "name": "formatted",
-          "type": "STRING",
-          "links": [
-            20
-          ],
-          "slot_index": 0
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "FormatString"
-      },
-      "widgets_values": [
-        "{arg0}.safetensors"
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 19,
-      "type": "ConvertToAny",
-      "pos": [
-        730,
-        -100
-      ],
-      "size": [
-        168,
-        26
-      ],
-      "flags": {},
-      "order": 4,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "value",
-          "type": "*",
-          "link": 20
-        }
-      ],
-      "outputs": [
-        {
-          "name": "value_any",
-          "type": "*",
-          "links": [
-            21
-          ],
-          "slot_index": 0,
-          "label": "value (Any)"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "ConvertToAny"
-      },
-      "widgets_values": [],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 13,
-      "type": "XYPlotQueue",
-      "pos": [
-        110,
-        -120
-      ],
-      "size": [
-        315,
-        146
-      ],
-      "flags": {},
-      "order": 1,
-      "mode": 0,
-      "inputs": [
-        {
-          "name": "dim1",
-          "type": "LIST",
-          "link": 48,
-          "shape": 6
-        },
-        {
-          "name": "dim2",
-          "type": "LIST",
-          "link": 49,
-          "shape": 6,
-          "label": "dim2 (opt)"
-        }
-      ],
-      "outputs": [
-        {
-          "name": "xy_plot_data",
-          "type": "XY_PLOT_DATA",
-          "links": [
-            14
-          ],
-          "slot_index": 0,
-          "label": "XY plot data",
-          "color_off": "#52395B",
-          "color_on": "#9521c3"
-        },
-        {
-          "name": "dim1_value",
-          "type": "*",
-          "links": [
-            19
-          ],
-          "slot_index": 1,
-          "label": "dim1 value"
-        },
-        {
-          "name": "dim2_value",
-          "type": "*",
-          "links": [
-            22
-          ],
-          "slot_index": 2,
-          "label": "dim2 value"
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "XYPlotQueue"
-      },
-      "widgets_values": [
-        0,
-        0,
-        0
-      ],
-      "color": "#2a363b",
-      "bgcolor": "#3f5159"
-    },
-    {
-      "id": 21,
-      "type": "OutputConfigLocal",
-      "pos": [
-        -380,
-        -120
-      ],
-      "size": [
-        360,
-        550
-      ],
-      "flags": {},
-      "order": 0,
-      "mode": 0,
-      "inputs": [],
-      "outputs": [
-        {
-          "name": "checkpoints",
-          "type": "LIST",
-          "links": [
-            48
-          ],
-          "shape": 6
-        },
-        {
-          "name": "seeds",
-          "type": "LIST",
-          "links": [
-            49
-          ],
-          "shape": 6
-        },
-        {
-          "name": "prompt",
-          "type": "STRING",
-          "links": [
-            50
-          ]
-        },
-        {
-          "name": "steps",
-          "type": [
-            "INT",
-            "FLOAT"
-          ],
-          "links": [
-            51
-          ]
-        },
-        {
-          "name": "cfg",
-          "type": [
-            "INT",
-            "FLOAT"
-          ],
-          "links": [
-            52
-          ],
-          "label": "CFG"
-        },
-        {
-          "name": "sampler",
-          "type": "*",
-          "links": [
-            53
-          ]
-        },
-        {
-          "name": "scheduler",
-          "type": "*",
-          "links": [
-            54
-          ]
-        },
-        {
-          "name": "width",
-          "type": [
-            "INT",
-            "FLOAT"
-          ],
-          "links": [
-            55
-          ]
-        },
-        {
-          "name": "height",
-          "type": [
-            "INT",
-            "FLOAT"
-          ],
-          "links": [
-            56
-          ]
-        }
-      ],
-      "properties": {
-        "Node name for S&R": "OutputConfigLocal"
-      },
-      "widgets_values": [
-        {
-          "checkpoints": {
-            "value": [
-              "sd_xl_base_1.0",
-              "Juggernaut-XI-byRunDiffusion"
-            ],
-            "type": "LIST",
-            "extra_info": {
-              "shape": 6
-            }
-          },
-          "seeds": {
-            "value": [
-              156680208700286,
-              715168739510668,
-              568208062071311
-            ],
-            "type": "LIST",
-            "extra_info": {
-              "shape": 6
-            }
-          },
-          "prompt": {
-            "value": "beautiful scenery nature glass bottle landscape, purple galaxy bottle,",
-            "type": "STRING",
-            "extra_info": {}
-          },
-          "steps": {
-            "value": 20,
-            "type": [
-              "INT",
-              "FLOAT"
-            ],
-            "extra_info": {}
-          },
-          "cfg": {
-            "value": 8,
-            "type": [
-              "INT",
-              "FLOAT"
-            ],
-            "extra_info": {
-              "label": "CFG"
-            }
-          },
-          "sampler": {
-            "value": "euler",
-            "type": "*",
-            "extra_info": {}
-          },
-          "scheduler": {
-            "value": "normal",
-            "type": "*",
-            "extra_info": {}
-          },
-          "width": {
-            "value": 1024,
-            "type": [
-              "INT",
-              "FLOAT"
-            ],
-            "extra_info": {}
-          },
-          "height": {
-            "value": 1024,
-            "type": [
-              "INT",
-              "FLOAT"
-            ],
-            "extra_info": {}
-          }
-        },
-        0,
-        "in a popup",
-        true,
-        "# Tutorials / XY Plot / 3 - Advanced techniques / Part 3\n# more details about the config format in the Output Config node reference and tutorials\ncheckpoints:\n  value:\n    - sd_xl_base_1.0\n    - Juggernaut-XI-byRunDiffusion\nseeds:\n  value: [156680208700286, 715168739510668, 568208062071311]\nprompt: 'beautiful scenery nature glass bottle landscape, purple galaxy bottle,'\nsteps: 20 # we can define the value directly\ncfg:\n  value: 8.0\n  label: 'CFG' # custom label\nsampler:\n  value: euler\n  type: '*' # required as widget is a combo (pre-defined list)\nscheduler:\n  value: normal\n  type: '*' # required as widget is a combo (pre-defined list)\nwidth: 1024\nheight: 1024\n",
-        "output config - part 3.yaml",
-        "All outputs generated",
-        {
-          "current": true,
-          "states": {
-            "true": {
-              "size": [
-                360,
-                550
-              ],
-              "members": {
-                "config": "customtext"
-              }
-            },
-            "false": {
-              "size": [
-                210,
-                314
-              ],
-              "members": {}
-            }
-          }
-        }
-      ],
-      "color": "#232",
-      "bgcolor": "#353"
     }
   ],
   "links": [
@@ -835,14 +675,6 @@
       3,
       0,
       "MODEL"
-    ],
-    [
-      2,
-      5,
-      0,
-      3,
-      3,
-      "LATENT"
     ],
     [
       3,
@@ -925,105 +757,65 @@
       "XY_PLOT_DATA"
     ],
     [
-      19,
+      15,
+      14,
+      0,
+      13,
+      0,
+      "LIST"
+    ],
+    [
+      18,
+      15,
+      0,
       13,
       1,
-      20,
-      0,
-      "STRING,INT,FLOAT,BOOLEAN"
+      "LIST"
     ],
     [
-      20,
-      20,
+      25,
+      5,
       0,
-      19,
-      0,
-      "*"
-    ],
-    [
       21,
-      19,
       0,
-      4,
+      "LATENT"
+    ],
+    [
+      26,
+      21,
       0,
+      3,
+      3,
+      "LATENT"
+    ],
+    [
+      28,
+      13,
+      2,
+      21,
+      1,
       "COMBO"
     ],
     [
+      29,
+      13,
+      1,
       22,
-      13,
-      2,
-      3,
-      4,
-      "INT"
-    ],
-    [
-      48,
-      21,
       0,
-      13,
-      0,
-      "LIST"
-    ],
-    [
-      49,
-      21,
-      1,
-      13,
-      1,
-      "LIST"
-    ],
-    [
-      50,
-      21,
-      2,
-      6,
-      1,
       "STRING"
     ],
     [
-      51,
-      21,
-      3,
-      3,
-      5,
-      "INT"
-    ],
-    [
-      52,
-      21,
-      4,
-      3,
-      6,
-      "FLOAT"
-    ],
-    [
-      53,
-      21,
-      5,
-      3,
-      7,
-      "COMBO"
-    ],
-    [
-      54,
-      21,
-      6,
-      3,
-      8,
-      "COMBO"
-    ],
-    [
-      55,
-      21,
-      7,
+      30,
+      22,
+      0,
       5,
       0,
       "INT"
     ],
     [
-      56,
-      21,
-      8,
+      31,
+      22,
+      1,
       5,
       1,
       "INT"
@@ -1033,10 +825,10 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 1.2100000000000006,
+      "scale": 1.1000000000000003,
       "offset": [
-        445.623156995248,
-        152.2253681914311
+        458.9711582045418,
+        260.08436179702727
       ]
     },
     "node_versions": {
