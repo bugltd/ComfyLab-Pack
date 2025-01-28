@@ -396,7 +396,10 @@ class ListRandomSeeds:
     def INPUT_TYPES(s):
         return {
             'required': {
-                'count': ('INT', {'default': 1, 'min': 1}),
+                'count': (
+                    'INT',
+                    {'default': 1, 'min': 1, 'tooltip': 'number of random seeds'},
+                ),
             },
         }
 
@@ -409,6 +412,7 @@ class ListRandomSeeds:
     )
     DESCRIPTION = 'Return a list of random seeds.'
 
+    # ensure the list is regenerated
     @classmethod
     def IS_CHANGED(cls, **kwargs):
         return float('NaN')
