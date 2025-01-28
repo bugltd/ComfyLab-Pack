@@ -133,14 +133,14 @@ export function ERROR_DISPLAY(
 	return widget as ErrorDisplayWidget
 }
 
-export function MODEL_LIST(
+export function SELECTION_LIST(
 	node: LGraphNode,
 	inputName: string,
 	inputData: InputSpec,
 ) {
-	inputData[1].value = { files: [] } // wrap into dict to avoid issues on validation
+	inputData[1].value = { selected: [] } // wrap into dict to avoid issues on validation
 	if (!Array.isArray(inputData[1].all) || !inputData[1].all) {
-		log.error("MODEL_LIST: 'all is invalid")
+		log.error("SELECTION_LIST: 'all is invalid")
 		// overwrite `all`
 		inputData[1].all = []
 	}

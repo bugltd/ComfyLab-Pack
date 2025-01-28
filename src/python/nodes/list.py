@@ -387,8 +387,8 @@ class ListCheckpoints:
     def INPUT_TYPES(s):
         return {
             'required': {
-                'models': (
-                    'MODEL_LIST',
+                'selection': (
+                    'SELECTION_LIST',
                     {'all': folder_paths.get_filename_list('checkpoints')},
                 ),
                 'with_extension': (
@@ -407,9 +407,9 @@ class ListCheckpoints:
     )
     DESCRIPTION = 'Create a list of selected checkpoints file names.'
 
-    def run(self, with_extension, models, **kwargs):
+    def run(self, with_extension, selection, **kwargs):
         output = []
-        for file in models['files']:
+        for file in selection['selected']:
             if not with_extension:
                 output.append(str(Path(file).stem))
             else:
@@ -426,8 +426,8 @@ class ListLoras:
     def INPUT_TYPES(s):
         return {
             'required': {
-                'models': (
-                    'MODEL_LIST',
+                'selection': (
+                    'SELECTION_LIST',
                     {'all': folder_paths.get_filename_list('loras')},
                 ),
                 'with_extension': (
@@ -446,9 +446,9 @@ class ListLoras:
     )
     DESCRIPTION = 'Create a list of selected LoRA file names.'
 
-    def run(self, with_extension, models, **kwargs):
+    def run(self, with_extension, selection, **kwargs):
         output = []
-        for file in models['files']:
+        for file in selection['selected']:
             if not with_extension:
                 output.append(str(Path(file).stem))
             else:
@@ -465,8 +465,8 @@ class ListSamplers:
     def INPUT_TYPES(s):
         return {
             'required': {
-                'models': (
-                    'MODEL_LIST',
+                'selection': (
+                    'SELECTION_LIST',
                     {'all': KSampler.SAMPLERS},
                 ),
             },
@@ -481,8 +481,8 @@ class ListSamplers:
     )
     DESCRIPTION = 'Create a list of selected sampler names.'
 
-    def run(self, models, **kwargs):
-        output = models['files']
+    def run(self, selection, **kwargs):
+        output = selection['selected']
         return (output, len(output))
 
 
@@ -495,8 +495,8 @@ class ListSchedulers:
     def INPUT_TYPES(s):
         return {
             'required': {
-                'models': (
-                    'MODEL_LIST',
+                'selection': (
+                    'SELECTION_LIST',
                     {'all': KSampler.SCHEDULERS},
                 ),
             },
@@ -511,6 +511,6 @@ class ListSchedulers:
     )
     DESCRIPTION = 'Create a list of selected scheduler names.'
 
-    def run(self, models, **kwargs):
-        output = models['files']
+    def run(self, selection, **kwargs):
+        output = selection['selected']
         return (output, len(output))

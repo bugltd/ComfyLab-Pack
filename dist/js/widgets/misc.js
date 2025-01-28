@@ -70,10 +70,10 @@ export function ERROR_DISPLAY(node, name = 'error_display') {
     const widget = makeComboWidget(node, name, ERROR_DISPLAY_CHOICES, 'dialog', () => { }, 'how to display detected errors');
     return widget;
 }
-export function MODEL_LIST(node, inputName, inputData) {
-    inputData[1].value = { files: [] };
+export function SELECTION_LIST(node, inputName, inputData) {
+    inputData[1].value = { selected: [] };
     if (!Array.isArray(inputData[1].all) || !inputData[1].all) {
-        log.error("MODEL_LIST: 'all is invalid");
+        log.error("SELECTION_LIST: 'all is invalid");
         inputData[1].all = [];
     }
     const widget = HIDDEN(node, inputName, inputData);

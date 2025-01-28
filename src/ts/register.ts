@@ -7,9 +7,9 @@ import { CATEGORY, type GlobalThisWithCategory } from '~/shared/common.js'
 import { customizeNode } from '~/custom.js'
 import { setupDynamicConnections } from '~/shared/dynamic_connections.js'
 import { QUEUE_STATUS } from '~/widgets/queue.js'
-import { HIDDEN, BTN, ERROR_DISPLAY, MODEL_LIST } from '~/widgets/misc.js'
+import { HIDDEN, BTN, ERROR_DISPLAY, SELECTION_LIST } from '~/widgets/misc.js'
 import { OutputConfigBackend, OutputConfigLocal } from '~/nodes/config.js'
-import { ListFromMultiline, ListModels } from '~/nodes/list.js'
+import { ListFromMultiline, ListFromSelection } from '~/nodes/list.js'
 import { InputMultiline } from '~/nodes/input.js'
 import { DebugJSONYAML, DebugWidgetVisibility } from '~/nodes/debug.js'
 
@@ -46,16 +46,16 @@ app.registerExtension({
 				ListFromMultiline(nodeType)
 				break
 			case 'ListCheckpoints':
-				ListModels(nodeType, 'checkpoint')
+				ListFromSelection(nodeType, 'checkpoint')
 				break
 			case 'ListLoras':
-				ListModels(nodeType, 'LoRA')
+				ListFromSelection(nodeType, 'LoRA')
 				break
 			case 'ListSamplers':
-				ListModels(nodeType, 'sampler')
+				ListFromSelection(nodeType, 'sampler')
 				break
 			case 'ListSchedulers':
-				ListModels(nodeType, 'scheduler')
+				ListFromSelection(nodeType, 'scheduler')
 				break
 			// INPUT
 			case 'InputMultiline':
@@ -96,7 +96,7 @@ app.registerExtension({
 			HIDDEN,
 			BTN,
 			ERROR_DISPLAY,
-			MODEL_LIST,
+			SELECTION_LIST,
 		}
 	},
 })

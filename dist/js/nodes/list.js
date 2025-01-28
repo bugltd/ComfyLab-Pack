@@ -14,25 +14,25 @@ export function ListFromMultiline(nodeType) {
         };
     };
 }
-export function ListModels(nodeType, model_type) {
-    const isModelCombo = (widget) => widget.name.startsWith(`${model_type}_`.toLowerCase());
-    const findModelCombos = (node) => node.widgets.filter((w) => isModelCombo(w));
-    const addModelCombo = (node, modelList) => {
-        const index = findModelCombos(node).length;
+export function ListFromSelection(nodeType, selection_type) {
+    const isCombo = (widget) => widget.name.startsWith(`${selection_type}_`.toLowerCase());
+    const findCombos = (node) => node.widgets.filter((w) => isCombo(w));
+    const addCombo = (node, selectionWidget) => {
+        const index = findCombos(node).length;
         const width = node.size[0];
-        const widget = makeComboWidget(node, `${model_type}_${index}`.toLowerCase(), ['none', ...modelList.all], 0);
+        const widget = makeComboWidget(node, `${selection_type}_${index}`.toLowerCase(), ['none', ...selectionWidget.all], 0);
         node.setSize([width, node.size[1]]);
-        widget.label = `${model_type} #${index + 1}`;
+        widget.label = `${selection_type} #${index + 1}`;
         widget.options.serialize = false;
         return widget;
     };
-    const refreshModelList = (node, modelList) => {
-        const files = [];
+    const refreshSelection = (node, selectionWidget) => {
+        const selected = [];
         let widgetIndex = 0;
         let comboIndex = 0;
         while (widgetIndex < node.widgets.length) {
             const widget = node.widgets[widgetIndex];
-            if (!isModelCombo(widget)) {
+            if (!isCombo(widget)) {
                 widgetIndex += 1;
                 continue;
             }
@@ -40,52 +40,52 @@ export function ListModels(nodeType, model_type) {
                 node.widgets.splice(widgetIndex, 1);
                 continue;
             }
-            widget.name = `${model_type}_${comboIndex}`.toLowerCase();
-            widget.label = `${model_type} #${comboIndex + 1}`;
-            files.push(widget.value);
+            widget.name = `${selection_type}_${comboIndex}`.toLowerCase();
+            widget.label = `${selection_type} #${comboIndex + 1}`;
+            selected.push(widget.value);
             widgetIndex += 1;
             comboIndex += 1;
         }
-        const last = addModelCombo(node, modelList);
+        const last = addCombo(node, selectionWidget);
         last.onSelected = () => {
-            refreshModelList(node, modelList);
+            refreshSelection(node, selectionWidget);
         };
-        modelList.value = { files };
+        selectionWidget.value = { selected };
     };
-    const refreshFromModelList = (node, modelList) => {
+    const refreshFromSelection = (node, selectionWidget) => {
         let widgetIndex = 0;
         while (widgetIndex < node.widgets.length) {
             const widget = node.widgets[widgetIndex];
-            if (isModelCombo(widget)) {
+            if (isCombo(widget)) {
                 node.widgets.splice(widgetIndex, 1);
                 continue;
             }
             widgetIndex += 1;
         }
-        const files = modelList.value.files;
-        for (const file of files) {
-            const widget = addModelCombo(node, modelList);
-            widget.value = file;
+        const selected = selectionWidget.value.selected;
+        for (const value of selected) {
+            const widget = addCombo(node, selectionWidget);
+            widget.value = value;
             widget.callback(widget.value);
             widget.onSelected = () => {
-                refreshModelList(node, modelList);
+                refreshSelection(node, selectionWidget);
             };
         }
-        const last = addModelCombo(node, modelList);
+        const last = addCombo(node, selectionWidget);
         last.onSelected = () => {
-            refreshModelList(node, modelList);
+            refreshSelection(node, selectionWidget);
         };
     };
     const original_onNodeCreated = nodeType.prototype.onNodeCreated;
     nodeType.prototype.onNodeCreated = function (...args) {
         original_onNodeCreated?.apply(this, ...args);
-        const modelList = findWidget(this, 'models');
-        refreshFromModelList(this, modelList);
+        const selectionWidget = findWidget(this, 'selection');
+        refreshFromSelection(this, selectionWidget);
     };
     const original_onConfigure = nodeType.prototype.onConfigure;
     nodeType.prototype.onConfigure = function (...args) {
         original_onConfigure?.apply(this, ...args);
-        const modelList = findWidget(this, 'models');
-        refreshFromModelList(this, modelList);
+        const selectionWidget = findWidget(this, 'selection');
+        refreshFromSelection(this, selectionWidget);
     };
 }
