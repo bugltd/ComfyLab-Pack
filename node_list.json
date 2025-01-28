@@ -12,6 +12,7 @@
   "List: Limit (lab)": "Limit list to a given size",
   "List: Random Seeds (lab)": "Return a list of random seeds",
   "List: Checkpoints (lab)": "Create a list of selected checkpoints file names",
+  "List: LoRAs (lab)": "Create a list of selected LoRA file names",
   "Output Config: Load (lab)": "Load a local JSON or YAML config file, and dynamically generate outputs",
   "Output Config: Retrieve (backend) (lab)": "Retrieve a JSON or YAML config file from backend, and dynamically generate outputs",
   "Generic Queue (lab)": "Loop through all values of input list, and send them to output",

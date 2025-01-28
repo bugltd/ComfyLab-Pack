@@ -48,6 +48,9 @@ app.registerExtension({
 			case 'ListCheckpoints':
 				ListModels(nodeType, 'checkpoint')
 				break
+			case 'ListLoras':
+				ListModels(nodeType, 'LoRA')
+				break
 			// INPUT
 			case 'InputMultiline':
 				InputMultiline(nodeType)

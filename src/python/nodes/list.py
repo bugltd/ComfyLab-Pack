@@ -414,3 +414,42 @@ class ListCheckpoints:
             else:
                 output.append(file)
         return (output, len(output))
+
+
+@register_node('List: LoRAs', 'list')
+class ListLoras:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'models': (
+                    'MODEL_LIST',
+                    {'all': folder_paths.get_filename_list('loras')},
+                ),
+                'with_extension': (
+                    'BOOLEAN',
+                    {'default': True, 'tooltip': 'keep file extension?'},
+                ),
+            },
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('LIST', 'INT')
+    RETURN_NAMES = ('list', 'count')
+    OUTPUT_TOOLTIPS = (
+        'list of LoRA file names',
+        TOOLTIP_OUTPUT_COUNT,
+    )
+    DESCRIPTION = 'Create a list of selected LoRA file names.'
+
+    def run(self, with_extension, models, **kwargs):
+        output = []
+        for file in models['files']:
+            if not with_extension:
+                output.append(str(Path(file).stem))
+            else:
+                output.append(file)
+        return (output, len(output))
