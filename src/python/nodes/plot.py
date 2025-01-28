@@ -82,6 +82,9 @@ class XYPlotQueue:
     )
     DESCRIPTION = 'Loop through all values of dim1, optionally combined with dim2 values, and send them to outputs.\nIMPORTANT: for a given dim1 value, all dim2 values are first iterated, before going to the next dim1 value.\nSo it is advised to associate slow operations (e.g. loading checkpoints) to dim1, to ensure better performance.'
 
+    dim1 = []
+    dim2 = []
+
     def run(
         self,
         dim1: list[str],
@@ -90,8 +93,15 @@ class XYPlotQueue:
         index: int,
         dim2: list[str] = [''],
     ):
-        if len(dim2) == 0:
-            dim2 = ['']
+        # store the input lists, to allow using input nodes that change at each prompt (ex. ListRandomSeeds)
+        if index == 0:
+            if len(dim2) == 0:
+                dim2 = ['']
+            self.dim1 = dim1
+            self.dim2 = dim2
+        else:
+            dim1 = self.dim1
+            dim2 = self.dim2
 
         # to simplify code below
         size = (len(dim1), len(dim2))
