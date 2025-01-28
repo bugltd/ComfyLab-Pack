@@ -55,8 +55,7 @@ Execute the workflow.
 ### What should be noticed
 
 > [!NOTE]
-> we have chosen to not include the `.safetensors` extension in the input: it would have been displayed in the row headers, making them too long.\
-> Of course, you can keep it, and skip the following.
+> we have chosen to not include the `.safetensors` extension in the input: it would have been displayed in the row headers, making them too long. Of course, you can keep it, and skip the following.
 
 To append the `.safetensors` extension:
 
@@ -97,7 +96,8 @@ Execute the workflow.
 
 ### Lessons learned
 
-You can basically use this approach for any combo widget, in particular when loading models, or any value in a combo widget.
+By using a `List: String` or `List: Multiline`, we can basically send any value, as long as we ensure it matches the destinastion widget.\
+You can use this approach for any combo widget, in particular when loading models, or any value in a combo widget.
 
 > [!IMPORTANT]
 > Be **very cautious** about the values you set in input: by using the Any type, we bypass the standard ComfyUI type checks, so the workflow may fail if the values are incorrect.
@@ -134,7 +134,7 @@ As expected, we have strictly the same results as in [Part1](#part-1---various-c
 In this tutorial, we have covered 3 different methods to vary checkpoints (or many other things):
 
 - simple one, using a dedicated node: applicable to checkpoints, LoRAs, samplers, schedulers
-- a more versatile one, that should adapt to many of your use cases
+- a more versatile one, that should adapt to many of your use cases: use a `List: from String` or `List: from Multiline`
 - one using the `Output Config` node, to standardize your workflow and keep the values separated
 
 > [!TIP]
