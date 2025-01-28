@@ -405,7 +405,7 @@ class ListCheckpoints:
         'list of checkpoint file names',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Create a list of selected checkpoints file names.'
+    DESCRIPTION = 'Create a list of selected checkpoint file names.'
 
     def run(self, with_extension, selection, **kwargs):
         output = []
