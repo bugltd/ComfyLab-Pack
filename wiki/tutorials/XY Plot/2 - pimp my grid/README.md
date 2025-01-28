@@ -156,7 +156,7 @@ But please note there are **many advanced techniques you can apply with ComfyLab
 If you want to go deeper, we can now move to the **next tutorial of the XY Plot series: 3 - complex variations**.\
 It will show how you can vary many things like checkpoints / LoRAs / ..., and virtually any model or value in a combo widget, by using 3 approaches:
 
-- simple one, with dedicated nodes for checkpoints / LoRAs, samplers, schedulers
+- simple one, with dedicated nodes for checkpoints / LoRAs / samplers / schedulers
 - a more versatile one, that should adapt to any kind of model (or combo widget)
 - by using the [`Output Config` node](../../Output%20Config/), to standardize your workflow and keep parameters separated
 
