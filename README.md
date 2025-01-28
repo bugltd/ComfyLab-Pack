@@ -1,7 +1,7 @@
 <p align="center">
     <img src="static/repo_banner.jpg" title="welcome to ComfyLab Pack!">
     <br/>
-    <span style="color:#787878; font-size: large; font-style: italic">A collection of carefully experimented nodes, to improve your Comfy UX.</span>
+    <span>A collection of carefully experimented nodes, to improve your Comfy UX.</span>
 </p>
 
 <h2 align="center"><a href="#️node-overview">Node overview</a> &nbsp; | &nbsp; <a href="#documentation">Documentation</a> | &nbsp; <a href="#installation">Installation</a></h2>
