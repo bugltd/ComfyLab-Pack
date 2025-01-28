@@ -153,11 +153,11 @@ But please note there are **many advanced techniques you can apply with ComfyLab
   - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
-If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 3 - advanced techniques**.\
-But before doing that, please note:
+If you want to go deeper, we can now move to the **next tutorial of the XY Plot series: 3 - complex variations**.\
+It will show how you can vary many things like checkpoints / LoRAs / ..., and virtually any model or value in a combo widget, by using 3 approaches:
 
-- it addresses some edge cases that may not be needed for most
-- it is not as detailed as those 2 first tutorials, we'll go faster
-- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
+- simple one, with dedicated nodes for checkpoints / LoRAs, samplers, schedulers
+- a more versatile one, that should adapt to any kind of model (or combo widget)
+- by using the [`Output Config` node](../../Output%20Config/), to standardize your workflow and keep parameters separated
 
-Interested? Let's go to the next tutorial: **[3 - advanced techniques](../3%20-%20advanced%20techniques/)**
+Interested? Let's go to the next tutorial: **[3 - complex variations](../3%20-%20complex%20variations/)**

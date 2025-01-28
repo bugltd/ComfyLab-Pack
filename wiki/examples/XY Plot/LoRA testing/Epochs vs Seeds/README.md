@@ -44,7 +44,7 @@ We build the LoRA model file name thanks to the `Format String` node. Here speci
 > [!NOTE]
 > More details in the [node reference](../../../../node%20reference/format.md), you can also visit [this guide](https://pyformat.info/) for different techniques applicable to Python string `format()` method
 
-Finally, we pipe the resulting string to `Load LoRA`, after converting it to type Any (`*`). More explanations in the [XY Plot tutorial: 3 - advanced techniques](../../../../tutorials/XY%20Plot/3%20-%20advanced%20techniques/).
+Finally, we pipe the resulting string to `Load LoRA`, after converting it to type Any (`*`). More explanations in the [XY Plot tutorial: 3 - complex variations](../../../../tutorials/XY%20Plot/3%20-%20complex%20variations/).
 
 #### Seed list
 

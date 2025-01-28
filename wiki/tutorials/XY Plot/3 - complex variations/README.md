@@ -1,4 +1,4 @@
-# Tutorials / XY Plot: 3 - advanced techniques
+# Tutorials / XY Plot: 3 - Complex variations
 
 Welcome to this third (and last) tutorial of the XY Plot series!
 
@@ -12,29 +12,36 @@ Here, no frills, we'll go straight to the point, to focus of the functionalities
 
 Tutorial sections:
 
-- [Part 2 - Various checkpoints (or LoRAs, ...)](#part-1---various-checkpoints-or-loras-)
-- [Part 3 - Various resolutions and aspect ratios](#part-2---various-resolutions-and-aspect-ratios)
-- [Part 4 - Using the Output Config node](#part-3---using-the-output-config-node)
+- [Part 1 - Various checkpoints (or LoRAs, samplers, schedulers)](#part-1---various-checkpoints-or-loras-samplers-schedulers)
+- [Part 2 - Vary any model (or combo widget)](#part-2---vary-any-model-or-combo-widget)
+- [Part 3 - Various resolutions and aspect ratios](#part-3---various-resolutions-and-aspect-ratios)
+- [Part 4 - Using the Output Config node](#part-4---using-the-output-config-node)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
 > [!TIP]
-> As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
+> In the following, we vary checkpoints vs a fixed list of seeds.
+> If you prefer to have a new random set of **random seeds** each time you generate the grid, just replace the corresponding `List: ftom Multiline` node with `List: Random Seeds`.
 
 And as always, if you do not want to follow all the steps, you can jump directly to [the conclusion](#tldr--conclusion).
 
 ---
 
-## Part 2 - Various checkpoints (or LoRAs, ...)
+## Part 1 - Various checkpoints (or LoRAs, samplers, schedulers)
 
-**Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI.**\
+> [!TIP]
+> Here we will use the `List: Checkpoints` node, that allows to select any number of checkpoints (from your ComfyUI `models/checkpoints` folder), and get a list of their file names.\
+> Similar nodes exist for: LoRAs, samplers, schedulers.\
+> For more advanced / specific cases, please check [Part 2](#part-2---vary-any-model-or-combo-widget), to learn how to vary any model (or combo widget).
+
+**Load either `workflow - part 1.json` or `workflow - part 1.png` into ComfyUI.**\
 **Important:**
 
-- in the first input list, adjust to checkpoints that are available in your ComfyUI instance
-- do no add the `.safetensors` extension, it will be added automatically
+- in the `List: Checkpoints` node, select a few checkpoints from your env
+- ensure the widget `with file extension?` is unchecked, as we will add it automatically
 
 Execute the workflow.
 
-![result - part 2](./details/result%20-%20part%202.jpg)
+![result - part 1](./details/result%20-%20part%201.jpg)
 
 Here we build a grid with 2 different checkpoints, vs a list of predefined seeds.
 
@@ -67,34 +74,36 @@ What should be noticed:
 - the checkpoint list is connected to `dim1`, not `dim2`, for a performance reason
   - if you want: just switch dim1 / dim2 and check the processing time _(more in the [core concepts page](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md))_
 
-> [!TIP]
-> You can basically use this approach for any combo widget, in particular when loading models (LoRA, ...).\
-> But be **very cautious** about the values you set in input: by using the Any type, we bypass the standard ComfyUI type checks, so the workflow may fail if the values are incorrect.
+## Part 2 - Vary any model (or combo widget)
 
-### Variant: Random seeds
+While it is usually simpler to use the list nodes dedicated to checkpoints / LoRAs / samplers / schedulers, there are some cases where we need to use a more versatile approach:
 
-Instead of fixed seeds, if you prefer to have a new random set of seeds each time you generate the grid, just replace the `List: ftom Multiline` node with `List: Random Seeds`.
+- we want to vary another type of model / value from a combo widget
+- we keep the list as a separate text file, and prefer to re-use it rather than manually selecting the values
 
-## Part 3 - Various resolutions and aspect ratios
+This short part will cover exactly that, to show how you can adapt the XY Plot to many specific cases.
 
-**Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
-Adjust the checkpoint to one available in your ComfyUI instance.\
+> [!NOTE]
+> We keep the same use case of varying checkpoints, to ensure this workflow is applicable for all.\
+> You should find it easy to adapt to your specific cases.
+
+**Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI.**\
+**Important:**
+
+- in the first input list, adjust to checkpoints that are available in your ComfyUI instance
+- do no add the `.safetensors` extension, it will be added automatically
+
 Execute the workflow.
 
-![result - part 3](./details/result%20-%20part%203.jpg)
+![result - part 2](./details/result%20-%20part%202.jpg)
 
-What we did:
-
-- include the ComfyLab `Resolution to Dimensions` node, to split the first input (`1024 x 1024`, ...) into width and height, piped into `Empty Latent Image`
-  - we could have done this differently, I chose this method as it is straightforward in this case
-- we also used a 2nd input list to set rotations, piped into the `rotation` input of `Rotate Latent`
-  - remember, we can do that because the `Queue` outputs are of type Any
-
-While probably not the most useful as such, this example demonstrates **the ability of the ComfyLab XY Plot to handle various resolutions or aspect ratios within the same grid**.
+> [!IMPORTANT]
+> You can basically use this approach for any combo widget, in particular when loading models.\
+> But be **very cautious** about the values you set in input: by using the Any type, we bypass the standard ComfyUI type checks, so the workflow may fail if the values are incorrect.
 
 ## Part 4 - Using the Output Config node
 
-Here the workflow is similar to [Part1](#part-1---various-checkpoints-or-loras-), except that we use the `Output Config` node, to simplify and standardize our workflow.
+Here the workflow is similar to [Part1](#part-1---various-checkpoints-or-loras-samplers-schedulers) and [Part 2](#part-2---vary-any-model-or-combo-widget), except that we use the `Output Config` node, to simplify and standardize our workflow.
 
 **Load either `workflow - part 4.json` or `workflow - part 4.png` into ComfyUI.**\
 **Copy one of the `output config - part 3.*` file, adjust the checkpoints to your env, and load it into the `Output Config` node.**
@@ -106,7 +115,7 @@ Execute the workflow.
 
 ![result - part 4](./details/result%20-%20part%202.jpg)
 
-As expected, we have strictly the same results as in [Part 1](#part-1---various-checkpoints-or-loras-).
+As expected, we have strictly the same results as in [Part1](#part-1---various-checkpoints-or-loras-samplers-schedulers) and [Part 2](#part-2---vary-any-model-or-combo-widget).
 
 What should be noticed:
 

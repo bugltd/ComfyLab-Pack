@@ -32,7 +32,7 @@ And last but not least: at stated above, it can take **other types than strings:
 
 ### Going further
 
-For more details and advanced techniques, you can check:
+For more details and complex variations, you can check:
 
 - [the tutorials of the `Format` nodes](../tutorials/Format/)
 - [a guide with different techniques (padding, ...)](https://pyformat.info/)

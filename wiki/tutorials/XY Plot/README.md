@@ -41,9 +41,9 @@ Contents:
 - make the grid RGBA to add a custom background inage
 - display 'page X / Y'
 
-## Tutorial 3 - advanced techniques
+## Tutorial 3 - complex variations
 
-**[>> Go to the tutorial](./3%20-%20advanced%20techniques/)**
+**[>> Go to the tutorial](./3%20-%20complex%20variations/)**
 
 Contents:
 

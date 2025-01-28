@@ -41,7 +41,7 @@ That being said, have a good read!
 - [XY Plot](./tutorials/XY%20Plot/)
   - [1 - the basics](./tutorials/XY%20Plot/1%20-%20the%20basics/)
   - [2 - pimp my grid](./tutorials/XY%20Plot/2%20-%20pimp%20my%20grid/)
-  - [3 - advanced techniques](./tutorials/XY%20Plot/3%20-%20advanced%20techniques/)
+  - [3 - complex variations](./tutorials/XY%20Plot/3%20-%20complex%20variations/)
 - [Format](./tutorials/Format/)
 
 ---
