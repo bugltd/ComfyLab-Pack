@@ -1,7 +1,6 @@
 # Examples / XY Plot / LoRA testing / Epochs vs Seeds
 
-[!NOTE]
-
+> [!NOTE]
 > As always, we use the following convention for node color:
 >
 > - Green: input node you surely want to customize
@@ -18,7 +17,7 @@ Sections:
 - [Epochs vs Fixed seeds (with Output Config)](#epochs-vs-fixed-seeds-with-output-config)
 
 > [!TIP]  
-> Note: Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
+> Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
 
 ## Overview
 
