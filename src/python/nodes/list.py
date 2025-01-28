@@ -4,6 +4,7 @@ import random
 from pathlib import Path
 
 import folder_paths  # type: ignore
+from comfy.samplers import KSampler  # type: ignore
 
 from ..collection.register_nodes import register_node
 
@@ -452,4 +453,64 @@ class ListLoras:
                 output.append(str(Path(file).stem))
             else:
                 output.append(file)
+        return (output, len(output))
+
+
+@register_node('List: Samplers', 'list')
+class ListSamplers:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'models': (
+                    'MODEL_LIST',
+                    {'all': KSampler.SAMPLERS},
+                ),
+            },
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('LIST', 'INT')
+    RETURN_NAMES = ('list', 'count')
+    OUTPUT_TOOLTIPS = (
+        'list of sampler names',
+        TOOLTIP_OUTPUT_COUNT,
+    )
+    DESCRIPTION = 'Create a list of selected sampler names.'
+
+    def run(self, models, **kwargs):
+        output = models['files']
+        return (output, len(output))
+
+
+@register_node('List: Schedulers', 'list')
+class ListSchedulers:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'models': (
+                    'MODEL_LIST',
+                    {'all': KSampler.SCHEDULERS},
+                ),
+            },
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('LIST', 'INT')
+    RETURN_NAMES = ('list', 'count')
+    OUTPUT_TOOLTIPS = (
+        'list of scheduler names',
+        TOOLTIP_OUTPUT_COUNT,
+    )
+    DESCRIPTION = 'Create a list of selected scheduler names.'
+
+    def run(self, models, **kwargs):
+        output = models['files']
         return (output, len(output))

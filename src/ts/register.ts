@@ -51,6 +51,12 @@ app.registerExtension({
 			case 'ListLoras':
 				ListModels(nodeType, 'LoRA')
 				break
+			case 'ListSamplers':
+				ListModels(nodeType, 'sampler')
+				break
+			case 'ListSchedulers':
+				ListModels(nodeType, 'scheduler')
+				break
 			// INPUT
 			case 'InputMultiline':
 				InputMultiline(nodeType)
