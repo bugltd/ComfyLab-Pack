@@ -4,6 +4,11 @@
 
 ## v0.0
 
+## v0.0.4 (2025-01-28): better wiki
+
+- replace repo banner and icon
+- improve README files with github alerts
+
 ## v0.0.3 (2025-01-23): bugfix #6
 
 - fix bugs (issue #6)
