@@ -71,6 +71,10 @@ What should be noticed:
 > You can basically use this approach for any combo widget, in particular when loading models (LoRA, ...).\
 > But be **very cautious** about the values you set in input: by using the Any type, we bypass the standard ComfyUI type checks, so the workflow may fail if the values are incorrect.
 
+### Variant: Random seeds
+
+Instead of fixed seeds, if you prefer to have a new random set of seeds each time you generate the grid, just replace the `List: ftom Multiline` node with `List: Random Seeds`.
+
 ## Part 2 - Various resolutions and aspect ratios
 
 **Load either `workflow - part 2.json` or `workflow - part 2.png` into ComfyUI.**\

@@ -39,6 +39,7 @@ All extension nodes, organized by category.
 |   **List: from Multiline**    |      split a multiline string, each line being a value<br/>optionally convert values to integers, flotas, ...       |           |          |
 | **List: from File (backend)** |                     read a multiline text file from backend,<br/>and send its content as a list                     |           |          |
 |    **List: from Elements**    |                                create a list from any number of individual elements                                 |           |          |
+|    **List: Random Seeds**     |                                            create a list of random seeds                                            |           |          |
 |        **List: Merge**        |                                         merge any number of lists into one                                          |           |          |
 |        **List: Limit**        |                                             limit list to a given size                                              |           |          |
 

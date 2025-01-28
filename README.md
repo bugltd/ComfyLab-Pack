@@ -4,7 +4,11 @@
     <span>A collection of carefully experimented nodes, to improve your Comfy UX.</span>
 </p>
 
-<h2 align="center"><a href="#️node-overview">Node overview</a> &nbsp; | &nbsp; <a href="#documentation">Documentation</a> | &nbsp; <a href="#installation">Installation</a></h2>
+<h2 align="center"><a href="#️news">News</a> &nbsp; | &nbsp; <a href="#️node-overview">Node overview</a> &nbsp; | &nbsp; <a href="#documentation">Documentation</a> | &nbsp; <a href="#installation">Installation</a></h2>
+
+# News
+
+- 2025-01-28 - v0.0.5: added node `List: Random Seeds`
 
 # Node overview
 

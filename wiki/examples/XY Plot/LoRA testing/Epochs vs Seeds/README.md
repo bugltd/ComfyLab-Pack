@@ -15,6 +15,7 @@ Sections:
 - [Overview](#overview)
 - [Epochs vs Fixed seeds](#epochs-vs-fixed-seeds)
 - [Epochs vs Fixed seeds (with Output Config)](#epochs-vs-fixed-seeds-with-output-config)
+- [Epochs vs Random seeds](#epochs-vs-random-seeds)
 
 > [!TIP]  
 > Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
@@ -78,3 +79,11 @@ Here we have replaced the 3 input nodes by a single `Output Config` node, and lo
 > More details about the `Output Config` node in the [node reference](../../../../node%20reference/output%20config.md) and [tutorials](../../../../tutorials/Output%20Config/).
 
 Feel free to adjust the values, create a different file, ...
+
+## Epochs vs Random seeds
+
+Load either `LoRA testing - epochs vs random seeds.json` or `LoRA testing - epochs vs random seeds.png` into ComfyUI.
+
+This example is similar to first one, except that we replace the `List: from Multiline` node with `List: Random Seeds`.
+
+Thanks to it, we generate a new list of random seeds each time we generate a new grid.
