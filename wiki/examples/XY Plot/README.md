@@ -4,6 +4,7 @@ Here you will find some examples demonstrating how to use the Comfy Lab XY Plot:
 
 - [LoRA testing](./LoRA%20testing/)
   - [Epochs vs Seeds](./LoRA%20testing/Epochs%20vs%20Seeds/)
+- [Various resolutions (and aspect ratios)](./Various%20resolutions/)
 
 > [!TIP]
 > For more detailed information / explanations, please check the XY Plot [tutorials](../../tutorials/XY%20Plot/) and [node references](../../node%20reference/xy%20plot/).
