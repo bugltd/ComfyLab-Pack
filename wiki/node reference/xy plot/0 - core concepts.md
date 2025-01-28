@@ -37,9 +37,9 @@ But it comes ar a price:
 
 One of the main features of the `Queue` node is **auto-queuing**
 
-- no need to reset a counter, or manually increase the batch size
+- no need to reset a counter, or manually increase the queue size
 - **the `Queue` node will take care of that for you**
-- in fact, you should definitely **not set the batch size to anything else than `1`**
+- in fact, you should definitely **not set the queue size to anything else than `1`**
 
 ## XY Plot: Render
 

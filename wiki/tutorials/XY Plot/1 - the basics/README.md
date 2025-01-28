@@ -12,6 +12,7 @@ Tutorial sections:
 
 To keep it simple, we will not detail the core concepts here. But if you are interested, now or later, you can check the [dedicated page](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md).
 
+> [!TIP]
 > As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
 And as always, if you do not want to follow all the steps, you can jump directly to [the conclusion](#tldr--conclusion).
@@ -21,7 +22,7 @@ And as always, if you do not want to follow all the steps, you can jump directly
 ## Part 1 - Our first grid (and some useful explanations)
 
 **Load either `workflow - part 1.json` or `workflow - part 1.png` into ComfyUI.**\
-**Ensure that the batch size is set to 1 (default)**.\
+**Ensure that the queue size is set to 1 (default)**.\
 Adjust the checkpoint to one available in your ComfyUI instance.\
 Execute the workflow.
 
@@ -40,7 +41,8 @@ What do we see?
 The `Queue` node takes lists as inputs. For this we use the nodes `List: from Multiline` and `List: from String`, available in the ComfyLab extension.\
 Of course, you can choose nodes from other extensions, as long as they provide lists.
 
-> There are other list-related nodes in the ComfyLab collection if you need
+> [!NOTE]
+> There are other list-related nodes in the ComfyLab collection if you need (see the [node list](../../../node_list.md).)
 
 Let's focus a bit:
 
@@ -60,12 +62,17 @@ Just remove the `#` and you will get an astronaut!
 
 <img src="./details/detail%20-%20part%201%20-%20float.jpg" alt="float conversion" hspace="20"/>
 
-- we have set the values in a string, separated by `, `: `5.5, 7, 10.5`
-  - the separator is configured accordingly, you can use any character you want: `/`, `|`, `&`, ...
-- and we have configured the conversion: `convert: float`
-  - that is a very important [core concept](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md):
-    - the `Queue` node cannot determine to which input you will connect the dim values
-    - that is why the output type is `*` (Any): you can connect them anywhere, but **you must ensure the type of input values corresponds to where you will use them**
+We have set the values in a string, separated by `, `: `5.5, 7, 10.5`
+
+- the separator is configured accordingly, you can use any character you want: `/`, `|`, `&`, ...
+
+And we have configured the conversion: `convert: float`
+
+> [!IMPORTANT]
+> that is a very important [core concept](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md):
+>
+> - the `Queue` node cannot determine to which input you will connect the dim values
+> - that is why the output type is `*` (Any): you can connect them anywhere, but **you must ensure the type of input values corresponds to where you will use them**
 
 <br/>
 
@@ -80,11 +87,14 @@ The `Queue` and `Render` nodes are connected by the specific `XY plot data` link
 During processing, the `Queue` node informs you about the current state: `Processing: 2 / 9` for example
 
 - you can re-run, you will see that the queue is reinitialized automatically:
-  - the `Queue` node is designed for **auto-queuing**: you don't have to reset a counter or adjust the batch size, **it takes care of everything for you**
+
+> [!IMPORTANT]
+> The `Queue` node is designed for **auto-queuing**: you don't have to reset a counter or adjust the queue size, **it takes care of everything for you**.\
+> In fact, the queue size should always set to 1.
 
 ## Part 2 - String templating
 
-Let's do our first customizations, that will be short:
+Let's do our first customizations, it will be quick:
 
 - in the dim1 multiline input, you can see that all lines start with `a photograpgy of`
   - that's redundant, and make row headers too long: let's optimize this
@@ -123,7 +133,7 @@ Execute the workflow.
 
 What we have changed:
 
-- the astronaut is back into business (we have removed the `#`, see Part 1)
+- the astronaut is back into business (we have removed the `#`, see [Part 1](#part-1---our-first-grid-and-some-useful-explanations))
 - in the `XY Plot: Queue` node, we have set `dim1: max per page` to 2
   - this where we set the pagination (0 to disable it)
 - in the `XT Plot: Render` node, the `direction` was changed to `dim1 as cols`

@@ -80,7 +80,7 @@ Exist in 2 flavors: **simple string and multiline**.
 ## Queue - _efficient and simple to use_
 
 Exist in 3 flavors: **Generic**, **File**, **Image**.\
-Very simple to use: **auto-queuing** (with error / interruption detection), no counter to reset or batch size to set.
+Very simple to use: **auto-queuing** (with error / interruption detection), no counter to reset or queue size to set.
 
 ## List utilities - _make lists as you want_
 

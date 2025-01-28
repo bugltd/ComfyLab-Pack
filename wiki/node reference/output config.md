@@ -9,7 +9,11 @@ The `Output Config: Load` (and its backend counterpart, `Output Config: Retrieve
 It opens a whole range of use cases: whether you need to standardize tests (LoRA, ...), store a collection of usual use cases, or just share your configs with others, this node can certainly prove very useful.\
 **You can define any number of outputs in it, to match your specific needs**.
 
-A config file is a simple text file in one of the following formats: **JSON, JSON5 or YAML** (and also the unofficial JSONC, aka 'json with comments').
+A config file is a simple text file in one of the following formats: **JSON, JSON5 or YAML**.
+
+> [!TIP]
+> The `YAML` and `JSON5` formats allow comments, which can be very handy, especially if you need to share your configs and document them.\
+> While `JSON` doesn't allow them (by design), you can also use the unofficial `JSONC` (aka "JSON with comments") with the ComfyLab `Output Config` node.
 
 A config can be very simple:
 

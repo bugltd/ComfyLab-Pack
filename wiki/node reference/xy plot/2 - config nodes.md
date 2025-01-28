@@ -7,7 +7,8 @@
 In addition to the standard [Queue and Render nodes](./1%20-%20queue%20and%20render.md), you can customize many visual aspects of the grid, thanks to 2 optional nodes, `Plot Config: Grid` and `Plot Config: Header/Footer`, than can be plugged into `XY Plot: Render`.\
 They allow you to customize the grid, and either the page header or footer (or both), all configurable separately.
 
-To see them in action, please refer to [tutorial #2 - pimp my grid](../../tutorials/XY%20Plot/2%20-%20pimp%20my%20grid/).
+> [!TIP]
+> To see them in action, please refer to [tutorial #2 - pimp my grid](../../tutorials/XY%20Plot/2%20-%20pimp%20my%20grid/).
 
 While some configuration options are specfic, they share some similarities:
 
@@ -26,11 +27,14 @@ The color can expressed either as RGB hex notation (e.g. `#e9e9e9`), or by name 
 
 As for the font color, you can use either the RGB hex notation, or a color name.
 
-In addition, you can also use the special value `transparent`:
+In addition, **you can also use the special value `transparent`**:
 
 - in the `Plot Config: Header/Footer`, it means the header / footer will use the same bg color as the grid
 - while in `Plot Config: Grid`, it will make the grid RGBA
   - useful if you want to add a background image
+
+> [!TIP]
+> To see how to use a custom background image, please check the [XY Plot tytorial: 2 - pimp my grid (Part 3)](../../tutorials/XY%20Plot/2%20-%20pimp%20my%20grid/)
 
 ## Plot Config: Grid
 

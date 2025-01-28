@@ -6,9 +6,11 @@ Here you will find plenty of information / tricks to help you discover the nodes
 
 Please take the time to read the pages if you face difficulties, and before [creating an issue](https://github.com/bugltd/ComfyLab-Pack/issues).
 
-Apart from these pages, I also customized most of the labels and tooltips.\
-You can get **useful contextual information in tooltips**, by just hovering (putting the mouse pointer over) the node title, or its inputs / widgets / outputs. It's not perfect, but should be enough in the most standard cases.
+> [!TIP]
+> You can get **useful contextual information in tooltips**, by just hovering (putting the mouse pointer over) the node title, or its inputs / widgets / outputs.\
+> It's not perfect, but should be enough in the most standard cases.
 
+> [!NOTE]
 > If you can, do not hesitate to propose a Pull Request to improve this wiki, and benefit to the community:\
 > English is not my native language, so there is certainly a lot to do to improve it.
 

@@ -23,7 +23,8 @@ At this point, you should see something like this (example with the `.yaml` conf
 
 ![node detail](./details/result%2001.jpg)
 
-> Note: the label for the 4th output has been customized according to our config
+> [!NOTE]
+> The label for the 4th output has been customized according to our config
 
 ### Connect the dots and run the workflow
 
@@ -42,6 +43,7 @@ Run the prompt: click the main blue `Queue` buttom.
 
 Modify the config files, change the prompt, or any value as you wish. Enjoy, there is plenty to do at this stage already!
 
+> [!TIP]
 > You can use any text editor to modify the files. I personally use VSCode, with the `JSON5 KIT` extension (but it's probably overkill for many).
 
 ## Part 2 - understanding the config
@@ -59,6 +61,7 @@ We can see that all connections except `seed` have been dropped. Why? There are 
   - note the quotes: the value is now a string, not a number anymore
 - the label for `prompt` has been changed
 
+> [!IMPORTANT]
 > This is intended, to restrict ambiguity when opening a new file. **There are 3 reasons for a connection to be dropped:**
 >
 > 1. the output name has changed -> drop
@@ -71,6 +74,7 @@ Now, reconnect the outputs to the `KSampler` node. **It will work for all but `s
 The reason is simple: the `steps` input in `KSampler` is designed to accept numbers (integers, actually), which seems totally logical. \
 By putting our value in quotes, we made it a string, which is not accepted by KSampler / steps.
 
+> [!IMPORTANT]
 > It's highly important to respect the type expected by the destination node inputs / widgets: a number is a number, a string is a string. \
 > And there's no way the `Output Config: Load` can magically guess, because it cannot predict where the outputs will be connected.
 

@@ -28,8 +28,9 @@ The available options are:
 - `color_off` / `color_on`: color when disconnected / connected
   - color values can be expressed in the traditional RGB hex way (`#dcb21a`), or by name (`blue`, `red`, ...)
 
-Another option is available, `type`: it allows you to enforce the output type to any of the valid types, as described in [the official docs](https://docs.comfy.org/custom-nodes/custom_node_datatypes), including any custom type (like `CHEESE`). \
-It is probably only useful for quite advanced and specific use cases. But please note it exists, if you need it.
+> [!NOTE]
+> Another option is available, `type`: it allows you to enforce the output type to any of the valid types, as described in [the official docs](https://docs.comfy.org/custom-nodes/custom_node_datatypes), including any custom type (like `CHEESE`). \
+> It is probably only useful for quite advanced and specific use cases. But please note it exists, if you need it.
 
 However, we are going to make use of it, in a kind of 'hacky' way, just below.
 
@@ -58,8 +59,10 @@ This time it works, and we can run the workflow. Why?
 We have enforced typing by setting `type: "*"`, which means "Any" in ComfyUI. By doing this, we bypass the type checks and say "don't worry, it will be fine".\
 Indeed it was fine, because we have set values that are valid for these inputs. Otherwise, we would have faced an error during workflow execution.
 
-For this reason, my humble piece of advice: **use `"*"` as a last resort**, and prefer standard types whenever you can.\
-And also, obviously: **review and understand your config before applying it**, especially if you downloaded it from someone else. While it cannot do anything harmful (the config is strictly validated), you may encounter unexpected results if you don't.
+> [!IMPORTANT]
+> For this reason, my humble piece of advice: **use `"*"` as a last resort**, and prefer standard types whenever you can.\
+> And also, obviously: **review and understand your config before applying it**, especially if you downloaded it from someone else.\
+> While it cannot do anything harmful (the config is strictly validated), you may encounter unexpected results if you don't.
 
 However, as you can see, in some cases it can open locked doors, and make your config extremely versatile, covering many different use cases. You can apply this to virtually any sort of combo widgets: LoRA, ... as long as you ensure the values are valid.
 
