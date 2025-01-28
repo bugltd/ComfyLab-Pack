@@ -18,7 +18,7 @@ Sections:
 - [Epochs vs Random seeds](#epochs-vs-random-seeds)
 
 > [!TIP]  
-> Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
+> Here we do not customize the grid look, but it can easily be done by plugging the `Plot Config: Grid` node to `XY Plot: Render`.
 
 ## Overview
 
