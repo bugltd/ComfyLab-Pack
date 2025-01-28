@@ -2,6 +2,8 @@ import hashlib
 import math
 import random
 
+import folder_paths  # type: ignore
+
 from ..collection.register_nodes import register_node
 
 
@@ -163,56 +165,6 @@ class ListFromMultiline:
                 output.append(line)
 
         return (output, len(output))
-
-
-# @register_node('Input Multiline To Batch', 'list')
-# class BatchFromMultiline:
-#     def __init__(self):
-#         pass
-
-#     @classmethod
-#     def INPUT_TYPES(s):
-#         return {
-#             'required': {
-#                 'separator': (
-#                     'STRING',
-#                     {'default': ',', 'multiline': False},
-#                 ),
-#                 'index': (
-#                     'INT',
-#                     {
-#                         'min': 0,
-#                         'default': 0,
-#                     },
-#                 ),
-#                 'multiline': (
-#                     'STRING',
-#                     {'default': '', 'multiline': True},
-#                 ),
-#             }
-#         }
-
-#     RETURN_TYPES = ('LIST', 'INT', 'INT')
-#     RETURN_NAMES = ('list', 'batch index', 'batch total')
-
-#     FUNCTION = 'run'
-
-#     def run(
-#         self,
-#         separator: str,
-#         index: int,
-#         multiline: str,
-#     ):
-#         lines = multiline.split('\n')
-#         output = []
-#         for line in lines:
-#             tokens = line.split(separator)
-#             trimmed = []
-#             for token in tokens:
-#                 trimmed.append(token.strip())
-#             output.append(trimmed)
-
-#         return (output[index], index, len(output))
 
 
 @register_node('List: from File (backend)', 'list')
@@ -422,3 +374,42 @@ class ListRandomSeeds:
         for i in range(0, count):
             values.append(math.floor(random.randrange(0, 0xFFFFFFFFFFFFFFFF)))
         return (values, len(values))
+
+
+class ContainsAnyDict(dict):
+    def __contains__(self, key):
+        return True
+
+
+@register_node('List: Checkpoints', 'list')
+class ListCheckpoints:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'with_extension': (
+                    'BOOLEAN',
+                    {'default': True, 'tooltip': 'keep file extension?'},
+                ),
+                'models': (
+                    'MODEL_LIST',
+                    {'all': folder_paths.get_filename_list('checkpoints')},
+                ),
+            },
+            'optional': ContainsAnyDict(),
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('LIST', 'INT')
+    RETURN_NAMES = ('list', 'count')
+    OUTPUT_TOOLTIPS = (
+        'list of checkpoint file names',
+        TOOLTIP_OUTPUT_COUNT,
+    )
+    DESCRIPTION = 'Create a list of selected checkpoints file names.'
+
+    def run(self, with_extension, model_list, **kwargs):
+        return ([], 0)
