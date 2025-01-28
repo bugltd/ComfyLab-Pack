@@ -90,7 +90,7 @@ During processing, the `Queue` node informs you about the current state: `Proces
 
 > [!IMPORTANT]
 > The `Queue` node is designed for **auto-queuing**: you don't have to reset a counter or adjust the queue size, **it takes care of everything for you**.\
-> In fact, the queue size should always set to 1.
+> In fact, the queue size should always be set to 1.
 
 ## Part 2 - String templating
 
