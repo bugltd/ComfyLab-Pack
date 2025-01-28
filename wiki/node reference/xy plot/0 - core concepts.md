@@ -30,7 +30,8 @@ This makes the `dim1 value` and `dim2 value` outputs very versatile, as you can 
 
 But it commes ar a price:
 
-> [!IMPORTANT] > **You must ensure that the data in input correspond to the expected data in output**
+> [!IMPORTANT]
+> You must ensure that the **data in input correspond to the expected data in output**
 > For example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats. If you send strings, you will obviously get an error when running the workflow
 
 One of the main features of the `Queue` node is **auto-queuing**
@@ -77,6 +78,8 @@ So let's switch, connecting the list of checkpoints to `dim1`, and the list of s
 - **keep** checkpoint #1, get seed #3 > _do not load checkpoint #1_ (it's in memory) > render image
 - ...
 
-By doing so, we optimize the performance as much as possible.\
-So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim1`**.\
-(And if you vary 2 lists of models, obviously choose the slowest as `dim1`).
+By doing so, we optimize the performance as much as possible.
+
+> [!TIP]
+> So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim1`**.\
+> (And if you vary 2 lists of models, obviously choose the slowest as `dim1`).
