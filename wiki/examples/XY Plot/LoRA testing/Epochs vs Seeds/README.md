@@ -40,7 +40,7 @@ First, we define the LoRA prefix, without the epoch: we build the filename later
 We also define the epochs we want to test, separated by commas.\
 ![epochs](./images/details%20-%20input%20epochs.jpg)
 
-> Notes:
+> [!NOTE]
 >
 > - we can of course use a different separator, simply adjust the `separator` to your needs
 > - no need to pad the epochs to 6 characters, we do that later
@@ -48,7 +48,8 @@ We also define the epochs we want to test, separated by commas.\
 We build the LoRA model file name thanks to the `Format String` node. Here specifically, we prefix with the LoRA name, followed by the epoch (padded to 6 digits), then finally add the file extension.\
 ![format file name](./images/details%20-%20format%20lora%20name.jpg)
 
-> Note: check the [node reference](../../../../node%20reference/format.md) for more details, and also visit [this guide](https://pyformat.info/) for different techniques applicable to Python string `format()` method
+> [!NOTE]
+> check the [node reference](../../../../node%20reference/format.md) for more details, and also visit [this guide](https://pyformat.info/) for different techniques applicable to Python string `format()` method
 
 Finally, we pipe the resulting string to `Load LoRA`, after converting it to type Any (`*`). More explanations in the [XY Plot tutorial: 3 - advanced techniques](../../../../tutorials/XY%20Plot/3%20-%20advanced%20techniques/).
 
