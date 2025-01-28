@@ -131,7 +131,7 @@ As expected, we have strictly the same results as in [Part1](#part-1---various-c
 
 ## TL;DR / Conclusion
 
-In this tutorial, we have covered 3 different methods to make checkpoints (or many other things) vary:
+In this tutorial, we have covered 3 different methods to vary checkpoints (or many other things):
 
 - simple one, using a dedicated node: applicable to checkpoints, LoRAs, samplers, schedulers
 - a more versatile one, that should adapt to many of your use cases
