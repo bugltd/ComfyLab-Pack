@@ -138,7 +138,7 @@ That being said, I hope you have found these tutorials interesting and easy to f
 > [!NOTE]
 > If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
 
-Thank you for reading, and enjoy your beautiful grids my friends!
+Thank you for reading, and enjoy your beautiful grids!
 
 ## Going further (advanced)
 
