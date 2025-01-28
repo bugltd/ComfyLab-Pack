@@ -1,6 +1,7 @@
 import hashlib
 import math
 import random
+from pathlib import Path
 
 import folder_paths  # type: ignore
 
@@ -376,11 +377,6 @@ class ListRandomSeeds:
         return (values, len(values))
 
 
-class ContainsAnyDict(dict):
-    def __contains__(self, key):
-        return True
-
-
 @register_node('List: Checkpoints', 'list')
 class ListCheckpoints:
     def __init__(self):
@@ -390,16 +386,15 @@ class ListCheckpoints:
     def INPUT_TYPES(s):
         return {
             'required': {
-                'with_extension': (
-                    'BOOLEAN',
-                    {'default': True, 'tooltip': 'keep file extension?'},
-                ),
                 'models': (
                     'MODEL_LIST',
                     {'all': folder_paths.get_filename_list('checkpoints')},
                 ),
+                'with_extension': (
+                    'BOOLEAN',
+                    {'default': True, 'tooltip': 'keep file extension?'},
+                ),
             },
-            'optional': ContainsAnyDict(),
         }
 
     FUNCTION = 'run'
@@ -411,5 +406,11 @@ class ListCheckpoints:
     )
     DESCRIPTION = 'Create a list of selected checkpoints file names.'
 
-    def run(self, with_extension, model_list, **kwargs):
-        return ([], 0)
+    def run(self, with_extension, models, **kwargs):
+        output = []
+        for file in models['files']:
+            if not with_extension:
+                output.append(str(Path(file).stem))
+            else:
+                output.append(file)
+        return (output, len(output))

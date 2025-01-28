@@ -71,7 +71,7 @@ export function ERROR_DISPLAY(node, name = 'error_display') {
     return widget;
 }
 export function MODEL_LIST(node, inputName, inputData) {
-    inputData[1].value = [];
+    inputData[1].value = { files: [] };
     if (!Array.isArray(inputData[1].all) || !inputData[1].all) {
         log.error("MODEL_LIST: 'all is invalid");
         inputData[1].all = [];

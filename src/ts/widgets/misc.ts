@@ -138,7 +138,7 @@ export function MODEL_LIST(
 	inputName: string,
 	inputData: InputSpec,
 ) {
-	inputData[1].value = []
+	inputData[1].value = { files: [] } // wrap into dict to avoid issues on validation
 	if (!Array.isArray(inputData[1].all) || !inputData[1].all) {
 		log.error("MODEL_LIST: 'all is invalid")
 		// overwrite `all`
