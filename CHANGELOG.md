@@ -4,6 +4,10 @@
 
 ## v0.0
 
+## v0.0.5 (2025-01-28): new List utility nodes
+
+- Random Seeds / Checkpoints / LoRAs / Samplers/ Schedulers
+
 ## v0.0.4 (2025-01-28): better wiki
 
 - replace repo banner and icon
