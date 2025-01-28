@@ -1,14 +1,7 @@
 # Examples / XY Plot / LoRA testing / Epochs vs Seeds
 
 > [!NOTE]
-> As always, we use the following convention for node color:
->
-> - Green: input node you surely want to customize
-> - Blue: the specific nodes we use for processing / customization
->
-> Of course, adjust to your env / needs: checkpoint, prompt, CFG, ...
-
-These examples are intended for quick re-use, feel free to check [the tutorials](../../../../tutorials/) for more detailed explanations.
+> These examples are intended for quick re-use, feel free to check [the tutorials](../../../../tutorials/) for more detailed explanations.
 
 Sections:
 
