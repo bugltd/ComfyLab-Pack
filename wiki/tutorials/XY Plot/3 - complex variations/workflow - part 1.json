@@ -1,6 +1,6 @@
 {
-  "last_node_id": 20,
-  "last_link_id": 22,
+  "last_node_id": 21,
+  "last_link_id": 23,
   "nodes": [
     {
       "id": 7,
@@ -435,7 +435,7 @@
         {
           "name": "dim1",
           "type": "LIST",
-          "link": 15,
+          "link": 23,
           "shape": 6
         },
         {
@@ -568,15 +568,15 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 14,
-      "type": "ListFromMultiline",
+      "id": 21,
+      "type": "ListCheckpoints",
       "pos": [
-        -430,
-        -100
+        -280,
+        -110
       ],
       "size": [
-        470,
-        200
+        315,
+        126
       ],
       "flags": {},
       "order": 1,
@@ -587,7 +587,7 @@
           "name": "list",
           "type": "LIST",
           "links": [
-            15
+            23
           ],
           "slot_index": 0,
           "shape": 6
@@ -599,13 +599,17 @@
         }
       ],
       "properties": {
-        "Node name for S&R": "ListFromMultiline"
+        "Node name for S&R": "ListCheckpoints"
       },
       "widgets_values": [
-        0,
-        true,
-        "disabled",
-        "# here we list the checkpoints\n# do not add the '.safetensors' extension, it will be appended later\nsd_xl_base_1.0\nJuggernaut-XI-byRunDiffusion"
+        {
+          "selected": [
+            "sd_xl_base_1.0.safetensors"
+          ]
+        },
+        false,
+        "sd_xl_base_1.0.safetensors",
+        "none"
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -752,14 +756,6 @@
       "XY_PLOT_DATA"
     ],
     [
-      15,
-      14,
-      0,
-      13,
-      0,
-      "LIST"
-    ],
-    [
       18,
       15,
       0,
@@ -798,6 +794,14 @@
       3,
       4,
       "INT"
+    ],
+    [
+      23,
+      21,
+      0,
+      13,
+      0,
+      "LIST"
     ]
   ],
   "groups": [],
@@ -806,8 +810,8 @@
     "ds": {
       "scale": 1,
       "offset": [
-        544,
-        216
+        564,
+        126
       ]
     },
     "node_versions": {
