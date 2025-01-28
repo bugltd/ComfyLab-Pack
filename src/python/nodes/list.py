@@ -1,4 +1,6 @@
 import hashlib
+import math
+import random
 
 from ..collection.register_nodes import register_node
 
@@ -383,3 +385,36 @@ class ListLimit:
                 output = list[-nb_elements:]
 
         return (output, len(output))
+
+
+@register_node('List: Random Seeds', 'list')
+class ListRandomSeeds:
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'count': ('INT', {'default': 1, 'min': 1}),
+            },
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('LIST', 'INT')
+    RETURN_NAMES = ('list', 'count')
+    OUTPUT_TOOLTIPS = (
+        'list of random seeds',
+        TOOLTIP_OUTPUT_COUNT,
+    )
+    DESCRIPTION = 'Return a list of random seeds.'
+
+    @classmethod
+    def IS_CHANGED(cls, **kwargs):
+        return float('NaN')
+
+    def run(self, count):
+        values = []
+        for i in range(0, count):
+            values.append(math.floor(random.randrange(0, 0xFFFFFFFFFFFFFFFF)))
+        return (values, len(values))
