@@ -18,4 +18,5 @@ Changelog = "https://github.com/bugltd/ComfyLab-Pack/blob/main/CHANGELOG.md"
 [tool.comfy]
 PublisherId = "bugltd"
 DisplayName = "ComfyLab Pack"
-Icon = "https://github.com/bugltd/ComfyLab-Pack/blob/main/static/repo_icon.png"
+Icon = "https://github.com/bugltd/ComfyLab-Pack/blob/main/static/repo_icon_400
+.png"
