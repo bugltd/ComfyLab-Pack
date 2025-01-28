@@ -1,11 +1,7 @@
-<h1 align="center">
-    ComfyLab Pack
-</h1>
-
 <p align="center">
-    <img src=".images/repo_banner.jpg" width="70%" title="welcome to ComfyLab Pack!">
+    <img src="static/repo_banner.png" title="welcome to ComfyLab Pack!">
     <br/>
-    <span style="color:#787878; font-size: large; font-style: italic">A collection of carefully experimented nodes, to improve your Comfy UX.</span>
+    <span>A collection of carefully experimented nodes, to improve your Comfy UX.</span>
 </p>
 
 <h2 align="center"><a href="#️node-overview">Node overview</a> &nbsp; | &nbsp; <a href="#documentation">Documentation</a> | &nbsp; <a href="#installation">Installation</a></h2>
@@ -41,6 +37,7 @@
 - ...
 </details>
 
+> [!NOTE]
 > For a quick start, it is advised to read the [core concepts](./wiki/node%20reference/xy%20plot/00%20-%20core%20concepts.md).\
 > More information in the [XY Plot node reference](./wiki/node%20reference/xy%20plot/) and the [dedicated tutorials](./wiki/tutorials/XY%20Plot/), from simple to advanced.\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
@@ -60,6 +57,7 @@ Very **useful to standardize your workflows**, and keep a collection of configur
 - strictly validated with a **JSON Schema**, with **detailed visual report** in case of errors
 </details>
 
+> [!NOTE]
 > More information in the [Output Config node reference](./wiki/node%20reference/output%20config.md) and the [dedicated tutorials](./wiki/tutorials/Output%20Config/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
@@ -71,13 +69,14 @@ Very useful for many operations: **insert / prefix / append, concatenate, pad, t
 Compatible with **integers, floats, booleans.**\
 Exist in 2 flavors: **simple string and multiline**.
 
+> [!NOTE]
 > More information in the [Format String node reference](./wiki/node%20reference/format.md) and the [dedicated tutorials](./wiki/tutorials/Format/).\
 > You can also check the [examples](./wiki/examples/), they will be frequently extended.
 
 ## Queue - _efficient and simple to use_
 
 Exist in 3 flavors: **Generic**, **File**, **Image**.\
-Very simple to use: **auto-queuing** (with error / interruption detection), no counter to reset or batch size to set.
+Very simple to use: **auto-queuing** (with error / interruption detection), no counter to reset or queue size to set.
 
 ## List utilities - _make lists as you want_
 
@@ -91,8 +90,9 @@ Please check the [node list](./wiki/node_list.md).
 
 # Documentation
 
-<ins>Important note:</ins> all nodes in this extension has been adjusted with custom tooltips.\
-By simply **moving the mouse pointer over** a node or its inputs / widgets / outputs, you can get useful **contextual information**.
+> [!TIP]
+> All nodes in this extension has been adjusted with custom tooltips.\
+> By simply **moving the mouse pointer over** a node or its inputs / widgets / outputs, you can get useful **contextual information**.
 
 In addition, more detailed information in the [wiki](./wiki/):
 

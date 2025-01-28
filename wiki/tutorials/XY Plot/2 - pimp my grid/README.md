@@ -13,6 +13,7 @@ Tutorial sections:
 - [TL;DR / Conclusion](#tldr--conclusion)
 - [Going further (advanced)](#going-further-advanced)
 
+> [!TIP]
 > As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
 And as always, if you do not want to follow all the steps, you can jump directly to [the conclusion](#tldr--conclusion).
@@ -66,8 +67,10 @@ Some of the configuration options are similar to the `Plot Config: Grid` (font, 
 - `background color`: set a color (as in header), or use the special value `transparent` (as in footer) to keep the grid bg color
 - `padding`: add vertical space above and below the header / footer text
 
-> a note about colors (either font or background, in all the `Plot Config` nodes):\
-> as you can see in the footer, you can specify them by name (eg `white`), instead of the traditional RGB hex notation
+> [!NOTE]
+> About colors (either font or background, in all the `Plot Config` nodes):\
+> As you can see in the footer, you can specify them by name (eg `white`), instead of the traditional RGB hex notation.\
+> And for the RGB hex notation, you can use the standard 6-character one (`#a2a2a2`) or the short one (`#aaa`).
 
 With just these 3 `Plot Config` nodes, we now have access to a bunch of configuration options.\
 But there's maybe something more we can do: what about adding a custom background image?
@@ -91,7 +94,7 @@ Then, we pipe the `grid` output from `XY Plot: Render` to the standard node `Spl
 
 Finally, we add a `Load Image` node to load the background, and connect it to `source` in `ImageCompositeMasked`.
 
-All that with ComfyLab and a few Comfy Core nodes. That wasn't too difficult, don't you think?
+All that with ComfyLab and a few ComfyUI Core nodes. That wasn't too difficult, don't you think?
 
 ## Part 4 - Display 'page X / Y'
 
@@ -130,8 +133,10 @@ What we have covered:
 With these 2 tutorials, **we have seen how to create grids, and make them unique**.\
 It's now your turn to use your creativity and aesthetic talent (surely better than mine), to make them as beautiful as you wish!
 
-That being said, I hope you have found these tutorials interesting and easy to follow.\
-If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
+That being said, I hope you have found these tutorials interesting and easy to follow.
+
+> [!NOTE]
+> If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
 
 Thank you for reading, and enjoy your beautiful grids my friends!
 

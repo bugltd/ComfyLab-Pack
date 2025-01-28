@@ -7,8 +7,10 @@
 The `Format` nodes are very simple yet powerful nodes, that are based on the **standard Python string `format()` method**.\
 They exist in 2 flavors: `String` or `Multiline`.
 
-They are useful to create a string from a template, and **any number of inputs**.\
-Inputs can be of the following ComfyUI types: `STRING`, `INT`, `FLOAT`, `BOOLEAN`.
+They are useful to create a string from a template, and **any number of inputs**.
+
+> [!NOTE]
+> Inputs can be of the following ComfyUI types: `STRING`, `INT`, `FLOAT`, `BOOLEAN`.
 
 ## How to use
 
@@ -23,7 +25,8 @@ Given the following template: `first arg by name: {arg0}, second by index: {1}`,
 Here we see that **we can reference the inputs either by their name (`argN`), or by their index (starting at 0)**.\
 Straightforward, isn't it?
 
-This way, it's **very simple to concatenate 2 strings, append text to a string, ... many operations in one single node!**
+> [!TIP]
+> This way, it's **very simple to concatenate 2 strings, append text to a string, pad / truncate, ... many operations in one single node!**
 
 And last but not least: at stated above, it can take **other types than strings: integer, float, boolean** (and surely others).
 
@@ -32,7 +35,7 @@ And last but not least: at stated above, it can take **other types than strings:
 For more details and advanced techniques, you can check:
 
 - [the tutorials of the `Format` nodes](../tutorials/Format/)
-- [a guide with different possible techniques (padding, ...)](https://pyformat.info/)
+- [a guide with different techniques (padding, ...)](https://pyformat.info/)
 - [format specification mini-language (python.org)](https://docs.python.org/3/library/string.html#format-specification-mini-language)
 
 ## Inputs / Widgets / Outputs

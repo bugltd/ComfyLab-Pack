@@ -12,36 +12,52 @@ What is processed between them (from `dim1 value` / `dim2 value` outputs of `Que
 
 As you can see in the screenshot, there is no concept of row / column or X / Y in the `Queue` node, as in many other plot / grid implementations:
 
-- instead, we talk about `dim1` and `dim2` (dimensions 1 & 2)
-  - this is intended, to improve performance: but we'll talk about that later
-  - just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
-  - whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (`direction` toggle)
-- `dim1` and `dim2` (optional) **take lists as inputs**
-  - in ComfyUI, a LIST is a LIST, but we cannot know if it's a list of strings, numbers, images, ...
-  - so another important rule: **what you send is what you get**
-    - said differently: if you send a list of numbers, you will get number values in output
-    - or one could say: sh\*t in, sh\*t out...
-- for the reason above, the `Queue` node cannot determine what it will get in input, so the type of the outputs is set to `"*"` (Any)
-  - this makes the `dim1 value` and `dim2 value` outputs very flexible, as you can basically connect them anywhere
-  - but it comes at a price: **you must ensure that the data in input correspond to the expected data in output**
-    - for example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats. If you send strings, you will obviously get an error when running the workflow
-- one of the main features of the `Queue` node is **auto-queuing**
-  - no need to reset a counter, or manually increase the batch size
-  - **the `Queue` node will take care of that for you**
-  - in fact, you should definitely **not set the batch size to anything else than `1`**
+Instead, we talk about `dim1` and `dim2` (dimensions 1 & 2): this is intended, to improve performance: but we'll talk about that later.
+
+> [!IMPORTANT]
+> Just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**.\
+> Whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (with the `direction` toggle).
+
+`dim1` and `dim2` (optional) **take lists as inputs**:
+
+- in ComfyUI, a LIST is a LIST, but we cannot know if it's a list of strings, numbers, images, ...
+- so another important rule: **what you send is what you get**
+  - said differently: if you send a list of numbers, you will get number values in output
+  - or one could say: sh\*t in, sh\*t out...
+
+For the reason above, the `Queue` node cannot determine what it will get in input, so **the type of the outputs is set to `"*"` (Any)**.\
+This makes the `dim1 value` and `dim2 value` outputs very versatile, as you can basically connect them anywhere.
+
+But it comes ar a price:
+
+> [!WARNING]
+> You must ensure that the **data in input correspond to the expected data in output**\
+> For example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats.\
+> If you send strings, you will obviously get an error when running the workflow
+
+One of the main features of the `Queue` node is **auto-queuing**
+
+- no need to reset a counter, or manually increase the queue size
+- **the `Queue` node will take care of that for you**
+- in fact, you should definitely **not set the queue size to anything else than `1`**
 
 ## XY Plot: Render
 
 The `Render` node, in its default configuration is easier to understand:
 
-- it takes an `image` as input, for example the result of the `KSampler` processing
-- <ins>important</ins>: you are not limited to KSampler
-  - in fact **you can do what you want between the `Queue` node and the `Render` one**
-  - it could be loading the image from a folder, doing some image transformations... you decide
-- it has 2 outputs:
-  - `image` is the single image, as received in input
-  - `grid` is the generated grid, when it has received enough images
-    - obviously, you can generate multiple grids, if you configure pagination in the `Queue` node
+It takes an `image` as input, for example the result of the `KSampler` processing
+
+> [!IMPORTANT]
+> You are not limited to KSampler:
+>
+> - in fact **you can do what you want between the `Queue` node and the `Render` one**
+> - it could be loading the image from a folder, doing some image transformations... you decide
+
+This node has 2 outputs:
+
+- `image` is the single image, as received in input
+- `grid` is the generated grid, when it has received enough images
+  - obviously, you can generate multiple grids, if you configure pagination in the `Queue` node
 
 ## dim1 vs dim2, which one should I choose? (or the Performance Question)
 
@@ -68,6 +84,8 @@ So let's switch, connecting the list of checkpoints to `dim1`, and the list of s
 - **keep** checkpoint #1, get seed #3 > _do not load checkpoint #1_ (it's in memory) > render image
 - ...
 
-By doing so, we optimize the performance as much as possible.\
-So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim1`**.\
-(And if you vary 2 lists of models, obviously choose the slowest as `dim1`).
+By doing so, we optimize the performance as much as possible.
+
+> [!TIP]
+> So as a general rule: **if you need to vary models (checkpoint, LoRA, ...), ensure these values are connected to `dim1`**.\
+> (And if you vary 2 lists of models, obviously choose the slowest as `dim1`).

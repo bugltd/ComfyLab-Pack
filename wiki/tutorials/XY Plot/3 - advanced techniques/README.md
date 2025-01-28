@@ -6,7 +6,9 @@ Here we are going to see a few advanced techniques you may find useful.\
 Of course, I cannot anticipate all the use cases, but by following this tutorial, I hope you will see the versatility of the ComfyLab XY Plot nodes, and understand how to adapt for your scenario.\
 Here, no frills, we'll go straight to the point, to focus of the functionalities rather than fancy grid customization.
 
-If you haven't yet, I highly recommend you follow (at least read) the first 2 tutorials ([1](../1%20-%20the%20basics/) & [2](../2%20-%20pimp%20my%20grid/)), and read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md).
+> [!IMPORTANT]
+> If you haven't yet, it is recommended to follow (at least read) the first 2 tutorials ([1](../1%20-%20the%20basics/) & [2](../2%20-%20pimp%20my%20grid/)), and read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md).\
+> You will probably need them in this advanced tutorial.
 
 Tutorial sections:
 
@@ -15,6 +17,7 @@ Tutorial sections:
 - [Part 3 - Using the Output Config node](#part-3---using-the-output-config-node)
 - [TL;DR / Conclusion](#tldr--conclusion)
 
+> [!TIP]
 > As for all nodes in this extension, you can get useful contextual information, by just **moving the mouse pointer over a node or its inputs / widgets / outputs**. This should help you understand some details, without reading the more detailed wiki pages (yet).
 
 And as always, if you do not want to follow all the steps, you can jump directly to [the conclusion](#tldr--conclusion).
@@ -37,28 +40,34 @@ Here we build a grid with 2 different checkpoints, vs a list of predefined seeds
 
 What should be noticed:
 
-- checkpoints:
-  - we have chosen not to include the `.safetensors` extension in the input
-    - it would have been displayed in the row headers, making them too long
-  - instead, we have used a `Format: String` node, to append `.safetensors` to the `dim1 value` output of the `Queue` node
-  - but by simply doing so, we cannot pipe the text output to the `Load Checkpoint` node, why?
-    - the `chkpt_name` widget does not accept any string, but a string that exists in the list
-  - so to bypass this limitation we simply convert the text output to Any, thanks to the `Convert to Any` node
-    - ![Any output](./details/detail%20-%20part%201%20-%20any.jpg)
-    - you can read more about the Any output in the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md), and the [2nd tutorial of the `Output Config` node](../../Output%20Config/2%20-%20more%20options)
-- seeds:
-  - theoritically, we should have converted the list values to integers, thanks to the `convert` combo widget
-    - but it also works (for seeds only AFAIK)
+<ins>Checkpoints:</ins>
 
-Lessons learned:
+- we have chosen not to include the `.safetensors` extension in the input
+  - it would have been displayed in the row headers, making them too long
+- instead, we have used a `Format: String` node, to append `.safetensors` to the `dim1 value` output of the `Queue` node
+- but by simply doing so, we cannot pipe the text output to the `Load Checkpoint` node, why?
+  - the `chkpt_name` widget does not accept any string, but a string that exists in the list
+- so to bypass this limitation we simply convert the text output to Any, thanks to the `Convert to Any` node
+  - ![Any output](./details/detail%20-%20part%201%20-%20any.jpg)
+
+> [!NOTE]
+> You can read more about the Any output in the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md), and the [2nd tutorial of the `Output Config` node](../../Output%20Config/2%20-%20more%20options)
+
+<ins>Seeds:</ins>
+
+- theoritically, we should have converted the list values to integers, thanks to the `convert` combo widget
+  - but it also works (for seeds only AFAIK)
+
+### Lessons learned
 
 - combo widgets (as `chkpt_name` in `Load Checkpoint`) do not accept simple strings
   - a workaround is to use an output with type Any (`"*"`)
     - should we have included the `.safetensors` in the first input, we could have dropped the `Format: String` and `Convert to Any` node, because the type of `Queue` outputs is Any
       - but this wouldn't be great in terms of display in the grid
 - the checkpoint list is connected to `dim1`, not `dim2`, for a performance reason
-  - if you want: just switch dim1 / dim2 and check the processing time _(more in the core concepts page)_
+  - if you want: just switch dim1 / dim2 and check the processing time _(more in the [core concepts page](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md))_
 
+> [!TIP]
 > You can basically use this approach for any combo widget, in particular when loading models (LoRA, ...).\
 > But be **very cautious** about the values you set in input: by using the Any type, we bypass the standard ComfyUI type checks, so the workflow may fail if the values are incorrect.
 
@@ -105,7 +114,8 @@ What should be noticed:
   - for example, `cfg` is written without quotes, so it's detected as a string
   - but for more combo widgets (sampler, scheduler), we have to force type to be Any (`*`)
 
-We won't go into details here about the configuration file itself, but you can find more information in the corresponding [node reference](../../../node%20reference/output%20config.md) and the [dedicated tutorials](../../../tutorials/Output%20Config/).
+> [!TIP]
+> We won't go into details here about the configuration file itself, but you can find more information in the corresponding [node reference](../../../node%20reference/output%20config.md) and the [dedicated tutorials](../../../tutorials/Output%20Config/).
 
 ## TL;DR / Conclusion
 

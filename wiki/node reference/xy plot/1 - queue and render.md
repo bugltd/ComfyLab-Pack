@@ -6,15 +6,16 @@
 
 ## XY Plot: Queue
 
-Important notes:
-
-- `dim` and `dim2` take lists as inputs, and sends each combination of values in outputs
-  - as the node cannot anticipate what is the type of input list values, the outputs are set to type Any (`"*"`)
-  - it means that you can connect the outputs everywhere
-    - but you must ensure that the type of data in input correspond to the expected in destination node
-    - **what you send is what you get**
-- `dim1` and `dim2` are processed following the rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
-- the node will manage auto-queuing: ensure set **the batch size is set to 1**
+> [!IMPORTANT] > `dim` and `dim2` take lists as inputs, and sends each combination of values in outputs
+>
+> - as the node cannot anticipate what is the type of input list values, the outputs are set to type Any (`"*"`)
+> - it means that you can connect the outputs everywhere
+>   - but you must ensure that the type of data in input correspond to the expected in destination node
+>   - **what you send is what you get**
+>
+> `dim1` and `dim2` are processed following the rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
+>
+> the node will manage auto-queuing: ensure set **the queue size is set to 1**
 
 For more detailed explanations, please check the [core concepts](./0%20-%20core%20concepts.md).
 
@@ -44,17 +45,17 @@ For more detailed explanations, please check the [core concepts](./0%20-%20core%
 
 ## XY Plot: Render
 
-Note:
+`dim1: header format` and `dim2: header format`:
 
-- `dim1: header format` and `dim2: header format`
-  - enter here a template string, following the syntax of Python string `format()` method
-  - the `{dim1}` and `{dim2}` placeholders will be replaced by the current dim1 / dim2 value
-  - very handy if you want to prefix the row / column headers, for example:
-    - if you have CFG values in dim1, by default the headers will be `7.5`, `8`, ...
-    - just change the dim1 header format to `CFG: {dim1}` and you will get: `CFG: 7.5`, `CFG: 8`, ...
-  - there are plenty of advanced techniques, but you will probably not use them here
-    - however if you want to learn more, you can check the [`Format` node reference](../format.md)
-- `direction`: whether dim1 values are displayed as rows, or columns
+- enter here a template string, following the syntax of Python string `format()` method
+- the `{dim1}` and `{dim2}` placeholders will be replaced by the current dim1 / dim2 value
+- very handy if you want to prefix the row / column headers, for example:
+  - if you have CFG values in dim1, by default the headers will be `7.5`, `8`, ...
+  - just change the dim1 header format to `CFG: {dim1}` and you will get: `CFG: 7.5`, `CFG: 8`, ...
+- there are plenty of advanced techniques, but you will probably not use them here
+  - however if you want to learn more, you can check the [`Format` node reference](../format.md)
+
+`direction`: whether dim1 values are displayed as rows, or columns
 
 ### Inputs / Widgets / Outputs
 

@@ -1,5 +1,6 @@
 # Examples / XY Plot / LoRA testing / Epochs vs Seeds
 
+> [!NOTE]
 > As always, we use the following convention for node color:
 >
 > - Green: input node you surely want to customize
@@ -15,7 +16,8 @@ Sections:
 - [Epochs vs Fixed seeds](#epochs-vs-fixed-seeds)
 - [Epochs vs Fixed seeds (with Output Config)](#epochs-vs-fixed-seeds-with-output-config)
 
-> Note: Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
+> [!TIP]  
+> Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
 
 ## Overview
 
@@ -38,15 +40,15 @@ First, we define the LoRA prefix, without the epoch: we build the filename later
 We also define the epochs we want to test, separated by commas.\
 ![epochs](./images/details%20-%20input%20epochs.jpg)
 
-> Notes:
->
-> - we can of course use a different separator, simply adjust the `separator` to your needs
-> - no need to pad the epochs to 6 characters, we do that later
+> [!NOTE]
+> We can of course use a different separator, simply adjust the `separator` to your needs.\
+> No need to pad the epochs to 6 characters, we'll do that later.
 
 We build the LoRA model file name thanks to the `Format String` node. Here specifically, we prefix with the LoRA name, followed by the epoch (padded to 6 digits), then finally add the file extension.\
 ![format file name](./images/details%20-%20format%20lora%20name.jpg)
 
-> Note: check the [node reference](../../../../node%20reference/format.md) for more details, and also visit [this guide](https://pyformat.info/) for different techniques applicable to Python string `format()` method
+> [!NOTE]
+> More details in the [node reference](../../../../node%20reference/format.md), you can also visit [this guide](https://pyformat.info/) for different techniques applicable to Python string `format()` method
 
 Finally, we pipe the resulting string to `Load LoRA`, after converting it to type Any (`*`). More explanations in the [XY Plot tutorial: 3 - advanced techniques](../../../../tutorials/XY%20Plot/3%20-%20advanced%20techniques/).
 
@@ -72,6 +74,7 @@ Here we have replaced the 3 input nodes by a single `Output Config` node, and lo
 - no need to convert the seed values to integers: that is automatically deducted, as the values are not quoted, so the `Output Config` node understands they are integers
 - we also added the prompt, we could have defined the CFG, steps, sampler, ... the same way
 
-More details about the `Output Config` node in the [node reference](../../../../node%20reference/output%20config.md) and [tutorials](../../../../tutorials/Output%20Config/).
+> [!TIP]
+> More details about the `Output Config` node in the [node reference](../../../../node%20reference/output%20config.md) and [tutorials](../../../../tutorials/Output%20Config/).
 
 Feel free to adjust the values, create a different file, ...
