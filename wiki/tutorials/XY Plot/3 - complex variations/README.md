@@ -5,11 +5,11 @@ Welcome to this third tutorial of the XY Plot series!
 Here we are going to see a few advanced techniques, to make virtually anything vary, for example models or any value in a combo widget.\
 To achieve that, we will use 3 different methods:
 
-- simple: with dedicated nodes for: checkpoints / LoRAs / samplers / schedulers
+- simple: with dedicated nodes, for checkpoints / LoRAs / samplers / schedulers
 - versatile: adaptable to any kind of model (or combo widget)
 - with the [`Output Config`](../../Output%20Config/) node: to standardize your workflow, and keep parameters separated
 
-Each of these approaches will generate the same results: depending on your specifities, pick the one that matches your specific needs.
+Each of these approaches will generate the same results: depending on your specifity, pick the one that matches your specific needs.
 
 > [!TIP]
 > In the following, we vary checkpoints vs a fixed list of seeds.
@@ -60,7 +60,7 @@ Execute the workflow.
 
 To append the `.safetensors` extension:
 
-- we use a `Format: String` node, to add it to the `dim1 value` output of the `Queue` node
+- we use a `Format: String` node, to add the extension to the `dim1 value` output of the `Queue` node
 - but by simply doing so, we cannot pipe the text output to the `Load Checkpoint` node, why?
   - the `chkpt_name` widget does not accept any string, but a string that exists in the list
 - so to bypass this limitation we simply convert the text output to Any, thanks to the `Convert to Any` node
@@ -83,7 +83,7 @@ To append the `.safetensors` extension:
 While it is usually simpler to use the `List` nodes dedicated to checkpoints / LoRAs / samplers / schedulers, there are some cases where we need to use a more versatile approach:
 
 - we want to vary another type of model / value from a combo widget
-- we keep the list as a separate text file, and prefer to re-use it, rather than manually selecting the values
+- we have stored the list as a separate text file (e.g. test case), and prefer to re-use it, rather than manually selecting the values
 
 This short part will cover exactly that, to show how you can adapt the XY Plot to many specific cases.
 
