@@ -25,12 +25,12 @@ Instead, we talk about `dim1` and `dim2` (dimensions 1 & 2): this is intended, t
   - said differently: if you send a list of numbers, you will get number values in output
   - or one could say: sh\*t in, sh\*t out...
 
-For the reason above, the `Queue` node cannot determine what it will get in input, so the type of the outputs is set to `"*"` (Any).\
+For the reason above, the `Queue` node cannot determine what it will get in input, so **the type of the outputs is set to `"*"` (Any)**.\
 This makes the `dim1 value` and `dim2 value` outputs very versatile, as you can basically connect them anywhere.
 
-But it commes ar a price:
+But it comes ar a price:
 
-> [!IMPORTANT]
+> [!WARNING]
 > You must ensure that the **data in input correspond to the expected data in output**\
 > For example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats.\
 > If you send strings, you will obviously get an error when running the workflow
