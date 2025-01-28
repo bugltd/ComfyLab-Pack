@@ -15,8 +15,8 @@ As you can see in the screenshot, there is no concept of row / column or X / Y i
 Instead, we talk about `dim1` and `dim2` (dimensions 1 & 2): this is intended, to improve performance: but we'll talk about that later.
 
 > [!IMPORTANT]
-> just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**
-> whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (`direction` toggle)
+> Just remember this rule: **for a given `dim1` value, we process all values of `dim2` before switching to the next `dim1` value**.\
+> Whether `dim1` and `dim2` are rows or columns is configured later, in the `Render` node (with the `direction` toggle).
 
 `dim1` and `dim2` (optional) **take lists as inputs**:
 
