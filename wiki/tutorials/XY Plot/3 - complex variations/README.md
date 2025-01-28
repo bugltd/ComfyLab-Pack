@@ -104,7 +104,7 @@ You can basically use this approach for any combo widget, in particular when loa
 
 ## Part 3 - With the `Output Config` node
 
-Here the workflow is similar to [Part1](#part-1---simple-with-a-dedicated-node-for-checkpoints-loras-samplers-schedulers) and [Part 2](#part-2---versatile-any-model-or-combo-widget), except that we use the ComfyLab [`Output Config`](../../../node%20reference/output%20config.md) node, to keep our workflow and values separated.
+Here we use the ComfyLab [`Output Config`](../../../node%20reference/output%20config.md) node, to keep our workflow and values separated.
 
 **Load either `workflow - part 3.json` or `workflow - part 3.png` into ComfyUI.**\
 **Copy one of the `output config - part 3.*` files, adjust the checkpoints to your env, and load it into the `Output Config` node.**
