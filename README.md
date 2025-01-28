@@ -1,5 +1,5 @@
 <p align="center">
-    <img src="static/repo_banner.jpg" width="70%" title="welcome to ComfyLab Pack!">
+    <img src="static/repo_banner.jpg" title="welcome to ComfyLab Pack!">
     <br/>
     <span style="color:#787878; font-size: large; font-style: italic">A collection of carefully experimented nodes, to improve your Comfy UX.</span>
 </p>
