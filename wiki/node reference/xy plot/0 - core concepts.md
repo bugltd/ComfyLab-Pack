@@ -31,8 +31,9 @@ This makes the `dim1 value` and `dim2 value` outputs very versatile, as you can 
 But it commes ar a price:
 
 > [!IMPORTANT]
-> You must ensure that the **data in input correspond to the expected data in output**
-> For example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats. If you send strings, you will obviously get an error when running the workflow
+> You must ensure that the **data in input correspond to the expected data in output**\
+> For example: if you connect `dim1 value` to the `cfg` input of `KSampler`, you must ensure that the input list is a list of floats.\
+> If you send strings, you will obviously get an error when running the workflow
 
 One of the main features of the `Queue` node is **auto-queuing**
 
@@ -44,14 +45,19 @@ One of the main features of the `Queue` node is **auto-queuing**
 
 The `Render` node, in its default configuration is easier to understand:
 
-- it takes an `image` as input, for example the result of the `KSampler` processing
-- <ins>important</ins>: you are not limited to KSampler
-  - in fact **you can do what you want between the `Queue` node and the `Render` one**
-  - it could be loading the image from a folder, doing some image transformations... you decide
-- it has 2 outputs:
-  - `image` is the single image, as received in input
-  - `grid` is the generated grid, when it has received enough images
-    - obviously, you can generate multiple grids, if you configure pagination in the `Queue` node
+It takes an `image` as input, for example the result of the `KSampler` processing
+
+> [!IMPORTANT]
+> You are not limited to KSampler:
+>
+> - in fact **you can do what you want between the `Queue` node and the `Render` one**
+> - it could be loading the image from a folder, doing some image transformations... you decide
+
+This node has 2 outputs:
+
+- `image` is the single image, as received in input
+- `grid` is the generated grid, when it has received enough images
+  - obviously, you can generate multiple grids, if you configure pagination in the `Queue` node
 
 ## dim1 vs dim2, which one should I choose? (or the Performance Question)
 
