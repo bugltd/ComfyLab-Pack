@@ -47,6 +47,7 @@ Contents:
 
 Contents:
 
-- various checkpoints (or virtually any model, LoRA, ...)
-- integrate various image resolutions / aspect ratios in the grid
-- combine the XY Plot with the `Output Config` node
+- various checkpoints (or virtually any model, LoRA, ...), following 3 methods using:
+  - dedicated nodes to manually select a list of checkpoints / LoRAs / samplers / scheduler
+  - a more versatile approach for vurtually anything (models, any combo value)
+  - the `Output Config` node to keep the use case data separated from your workflow
