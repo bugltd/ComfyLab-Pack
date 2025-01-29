@@ -1,7 +1,7 @@
 [project]
 name = "comfylab-pack"
 description = "Nodes: fully-customizable and versatile XY Plot grid, dynamic outputs from config files, Format String, various List utilities, ... visit the wiki for a complete list, tutorials and more."
-version = "0.0.6"
+version = "0.0.7"
 authors = [{ name = "bugltd" }]
 license = {file = "LICENSE"}
 readme = "README.md"

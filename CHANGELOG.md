@@ -4,6 +4,14 @@
 
 ## v0.0
 
+## v0.0.7 (2025-01-29)
+
+- improve node `List: Random Seeds`
+
+## v0.0.6 (2025-01-29)
+
+- adjust project description
+
 ## v0.0.5 (2025-01-29)
 
 - new List utility nodes: Random Seeds / Checkpoints / LoRAs / Samplers/ Schedulers
