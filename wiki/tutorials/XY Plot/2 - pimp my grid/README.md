@@ -138,11 +138,12 @@ That being said, I hope you have found these tutorials interesting and easy to f
 > [!NOTE]
 > If you have any suggestion to improve them (content, features, better English, shorter sentences, ...), feel free to open [an issue](https://github.com/bugltd/ComfyLab-Pack/issues), [a discussion](https://github.com/bugltd/ComfyLab-Pack/discussions), or even a Pull Request if you can.
 
-Thank you for reading, and enjoy your beautiful grids my friends!
+Thank you for reading, and enjoy your beautiful grids!
 
 ## Going further (advanced)
 
-These 2 tutorials are intended for a large audience, and to cover the most standard use cases.\
+These 2 tutorials are intended for a large audience, and to cover the most standard use cases.
+
 But please note there are **many advanced techniques you can apply with ComfyLab XY Plot nodes**, for example:
 
 - vary checkpoints, LoRA (any model in fact), ... virtually anything
@@ -153,11 +154,11 @@ But please note there are **many advanced techniques you can apply with ComfyLab
   - with the [ComfyLab `Output Config` node](../../Output%20Config/)
 - ...
 
-If you want to dive deeper, I propose we move to the **next (and last) tutorial of the XY Plot series: 3 - advanced techniques**.\
-But before doing that, please note:
+If you want to go deeper, we can now move to the **next tutorial of the XY Plot series: 3 - complex variations**.\
+It will show how you can vary many things like checkpoints / LoRAs / ..., and virtually any model or value in a combo widget, by using 3 methods:
 
-- it addresses some edge cases that may not be needed for most
-- it is not as detailed as those 2 first tutorials, we'll go faster
-- if you haven't done it yet, I strongly advise you read the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md): it's not long, and you may learn some important design choices there.
+- simple, with dedicated nodes for checkpoints / LoRAs / samplers / schedulers
+- versatile, that should adapt to any kind of model (or combo widget)
+- with the [`Output Config` node](../../Output%20Config/), to standardize your workflow and keep parameters separated
 
-Interested? Let's go to the next tutorial: **[3 - advanced techniques](../3%20-%20advanced%20techniques/)**
+Interested? Let's go to the next tutorial: **[3 - complex variations](../3%20-%20complex%20variations/)**

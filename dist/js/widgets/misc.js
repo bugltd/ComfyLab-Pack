@@ -1,6 +1,7 @@
 import { makeButtonWidget, makeComboWidget, } from '../widgets/factories.js';
 import { makeWidgetAsync } from '../shared/utils.js';
-export function HIDDEN(node, inputName, inputData, _app) {
+import { log } from '../shared/common.js';
+export function HIDDEN(node, inputName, inputData) {
     const initialValue = inputData[1].value;
     const widget = {
         type: 'HIDDEN',
@@ -67,5 +68,15 @@ export const ERROR_DISPLAY_CHOICES = {
 };
 export function ERROR_DISPLAY(node, name = 'error_display') {
     const widget = makeComboWidget(node, name, ERROR_DISPLAY_CHOICES, 'dialog', () => { }, 'how to display detected errors');
+    return widget;
+}
+export function SELECTION_LIST(node, inputName, inputData) {
+    inputData[1].value = { selected: [] };
+    if (!Array.isArray(inputData[1].all) || !inputData[1].all) {
+        log.error("SELECTION_LIST: 'all is invalid");
+        inputData[1].all = [];
+    }
+    const widget = HIDDEN(node, inputName, inputData);
+    widget.all = inputData[1].all;
     return widget;
 }

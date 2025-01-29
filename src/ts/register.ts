@@ -7,9 +7,9 @@ import { CATEGORY, type GlobalThisWithCategory } from '~/shared/common.js'
 import { customizeNode } from '~/custom.js'
 import { setupDynamicConnections } from '~/shared/dynamic_connections.js'
 import { QUEUE_STATUS } from '~/widgets/queue.js'
-import { HIDDEN, BTN, ERROR_DISPLAY } from '~/widgets/misc.js'
+import { HIDDEN, BTN, ERROR_DISPLAY, SELECTION_LIST } from '~/widgets/misc.js'
 import { OutputConfigBackend, OutputConfigLocal } from '~/nodes/config.js'
-import { ListFromMultiline } from '~/nodes/list.js'
+import { ListFromMultiline, ListFromSelection } from '~/nodes/list.js'
 import { InputMultiline } from '~/nodes/input.js'
 import { DebugJSONYAML, DebugWidgetVisibility } from '~/nodes/debug.js'
 
@@ -42,6 +42,21 @@ app.registerExtension({
 					start_index: 1,
 				})
 				break
+			case 'ListFromMultiline':
+				ListFromMultiline(nodeType)
+				break
+			case 'ListCheckpoints':
+				ListFromSelection(nodeType, 'checkpoint')
+				break
+			case 'ListLoras':
+				ListFromSelection(nodeType, 'LoRA')
+				break
+			case 'ListSamplers':
+				ListFromSelection(nodeType, 'sampler')
+				break
+			case 'ListSchedulers':
+				ListFromSelection(nodeType, 'scheduler')
+				break
 			// INPUT
 			case 'InputMultiline':
 				InputMultiline(nodeType)
@@ -53,9 +68,6 @@ app.registerExtension({
 					separator: '',
 					start_index: 0,
 				})
-				break
-			case 'ListFromMultiline':
-				ListFromMultiline(nodeType)
 				break
 			// DEBUG
 			case 'DebugJSONYAML':
@@ -84,6 +96,7 @@ app.registerExtension({
 			HIDDEN,
 			BTN,
 			ERROR_DISPLAY,
+			SELECTION_LIST,
 		}
 	},
 })

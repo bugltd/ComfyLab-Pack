@@ -1,7 +1,7 @@
 [project]
 name = "comfylab-pack"
 description = "A collection of carefully experimented nodes, to improve your Comfy UX."
-version = "0.0.4"
+version = "0.0.5"
 authors = [{ name = "bugltd" }]
 license = {file = "LICENSE"}
 readme = "README.md"
@@ -18,4 +18,4 @@ Changelog = "https://github.com/bugltd/ComfyLab-Pack/blob/main/CHANGELOG.md"
 [tool.comfy]
 PublisherId = "bugltd"
 DisplayName = "ComfyLab Pack"
-Icon = "https://github.com/bugltd/ComfyLab-Pack/blob/main/static/repo_icon.png"
+Icon = "https://github.com/bugltd/ComfyLab-Pack/blob/main/static/repo_icon_400.png"

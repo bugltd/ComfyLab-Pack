@@ -18,7 +18,7 @@ make_node_list(Path(__file__).parent / 'node_list.json')
 load_api()
 
 print(
-    ' 🧬 {}: {} hybrid nodes successfully cloned'.format(
+    ' ⚙️  {}: {} carefully crafted nodes available'.format(
         CATEGORY, len(NODE_CLASS_MAPPINGS)
     )
 )

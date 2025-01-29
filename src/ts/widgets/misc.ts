@@ -1,5 +1,4 @@
 import { LGraphNode, IWidget } from '@comfyorg/litegraph'
-import type { ComfyApp } from '@comfyorg/comfyui-frontend-types'
 
 import { InputSpec } from '~/.d.ts/comfyui-frontend-types_alt.js'
 import {
@@ -8,6 +7,7 @@ import {
 	makeComboWidget,
 } from '~/widgets/factories.js'
 import { makeWidgetAsync } from '~/shared/utils.js'
+import { log } from '~/shared/common.js'
 
 /**
  * Create an hidden widget. To be used in `getCustomWidgets(app)`
@@ -21,8 +21,8 @@ export function HIDDEN(
 	node: LGraphNode,
 	inputName: string,
 	inputData: InputSpec,
-	// eslint-disable-next-line @typescript-eslint/no-unused-vars
-	_app: ComfyApp | undefined,
+	// // eslint-disable-next-line @typescript-eslint/no-unused-vars
+	// _app: ComfyApp | undefined,
 ) {
 	// the value in inputData is only used when creating a new workdlow
 	// otherwise, the cached value will be used by Comfy
@@ -131,4 +131,21 @@ export function ERROR_DISPLAY(
 		'how to display detected errors',
 	)
 	return widget as ErrorDisplayWidget
+}
+
+export function SELECTION_LIST(
+	node: LGraphNode,
+	inputName: string,
+	inputData: InputSpec,
+) {
+	inputData[1].value = { selected: [] } // wrap into dict to avoid issues on validation
+	if (!Array.isArray(inputData[1].all) || !inputData[1].all) {
+		log.error("SELECTION_LIST: 'all is invalid")
+		// overwrite `all`
+		inputData[1].all = []
+	}
+
+	const widget = HIDDEN(node, inputName, inputData)
+	widget.all = inputData[1].all
+	return widget
 }

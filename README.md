@@ -8,7 +8,9 @@
 
 # News
 
-- 2025-01-28 - v0.0.5: added node `List: Random Seeds`
+- 2025-01-29 - v0.0.5:
+  - new List utility nodes: Random Seeds / Checkpoints / LoRAs / Samplers/ Schedulers
+  - reorganize / improve wiki
 
 # Node overview
 

@@ -1,14 +1,7 @@
 # Examples / XY Plot / LoRA testing / Epochs vs Seeds
 
 > [!NOTE]
-> As always, we use the following convention for node color:
->
-> - Green: input node you surely want to customize
-> - Blue: the specific nodes we use for processing / customization
->
-> Of course, adjust to your env / needs: checkpoint, prompt, CFG, ...
-
-These examples are intended for quick re-use, feel free to check [the tutorials](../../../../tutorials/) for more detailed explanations.
+> These examples are intended for quick re-use, feel free to check [the tutorials](../../../../tutorials/) for more detailed explanations.
 
 Sections:
 
@@ -18,7 +11,7 @@ Sections:
 - [Epochs vs Random seeds](#epochs-vs-random-seeds)
 
 > [!TIP]  
-> Here we do not customize the grid look, but it can easily be done by plugging the `OutputConfig: Grid` node to `XY Plot: Render`.
+> Here we do not customize the grid look, but it can be done easily by plugging the `Plot Config: Grid` node to `XY Plot: Render`.
 
 ## Overview
 
@@ -51,7 +44,7 @@ We build the LoRA model file name thanks to the `Format String` node. Here speci
 > [!NOTE]
 > More details in the [node reference](../../../../node%20reference/format.md), you can also visit [this guide](https://pyformat.info/) for different techniques applicable to Python string `format()` method
 
-Finally, we pipe the resulting string to `Load LoRA`, after converting it to type Any (`*`). More explanations in the [XY Plot tutorial: 3 - advanced techniques](../../../../tutorials/XY%20Plot/3%20-%20advanced%20techniques/).
+Finally, we pipe the resulting string to `Load LoRA`, after converting it to type Any (`*`). More explanations in the [XY Plot tutorial: 3 - complex variations](../../../../tutorials/XY%20Plot/3%20-%20complex%20variations/).
 
 #### Seed list
 

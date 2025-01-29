@@ -9,6 +9,6 @@
 
 - [1 - the basics](./XY%20Plot/1%20-%20the%20basics/)
 - [2 - pimp my grid](./XY%20Plot/2%20-%20pimp%20my%20grid/)
-- [3 - advanced techniques](./XY%20Plot/3%20-%20advanced%20techniques/)
+- [3 - complex variations](./XY%20Plot/3%20-%20complex%20variations/)
 
 **[Format](./Format/)**

@@ -41,12 +41,13 @@ Contents:
 - make the grid RGBA to add a custom background inage
 - display 'page X / Y'
 
-## Tutorial 3 - advanced techniques
+## Tutorial 3 - complex variations
 
-**[>> Go to the tutorial](./3%20-%20advanced%20techniques/)**
+**[>> Go to the tutorial](./3%20-%20complex%20variations/)**
 
 Contents:
 
-- various checkpoints (or virtually any model, LoRA, ...)
-- integrate various image resolutions / aspect ratios in the grid
-- combine the XY Plot with the `Output Config` node
+- various checkpoints (or virtually any model, LoRA, ...), following 3 methods using:
+  - dedicated nodes to manually select a list of checkpoints / LoRAs / samplers / scheduler
+  - a more versatile approach for vurtually anything (models, any combo value)
+  - the `Output Config` node to keep the use case data separated from your workflow

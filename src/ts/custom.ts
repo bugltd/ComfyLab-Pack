@@ -107,6 +107,16 @@ const customLabels = {
 			nb_elements: 'nb of elements',
 		},
 	},
+	ListCheckpoints: {
+		widget: {
+			with_extension: 'with file extension?',
+		},
+	},
+	ListLoras: {
+		widget: {
+			with_extension: 'with file extension?',
+		},
+	},
 	// CONFIG
 	OutputConfigBackend: {
 		widget: {
@@ -119,31 +129,6 @@ const customLabels = {
 		widget: {
 			error_display: 'display errors',
 			show_config: 'show config',
-		},
-	},
-	OutputConfigAuto: {
-		widget: {
-			auto_connect: 'auto-connect?',
-			multi_nodes: 'if multiple nodes found',
-			error_display: 'display errors',
-			show_config: 'show config',
-		},
-	},
-	NodeConfigApplyLocal: {
-		widget: {
-			error_display: 'display errors',
-			check_level: 'reject on',
-		},
-	},
-	MultiConfigFetch: {
-		widget: {
-			node_by: 'identify nodes by',
-		},
-	},
-	MultiConfigApplyLocal: {
-		widget: {
-			error_display: 'display errors',
-			check_level: 'reject on',
 		},
 	},
 	// QUEUE
@@ -266,6 +251,26 @@ const customLooks = {
 		},
 	},
 	ListLimit: {
+		output: {
+			list: { shape: 'grid' },
+		},
+	},
+	ListCheckpoints: {
+		output: {
+			list: { shape: 'grid' },
+		},
+	},
+	ListLoras: {
+		output: {
+			list: { shape: 'grid' },
+		},
+	},
+	ListSamplers: {
+		output: {
+			list: { shape: 'grid' },
+		},
+	},
+	ListSchedulers: {
 		output: {
 			list: { shape: 'grid' },
 		},
