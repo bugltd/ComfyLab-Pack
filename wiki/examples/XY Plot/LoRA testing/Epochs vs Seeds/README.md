@@ -79,4 +79,4 @@ Load either `LoRA testing - epochs vs random seeds.json` or `LoRA testing - epoc
 
 This example is similar to first one, except that we replace the `List: from Multiline` node with `List: Random Seeds`.
 
-Thanks to it, we generate a new list of random seeds each time we generate a new grid.
+Thanks to it, we generate a new list of random seeds each time we want: either by refreshing the page, or by clicking the `Reset` button.

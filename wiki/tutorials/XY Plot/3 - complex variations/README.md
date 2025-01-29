@@ -13,7 +13,7 @@ Each of these approaches will generate the same results: depending on your speci
 
 > [!TIP]
 > In the following, we vary checkpoints vs a fixed list of seeds.
-> If you prefer to have a new set of **random seeds** each time you generate the grid, just replace the corresponding `List: ftom Multiline` node with `List: Random Seeds`.
+> If you prefer to have a new set of **random seeds** each time you want, just replace the corresponding `List: ftom Multiline` node with `List: Random Seeds`.
 
 Tutorial sections:
 
