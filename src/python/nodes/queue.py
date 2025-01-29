@@ -33,15 +33,7 @@ class GenericQueue:
     OUTPUT_TOOLTIPS = ('current value (not typed)', 'current index', 'total elements')
     DESCRIPTION = 'Loop through all values of input list, and send them to output.'
 
-    input_list = []
-
     def run(self, input_list: list[Any], index: int):
-        # store the input list, to allow using input nodes that change at each prompt (ex. ListRandomSeeds)
-        if index == 0:
-            self.input_list = input_list
-        else:
-            input_list = self.input_list
-
         total = len(input_list)
         if total == 0:
             raise Exception('Empty input list')

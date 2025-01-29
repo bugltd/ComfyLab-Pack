@@ -1,5 +1,5 @@
 import { findWidget, loadTextFile } from '../shared/utils.js';
-import { makeComboWidget } from '../widgets/factories.js';
+import { makeComboWidget, makeButtonWidget } from '../widgets/factories.js';
 export function ListFromMultiline(nodeType) {
     const original_onNodeCreated = nodeType.prototype.onNodeCreated;
     nodeType.prototype.onNodeCreated = function (...args) {
@@ -87,5 +87,28 @@ export function ListFromSelection(nodeType, selection_type) {
         original_onConfigure?.apply(this, ...args);
         const selectionWidget = findWidget(this, 'selection');
         refreshFromSelection(this, selectionWidget);
+    };
+}
+export function ListRandomSeeds(nodeType) {
+    const reset = (widget) => {
+        widget.value = new Date().getTime();
+    };
+    const original_onNodeCreated = nodeType.prototype.onNodeCreated;
+    nodeType.prototype.onNodeCreated = function (...args) {
+        original_onNodeCreated?.apply(this, ...args);
+        const resetBtn = makeButtonWidget(this, 'reset_btn', 'Reset', {
+            tooltip: 'reset seeds',
+        });
+        resetBtn.callback = () => {
+            reset(resetBtn);
+        };
+        reset(resetBtn);
+    };
+    const original_onConfigure = nodeType.prototype.onConfigure;
+    nodeType.prototype.onConfigure = function (...args) {
+        original_onConfigure?.apply(this, ...args);
+        const resetBtn = findWidget(this, 'reset_btn');
+        if (resetBtn)
+            reset(resetBtn);
     };
 }

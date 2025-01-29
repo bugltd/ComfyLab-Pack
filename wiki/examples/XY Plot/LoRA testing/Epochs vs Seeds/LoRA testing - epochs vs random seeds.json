@@ -1,6 +1,6 @@
 {
-  "last_node_id": 31,
-  "last_link_id": 50,
+  "last_node_id": 32,
+  "last_link_id": 51,
   "nodes": [
     {
       "id": 10,
@@ -778,7 +778,7 @@
         {
           "name": "dim2",
           "type": "LIST",
-          "link": 50,
+          "link": 51,
           "shape": 6,
           "label": "dim2 (opt)"
         }
@@ -957,7 +957,7 @@
       "bgcolor": "#3f5159"
     },
     {
-      "id": 31,
+      "id": 32,
       "type": "ListRandomSeeds",
       "pos": [
         -130,
@@ -965,7 +965,7 @@
       ],
       "size": [
         230,
-        80
+        102
       ],
       "flags": {},
       "order": 4,
@@ -976,9 +976,8 @@
           "name": "list",
           "type": "LIST",
           "links": [
-            50
-          ],
-          "slot_index": 0
+            51
+          ]
         },
         {
           "name": "count",
@@ -990,7 +989,8 @@
         "Node name for S&R": "ListRandomSeeds"
       },
       "widgets_values": [
-        3
+        3,
+        1738158785373
       ],
       "color": "#232",
       "bgcolor": "#353"
@@ -1222,8 +1222,8 @@
       "INT"
     ],
     [
-      50,
-      31,
+      51,
+      32,
       0,
       16,
       1,
@@ -1234,15 +1234,15 @@
   "config": {},
   "extra": {
     "ds": {
-      "scale": 0.9090909090909091,
+      "scale": 1.6808936603591031,
       "offset": [
-        435.64777679120135,
-        222.60346593966682
+        180.8378676307794,
+        164.9507228954187
       ]
     },
     "node_versions": {
       "comfy-core": "0.3.10",
-      "ComfyLab-Pack": "a5b98e8f22d230e90c12de548f71815788f2d50d"
+      "ComfyLab-Pack": "97697d8542327e3825980ee57f250646c25a6b0d"
     }
   },
   "version": 0.4
