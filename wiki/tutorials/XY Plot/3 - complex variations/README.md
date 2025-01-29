@@ -114,7 +114,7 @@ Here we use the ComfyLab [`Output Config`](../../../node%20reference/output%20co
 
 Execute the workflow.
 
-As expected, we have strictly the same results as in [Part1](#part-1---various-checkpoints-or-loras-samplers-schedulers) and [Part 2](#part-2---vary-any-model-or-combo-widget).
+As expected, we have strictly the same results as in [Part1](#part-1---simple-with-a-dedicated-node-for-checkpoints-loras-samplers-schedulers) and [Part 2](#part-2---versatile-any-model-or-combo-widget).
 
 ### What should be noticed
 
