@@ -364,7 +364,7 @@ class ListRandomSeeds:
         'list of random seeds',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Return a list of random seeds.'
+    DESCRIPTION = 'Create a list of random seeds.'
 
     # ensure the list is regenerated
     @classmethod
@@ -405,7 +405,7 @@ class ListCheckpoints:
         'list of checkpoint file names',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Create a list of selected checkpoint file names.'
+    DESCRIPTION = 'Create a list from selected checkpoint file names.'
 
     def run(self, with_extension, selection, **kwargs):
         output = []
@@ -444,7 +444,7 @@ class ListLoras:
         'list of LoRA file names',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Create a list of selected LoRA file names.'
+    DESCRIPTION = 'Create a list from selected LoRA file names.'
 
     def run(self, with_extension, selection, **kwargs):
         output = []
@@ -479,7 +479,7 @@ class ListSamplers:
         'list of sampler names',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Create a list of selected sampler names.'
+    DESCRIPTION = 'Create a list from selected sampler names.'
 
     def run(self, selection, **kwargs):
         output = selection['selected']
@@ -509,7 +509,7 @@ class ListSchedulers:
         'list of scheduler names',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Create a list of selected scheduler names.'
+    DESCRIPTION = 'Create a list from selected scheduler names.'
 
     def run(self, selection, **kwargs):
         output = selection['selected']
