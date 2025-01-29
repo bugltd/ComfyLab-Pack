@@ -35,8 +35,8 @@ All extension nodes, organized by category.
 
 |           Node name           |                                                     Description                                                     | Reference | Tutorial |
 | :---------------------------: | :-----------------------------------------------------------------------------------------------------------------: | :-------: | :------: |
-|     **List: from String**     | split a single string into elements delimited by a separator<br/>optionally convert values to integers, flotas, ... |           |          |
-|   **List: from Multiline**    |      split a multiline string, each line being a value<br/>optionally convert values to integers, flotas, ...       |           |          |
+|     **List: from String**     | split a single string into elements delimited by a separator<br/>optionally convert values to integers, floats, ... |           |          |
+|   **List: from Multiline**    |      split a multiline string, each line being a value<br/>optionally convert values to integers, floats, ...       |           |          |
 | **List: from File (backend)** |                     read a multiline text file from backend,<br/>and send its content as a list                     |           |          |
 |    **List: from Elements**    |                                create a list from any number of individual elements                                 |           |          |
 |        **List: Merge**        |                                         merge any number of lists into one                                          |           |          |
