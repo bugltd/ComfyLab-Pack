@@ -5,7 +5,7 @@ import { setupDynamicConnections } from './shared/dynamic_connections.js';
 import { QUEUE_STATUS } from './widgets/queue.js';
 import { HIDDEN, BTN, ERROR_DISPLAY, SELECTION_LIST } from './widgets/misc.js';
 import { OutputConfigBackend, OutputConfigLocal } from './nodes/config.js';
-import { ListFromMultiline, ListFromSelection } from './nodes/list.js';
+import { ListFromMultiline, ListFromSelection, ListRandomSeeds, } from './nodes/list.js';
 import { InputMultiline } from './nodes/input.js';
 import { DebugJSONYAML, DebugWidgetVisibility } from './nodes/debug.js';
 globalThis[CATEGORY] = { log: 'debug' };
@@ -42,6 +42,9 @@ app.registerExtension({
                 break;
             case 'ListSchedulers':
                 ListFromSelection(nodeType, 'scheduler');
+                break;
+            case 'ListRandomSeeds':
+                ListRandomSeeds(nodeType);
                 break;
             case 'InputMultiline':
                 InputMultiline(nodeType);

@@ -366,11 +366,6 @@ class ListRandomSeeds:
     )
     DESCRIPTION = 'Create a list of random seeds.'
 
-    # ensure the list is regenerated
-    @classmethod
-    def IS_CHANGED(cls, **kwargs):
-        return float('NaN')
-
     def run(self, count):
         values = []
         for i in range(0, count):
