@@ -63,7 +63,7 @@ To append the `.safetensors` extension:
 - but by simply doing so, we cannot pipe the text output to the `Load Checkpoint` node, why?
   - the `chkpt_name` widget does not accept any string, but a string that exists in the list
 - so to bypass this limitation we simply convert the text output to Any, thanks to the `Convert to Any` node
-  - ![Any output](./details/detail%20-%20part%202-%20any.jpg)
+  - ![Any output](./details/detail%20-%20part%201-%20any.jpg)
 
 > [!NOTE]
 > You can read more about the Any output in the [XY Plot core concepts](../../../node%20reference/xy%20plot/0%20-%20core%20concepts.md), and the [2nd tutorial of the `Output Config` node](../../Output%20Config/2%20-%20more%20options/)
@@ -110,7 +110,7 @@ Here we use the ComfyLab [`Output Config`](../../../node%20reference/output%20co
 **Copy one of the `output config - part 3.*` files, adjust the checkpoints to your env, and load it into the `Output Config` node.**
 
 - you should get outputs like this (more than the 4 displayed here):
-- ![outputs](./details/detail%20-%20part%204%20-%20output%20config.jpg)
+- ![outputs](./details/detail%20-%20part%203%20-%20output%20config.jpg)
 
 Execute the workflow.
 
