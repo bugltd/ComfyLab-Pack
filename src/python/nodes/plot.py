@@ -90,6 +90,13 @@ class XYPlotQueue:
         index: int,
         dim2: list[str] = [''],
     ):
+        print('------------------------------------')
+        print('index = ', index)
+        print('------------------------------------')
+
+        if index < 0:  # value has been reset (completion, interrupt, errors)
+            index = 0
+
         if len(dim2) == 0:
             dim2 = ['']
 

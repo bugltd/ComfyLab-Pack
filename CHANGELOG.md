@@ -4,6 +4,11 @@
 
 ## v0.0
 
+## v0.0.8 (2025-01-30)
+
+- improve reset strategy on queues, to handle early interruptions
+- new repo icon URL
+
 ## v0.0.7 (2025-01-29)
 
 - improve node `List: Random Seeds`

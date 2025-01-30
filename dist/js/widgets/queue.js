@@ -19,7 +19,7 @@ export function QUEUE_STATUS(node, inputName, _inputData, app) {
         throw new Error('QUEUE_STATUS: app is undefined');
     const widget = node.addWidget('button', inputName, 0, () => { });
     const reset = () => {
-        widget.value = 0;
+        widget.value = Math.floor(Math.random() * 10e9) * -1;
         widget.total = undefined;
     };
     reset();

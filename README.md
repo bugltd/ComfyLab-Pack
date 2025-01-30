@@ -8,9 +8,13 @@
 
 # News
 
+Latest additions:
+
 - 2025-01-29 - v0.0.5:
   - new List utility nodes: Random Seeds / Checkpoints / LoRAs / Samplers/ Schedulers
   - reorganize / improve wiki
+
+> Full changelog in the [dedicated file](./CHANGELOG.md).
 
 # Node overview
 

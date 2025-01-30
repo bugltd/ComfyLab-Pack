@@ -34,6 +34,9 @@ class GenericQueue:
     DESCRIPTION = 'Loop through all values of input list, and send them to output.'
 
     def run(self, input_list: list[Any], index: int):
+        if index < 0:  # value has been reset (completion, interrupt, errors)
+            index = 0
+
         total = len(input_list)
         if total == 0:
             raise Exception('Empty input list')
@@ -137,6 +140,9 @@ class FileQueue:
         with_extension: bool,
         index: int,
     ):
+        if index < 0:  # value has been reset (completion, interrupt, errors)
+            index = 0
+
         # only scan files at the beginning
         if index == 0:
             self.scan_folder(folder, pattern, recursive)
