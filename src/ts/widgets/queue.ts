@@ -40,7 +40,8 @@ export function QUEUE_STATUS(
 	const widget = node.addWidget('button', inputName, 0, () => {})
 
 	const reset = () => {
-		widget.value = 0
+		// set widget value to a random negative value, to ensure we can restart in any case
+		widget.value = Math.floor(Math.random() * 10e9) * -1
 		widget.total = undefined
 	}
 
