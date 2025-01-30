@@ -364,7 +364,7 @@ class ListRandomSeeds:
         'list of random seeds',
         TOOLTIP_OUTPUT_COUNT,
     )
-    DESCRIPTION = 'Create a list of random seeds.'
+    DESCRIPTION = 'Create a list of random seeds.\nThe list is regenerated when clicking the button, restarting the backend, or refreshing the browser page.'
 
     def run(self, count):
         values = []
