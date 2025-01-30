@@ -12,6 +12,8 @@
   - new List utility nodes: Random Seeds / Checkpoints / LoRAs / Samplers/ Schedulers
   - reorganize / improve wiki
 
+> Detailed changelog in the [dedicated file](./CHANGELOG.md).
+
 # Node overview
 
 **The complete list of nodes can be found in the [wiki / node list](./wiki/node_list.md)**
