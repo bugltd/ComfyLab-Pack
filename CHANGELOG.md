@@ -4,6 +4,10 @@
 
 ## v0.0
 
+## v0.0.9 (2025-02-06)
+
+- add subfolder output to FileQueue and ImageQueue
+
 ## v0.0.8 (2025-01-30)
 
 - improve reset strategy on queues, to handle early interruptions
