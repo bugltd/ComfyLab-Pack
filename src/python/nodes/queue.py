@@ -81,12 +81,20 @@ class FileQueue:
         }
 
     FUNCTION = 'run'
-    RETURN_TYPES = ('STRING', 'STRING', 'STRING', 'INT', 'INT')
-    RETURN_NAMES = ('filename', 'full_path', 'relative_path', 'index', 'total')
+    RETURN_TYPES = ('STRING', 'STRING', 'STRING', 'STRING', 'INT', 'INT')
+    RETURN_NAMES = (
+        'filename',
+        'full_path',
+        'relative_path',
+        'subfolder',
+        'index',
+        'total',
+    )
     OUTPUT_TOOLTIPS = (
         'filename',
         'full path',
         'relative path',
+        'subfolder (relative)',
         'current index',
         'total files',
     )
@@ -151,9 +159,10 @@ class FileQueue:
         return {
             'result': (
                 str(file.name) if with_extension else file.stem,
-                # do not resolve, to ensure relative path is accurate
+                # do not resolve, to ensure relative path is accurate (if symlinks)
                 str(file),
                 str(file.relative_to(self.root)),
+                str(file.parent.relative_to(self.root)),
                 index + 1,
                 self.total,
             ),
@@ -195,13 +204,22 @@ class ImageQueue(FileQueue):
             },
         }
 
-    RETURN_TYPES = ('IMAGE', 'STRING', 'STRING', 'STRING', 'INT', 'INT')
-    RETURN_NAMES = ('image', 'filename', 'full_path', 'relative_path', 'index', 'total')
+    RETURN_TYPES = ('IMAGE', 'STRING', 'STRING', 'STRING', 'STRING', 'INT', 'INT')
+    RETURN_NAMES = (
+        'image',
+        'filename',
+        'full_path',
+        'relative_path',
+        'subfolder',
+        'index',
+        'total',
+    )
     OUTPUT_TOOLTIPS = (
         'image',
         'filename',
         'full path',
         'relative path',
+        'subfolder (relative)',
         'current index',
         'total files',
     )
