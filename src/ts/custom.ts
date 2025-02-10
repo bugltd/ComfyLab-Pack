@@ -188,6 +188,15 @@ const customLabels = {
 			scale_factor: 'scale factor',
 		},
 	},
+	// EXPERIMENTAL
+	MatchTemplate: {
+		output: {
+			detected_box: 'detected box',
+			debug_detection: 'debug - detection',
+			debug_template_mask: 'debug - template (mask)',
+			debug_template_image: 'debug - template (image)',
+		},
+	},
 } as const as Record<string, { [key in Scope]?: Record<string, string> }>
 
 const customLooks = {

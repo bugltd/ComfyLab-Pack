@@ -18,7 +18,7 @@ def import_all(load_env=True):
     if DEBUG:
         MODULES.append('debug')
     if MAD_SCIENTIST:
-        pass
+        MODULES.append('experimental')
 
     for mod in MODULES:
         importlib.import_module('...nodes.' + mod, package=__name__)

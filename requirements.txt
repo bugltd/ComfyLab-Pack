@@ -3,3 +3,5 @@ json5
 python-dotenv
 pyyaml
 pyaml
+opencv-python
+webcolors
