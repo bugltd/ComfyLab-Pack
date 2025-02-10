@@ -16,14 +16,23 @@ class AnyReturnTypes(tuple):
         return ANY_TYPE
 
 
-def tensor_to_pillow(tensor: torch.tensor) -> Image.Image:
+def tensor_to_pillow(tensor: torch.Tensor) -> Image.Image:
     return Image.fromarray(
         np.clip(255.0 * tensor.cpu().numpy().squeeze(), 0, 255).astype(np.uint8)
     )
 
 
-def pillow_to_tensor(image: Image.Image) -> torch.tensor:
+def pillow_to_tensor(image: Image.Image) -> torch.Tensor:
     return torch.from_numpy(np.array(image).astype(np.float32) / 255.0).unsqueeze(0)
+
+
+def tensor_to_cv(tensor: torch.Tensor):
+    # return np.clip(255 * tensor.cpu().numpy().squeeze(), 0, 255).astype(np.uint8)
+    return (tensor.numpy().squeeze(0) * 255).astype(np.uint8)  # <- works
+
+
+def cv_to_tensor(image) -> torch.Tensor:
+    return torch.from_numpy(image.astype(np.float32) / 255.0).unsqueeze(0)
 
 
 class EmptyNode:

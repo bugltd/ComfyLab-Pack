@@ -159,6 +159,14 @@ const customLabels = {
             scale_factor: 'scale factor',
         },
     },
+    MatchTemplate: {
+        output: {
+            detected_box: 'detected box',
+            debug_detection: 'debug - detection',
+            debug_template_mask: 'debug - template (mask)',
+            debug_template_image: 'debug - template (image)',
+        },
+    },
 };
 const customLooks = {
     XYPlotQueue: {
