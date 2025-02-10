@@ -123,6 +123,7 @@ class FileQueue:
         for p in patterns:
             # it = self.root.rglob(p.strip()) if recursive else self.root.glob(p.strip())
             # self.files += [file for file in it if file.is_file()]
+            p = p.strip()
 
             # TODO: go back to Path().glob() with recurse_symlinks=True when Python version is > 3.13
             # in the meantime, we use glob as it follows links by default
