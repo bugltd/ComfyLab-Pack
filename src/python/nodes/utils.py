@@ -375,7 +375,7 @@ class ImageDownscaleToTotalPixels:
     RETURN_TYPES = ('IMAGE', 'INT', 'INT')
     RETURN_NAMES = ('image', 'width', 'height')
     OUTPUT_TOOLTIPS = ('downscaled image', 'width', 'height')
-    DESCRIPTION = 'Downscale an image to match target size in megapuxels.'
+    DESCRIPTION = 'Downscale an image to match target size in megapuxels.\nIf the image is smaller than the target size, it is kept as is.'
 
     def run(self, image, upscale_method, megapixels):
         orig_samples = image.movedim(-1, 1)
@@ -389,7 +389,8 @@ class ImageDownscaleToTotalPixels:
 
         scale_by = math.sqrt(target_total / orig_total)
         target_width = round(orig_width * scale_by)
-        target_height = round(orig_height * scale_by)
+        # we calculate height differently, to respect aspect ratio as much as possible
+        target_height = round(orig_height * target_width / orig_width)
 
         s = comfy.utils.common_upscale(
             orig_samples, target_width, target_height, upscale_method, 'disabled'
