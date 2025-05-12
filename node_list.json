@@ -32,5 +32,6 @@
   "Save Text File (lab)": "Save text content to a file",
   "Sleep (lab)": "Delay execution for the given amount of seconds",
   "Convert to Any (lab)": "Convert any value to type Any ('*)",
-  "Resolution to Dimensions (lab)": "Split a resolution (as string, ex. '1024x1024') to dimensions, optionally multiplied by scale factor"
+  "Resolution to Dimensions (lab)": "Split a resolution (as string, ex. '1024x1024') to dimensions, optionally multiplied by scale factor",
+  "Image: Downscale to Total Pixels (lab)": "Downscale an image to match target size in megapuxels"
 }

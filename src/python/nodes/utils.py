@@ -5,8 +5,10 @@ from PIL import Image
 import numpy as np
 import torch  # type: ignore
 import re
+import math
 
 import folder_paths  # type: ignore
+import comfy.utils
 
 from ..collection.register_nodes import register_node
 from ..shared.utils import ANY_TYPE, pillow_to_tensor
@@ -339,3 +341,58 @@ class ResolutionToDims:
             int(int(m.group(1)) * scale_factor),
             int(int(m.group(2)) * scale_factor),
         )
+
+
+@register_node('Image: Downscale to Total Pixels', 'utils')
+class ImageDownscaleToTotalPixels:
+    upscale_methods = ['nearest-exact', 'bilinear', 'area', 'bicubic', 'lanczos']
+
+    def __init__(self):
+        pass
+
+    @classmethod
+    def INPUT_TYPES(s):
+        return {
+            'required': {
+                'image': ('IMAGE',),
+                'upscale_method': (
+                    s.upscale_methods,
+                    {'default': 'lanczos', 'tooltip': 'upscale method'},
+                ),
+                'megapixels': (
+                    'FLOAT',
+                    {
+                        'default': '1',
+                        'min': 0,
+                        'max': 16,
+                        'tooltip': 'target size in megapixels',
+                    },
+                ),
+            }
+        }
+
+    FUNCTION = 'run'
+    RETURN_TYPES = ('IMAGE', 'INT', 'INT')
+    RETURN_NAMES = ('image', 'width', 'height')
+    OUTPUT_TOOLTIPS = ('downscaled image', 'width', 'height')
+    DESCRIPTION = 'Downscale an image to match target size in megapuxels.'
+
+    def run(self, image, upscale_method, megapixels):
+        orig_samples = image.movedim(-1, 1)
+        orig_width = orig_samples.shape[3]
+        orig_height = orig_samples.shape[2]
+        orig_total = orig_width * orig_height
+        target_total = int(megapixels * 1024 * 1024)
+
+        if orig_total <= target_total:
+            return (image, orig_width, orig_height)
+
+        scale_by = math.sqrt(target_total / orig_total)
+        target_width = round(orig_width * scale_by)
+        target_height = round(orig_height * scale_by)
+
+        s = comfy.utils.common_upscale(
+            orig_samples, target_width, target_height, upscale_method, 'disabled'
+        )
+        s = s.movedim(1, -1)
+        return (s, target_width, target_height)
