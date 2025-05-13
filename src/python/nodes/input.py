@@ -60,7 +60,7 @@ class InputFloat:
 
     @classmethod
     def INPUT_TYPES(s):
-        return {'required': {'value': ('FLOAT', {'default': 0, 'step': 0.1})}}
+        return {'required': {'value': ('FLOAT', {'default': 0, 'step': 0.01})}}
 
     FUNCTION = 'run'
     RETURN_TYPES = ('FLOAT',)
