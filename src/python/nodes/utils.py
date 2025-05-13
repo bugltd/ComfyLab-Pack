@@ -355,29 +355,38 @@ class ImageDownscaleToTotalPixels:
         return {
             'required': {
                 'image': ('IMAGE',),
-                'upscale_method': (
+                'downscale_method': (
                     s.upscale_methods,
-                    {'default': 'lanczos', 'tooltip': 'upscale method'},
+                    {'default': 'lanczos', 'tooltip': 'downscale method'},
                 ),
                 'megapixels': (
                     'FLOAT',
                     {
-                        'default': '1',
+                        'default': 1,
                         'min': 0,
                         'max': 16,
+                        'step': 0.1,
                         'tooltip': 'target size in megapixels',
+                    },
+                ),
+                'multiple_of': (
+                    'INT',
+                    {
+                        'default': 0,
+                        'min': 0,
+                        'tooltip': 'if > 0, ensure the dimension are multiple of this number',
                     },
                 ),
             }
         }
 
     FUNCTION = 'run'
-    RETURN_TYPES = ('IMAGE', 'INT', 'INT')
-    RETURN_NAMES = ('image', 'width', 'height')
-    OUTPUT_TOOLTIPS = ('downscaled image', 'width', 'height')
-    DESCRIPTION = 'Downscale an image to match target size in megapuxels.\nIf the image is smaller than the target size, it is kept as is.'
+    RETURN_TYPES = ('IMAGE', 'INT', 'INT', 'FLOAT')
+    RETURN_NAMES = ('image', 'width', 'height', 'actual_size')
+    OUTPUT_TOOLTIPS = ('downscaled image', 'width', 'height', 'actual size in MP')
+    DESCRIPTION = 'Downscale an image to match target size in megapuxels.\nIf the image is smaller than the target size, it is kept as is.\nNote: image may be cropped, to prevent stretching and preserve aspect ratio.'
 
-    def run(self, image, upscale_method, megapixels):
+    def run(self, image, downscale_method, megapixels, multiple_of):
         orig_samples = image.movedim(-1, 1)
         orig_width = orig_samples.shape[3]
         orig_height = orig_samples.shape[2]
@@ -388,12 +397,29 @@ class ImageDownscaleToTotalPixels:
             return (image, orig_width, orig_height)
 
         scale_by = math.sqrt(target_total / orig_total)
-        target_width = round(orig_width * scale_by)
-        # we calculate height differently, to respect aspect ratio as much as possible
-        target_height = round(orig_height * target_width / orig_width)
-
-        s = comfy.utils.common_upscale(
-            orig_samples, target_width, target_height, upscale_method, 'disabled'
+        target_width = (
+            round(orig_width * scale_by)
+            if multiple_of == 0
+            else round(orig_width * scale_by / multiple_of) * multiple_of
         )
+        # we calculate height differently, to respect aspect ratio rather more that target size
+        target_height = (
+            round(orig_height * target_width / orig_width)
+            if multiple_of == 0
+            else round(orig_height * target_width / (orig_width * multiple_of))
+            * multiple_of
+        )
+
+        # allow cropping to avoid deformation
+        s = comfy.utils.common_upscale(
+            orig_samples, target_width, target_height, downscale_method, 'center'
+        )
+        target_width = s.shape[3]
+        target_height = s.shape[2]
         s = s.movedim(1, -1)
-        return (s, target_width, target_height)
+        return (
+            s,
+            target_width,
+            target_height,
+            target_width * target_height / (1024 * 1024),
+        )
