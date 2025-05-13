@@ -159,6 +159,15 @@ const customLabels = {
             scale_factor: 'scale factor',
         },
     },
+    ImageDownscaleToTotalPixels: {
+        widget: {
+            downscale_method: 'downscale method',
+            multiple_of: 'multiple of',
+        },
+        output: {
+            actual_size: 'actual size',
+        },
+    },
     MatchTemplate: {
         output: {
             detected_box: 'detected box',
